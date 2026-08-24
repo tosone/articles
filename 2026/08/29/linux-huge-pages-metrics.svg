@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="408" viewBox="0 0 1500 408" role="img" aria-label="Huge pages validation metrics table">
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#8ac9d8" stroke-width="1" opacity="0.12"/>
+    </pattern>
+    <filter id="shadow" x="-4%" y="-8%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#006d88" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect width="1500" height="408" fill="#fbfdff"/>
+  <rect width="1500" height="408" fill="url(#grid)"/>
+  <g transform="translate(24 24)" filter="url(#shadow)">
+    <rect width="1452" height="360" rx="24" fill="#ffffff" stroke="#b7e8f2" stroke-width="2"/>
+    <rect width="1452" height="60" rx="24" fill="#e6f9fd"/>
+    <path d="M 0 60 H 1452" stroke="#00add8" stroke-width="3"/>
+    <path d="M 260 0 V 360" stroke="#d7eef3" stroke-width="2"/>
+    <path d="M 0 120 H 1452 M 0 180 H 1452 M 0 240 H 1452 M 0 300 H 1452" stroke="#d7eef3" stroke-width="2"/>
+    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" font-size="24" letter-spacing="0">
+      <g fill="#0b2533" font-weight="850">
+        <text x="34" y="38">维度</text>
+        <text x="294" y="38">观察指标</text>
+      </g>
+      <g fill="#12313d" font-weight="650">
+        <text x="34" y="98">CPU 地址翻译</text>
+        <text x="294" y="98"><tspan font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace">dTLB-load-misses</tspan>、<tspan font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace">iTLB-load-misses</tspan>、page walk 相关事件</text>
+        <text x="34" y="158">内存行为</text>
+        <text x="294" y="158">RSS、page cache、major/minor fault、swap、NUMA remote access</text>
+        <text x="34" y="218">内核行为</text>
+        <text x="294" y="218">compaction、khugepaged、direct reclaim、kswapd</text>
+        <text x="34" y="278">业务效果</text>
+        <text x="294" y="278">QPS、平均延迟、P95、P99、P999、错误率</text>
+        <text x="34" y="338">稳定性</text>
+        <text x="294" y="338">OOM、分配失败、容器重启、节点不可调度</text>
+      </g>
+    </g>
+  </g>
+</svg>

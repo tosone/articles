@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2600" height="640" viewBox="0 0 2600 640" role="img" aria-label="Go generic methods capability table">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfdff"/>
+      <stop offset="0.58" stop-color="#edfaff"/>
+      <stop offset="1" stop-color="#f6f1e6"/>
+    </linearGradient>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00add8"/>
+      <stop offset="1" stop-color="#12c7b8"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-8%" width="110%" height="116%">
+      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#006d88" flood-opacity="0.12"/>
+    </filter>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#00add8" stroke-width="1" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <rect width="2600" height="640" fill="url(#paper)"/>
+  <rect width="2600" height="640" fill="url(#grid)"/>
+
+  <g transform="translate(24 46)" filter="url(#shadow)">
+    <rect x="0" y="0" width="2552" height="548" rx="24" fill="#ffffff"/>
+    <rect x="0" y="0" width="2552" height="88" rx="24" fill="url(#header)"/>
+    <path d="M 0 64 H 2552 V 88 H 0 Z" fill="url(#header)"/>
+
+    <g font-family="Avenir Next, Helvetica Neue, PingFang SC, sans-serif" letter-spacing="0">
+      <text x="40" y="56" fill="#ffffff" font-size="28" font-weight="850">能力</text>
+      <text x="360" y="56" fill="#ffffff" font-size="28" font-weight="850">Go 1.18 到 Go 1.26</text>
+      <text x="1740" y="56" fill="#ffffff" font-size="28" font-weight="850">Go 1.27</text>
+    </g>
+
+    <g stroke="#d5eef4" stroke-width="2">
+      <path d="M 320 0 V 548"/>
+      <path d="M 1700 0 V 548"/>
+      <path d="M 0 180 H 2552"/>
+      <path d="M 0 272 H 2552"/>
+      <path d="M 0 364 H 2552"/>
+      <path d="M 0 456 H 2552"/>
+    </g>
+
+    <g font-family="Avenir Next, Helvetica Neue, PingFang SC, sans-serif" letter-spacing="0">
+      <rect x="0" y="88" width="2552" height="92" fill="#f7fcfe"/>
+      <rect x="0" y="272" width="2552" height="92" fill="#f7fcfe"/>
+      <rect x="0" y="456" width="2552" height="92" fill="#f7fcfe"/>
+
+      <text x="40" y="145" fill="#0b2533" font-size="30" font-weight="850">泛型类型</text>
+      <text x="360" y="145" fill="#173642" font-size="28" font-weight="650">支持，例如</text>
+      <text x="505" y="145" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">type Set[T comparable] map[T]struct{}</text>
+      <text x="1740" y="145" fill="#173642" font-size="28" font-weight="650">继续支持</text>
+
+      <text x="40" y="237" fill="#0b2533" font-size="30" font-weight="850">泛型函数</text>
+      <text x="360" y="237" fill="#173642" font-size="28" font-weight="650">支持，例如</text>
+      <text x="505" y="237" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">func Map[T, U any](...) ...</text>
+      <text x="1740" y="237" fill="#173642" font-size="28" font-weight="650">继续支持</text>
+
+      <text x="40" y="329" fill="#0b2533" font-size="30" font-weight="850">泛型方法</text>
+      <text x="360" y="329" fill="#173642" font-size="28" font-weight="650">方法只能使用接收者类型已有的类型参数</text>
+      <text x="1740" y="329" fill="#173642" font-size="28" font-weight="650">方法可以声明自己的类型参数</text>
+
+      <text x="40" y="421" fill="#0b2533" font-size="30" font-weight="850">接口方法类型参数</text>
+      <text x="360" y="421" fill="#173642" font-size="28" font-weight="650">不支持</text>
+      <text x="1740" y="421" fill="#173642" font-size="28" font-weight="650">仍然不建议理解为完整 trait 系统</text>
+
+      <text x="40" y="513" fill="#0b2533" font-size="30" font-weight="850">高阶类型参数</text>
+      <text x="360" y="513" fill="#173642" font-size="28" font-weight="650">不支持</text>
+      <text x="1740" y="513" fill="#173642" font-size="28" font-weight="650">仍不支持</text>
+    </g>
+  </g>
+</svg>

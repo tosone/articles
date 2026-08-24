@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2010" height="330" viewBox="0 0 2010 330" role="img" aria-label="glibc and musl choice table">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfdff"/>
+      <stop offset="0.56" stop-color="#edfaff"/>
+      <stop offset="1" stop-color="#f6f1e6"/>
+    </linearGradient>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f7a41d"/>
+      <stop offset="0.48" stop-color="#00add8"/>
+      <stop offset="1" stop-color="#12c7b8"/>
+    </linearGradient>
+    <filter id="shadow" x="-4%" y="-8%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#0b2533" flood-opacity="0.12"/>
+    </filter>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#00add8" stroke-width="1" opacity="0.07"/>
+    </pattern>
+  </defs>
+
+  <rect width="2010" height="330" fill="url(#paper)"/>
+  <rect width="2010" height="330" fill="url(#grid)"/>
+
+  <g transform="translate(24 34)" filter="url(#shadow)">
+    <rect x="0" y="0" width="1962" height="258" rx="24" fill="#ffffff"/>
+    <rect x="0" y="0" width="1962" height="82" rx="24" fill="url(#header)"/>
+    <path d="M 0 58 H 1962 V 82 H 0 Z" fill="url(#header)"/>
+
+    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" letter-spacing="0">
+      <text x="40" y="52" fill="#ffffff" font-size="28" font-weight="850">选择</text>
+      <text x="370" y="52" fill="#ffffff" font-size="28" font-weight="850">优点</text>
+      <text x="1170" y="52" fill="#ffffff" font-size="28" font-weight="850">代价</text>
+    </g>
+
+    <g stroke="#d5eef4" stroke-width="2">
+      <path d="M 330 0 V 258"/>
+      <path d="M 1130 0 V 258"/>
+      <path d="M 0 170 H 1962"/>
+    </g>
+
+    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" letter-spacing="0">
+      <text x="40" y="137" fill="#0b2533" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">*-linux-gnu.2.17</text>
+      <text x="370" y="137" fill="#173642" font-size="27" font-weight="650">对传统 Linux 软件生态兼容更好，动态库更常见。</text>
+      <text x="1170" y="137" fill="#173642" font-size="27" font-weight="650">运行时依赖目标机 glibc，不能把“指定版本”当成完全静态。</text>
+
+      <text x="40" y="225" fill="#0b2533" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">*-linux-musl</text>
+      <text x="370" y="225" fill="#173642" font-size="27" font-weight="650">容易生成自包含静态二进制，适合 scratch 或极简容器。</text>
+      <text x="1170" y="225" fill="#173642" font-size="27" font-weight="650">DNS、locale、动态加载、部分 C 库兼容行为与 glibc 不同。</text>
+    </g>
+  </g>
+</svg>

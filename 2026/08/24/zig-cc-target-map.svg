@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1860" height="660" viewBox="0 0 1860 660" role="img" aria-label="Zig Rust Go target mapping table">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfdff"/>
+      <stop offset="0.56" stop-color="#edfaff"/>
+      <stop offset="1" stop-color="#f6f1e6"/>
+    </linearGradient>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f7a41d"/>
+      <stop offset="0.48" stop-color="#00add8"/>
+      <stop offset="1" stop-color="#12c7b8"/>
+    </linearGradient>
+    <filter id="shadow" x="-4%" y="-8%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0b2533" flood-opacity="0.12"/>
+    </filter>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#00add8" stroke-width="1" opacity="0.07"/>
+    </pattern>
+  </defs>
+
+  <rect width="1860" height="660" fill="url(#paper)"/>
+  <rect width="1860" height="660" fill="url(#grid)"/>
+
+  <g transform="translate(24 38)" filter="url(#shadow)">
+    <rect x="0" y="0" width="1812" height="584" rx="24" fill="#ffffff"/>
+    <rect x="0" y="0" width="1812" height="82" rx="24" fill="url(#header)"/>
+    <path d="M 0 58 H 1812 V 82 H 0 Z" fill="url(#header)"/>
+
+    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" letter-spacing="0">
+      <text x="40" y="52" fill="#ffffff" font-size="28" font-weight="850">目标</text>
+      <text x="460" y="52" fill="#ffffff" font-size="28" font-weight="850">Zig</text>
+      <text x="835" y="52" fill="#ffffff" font-size="28" font-weight="850">Rust</text>
+      <text x="1340" y="52" fill="#ffffff" font-size="28" font-weight="850">Go</text>
+    </g>
+
+    <g stroke="#d5eef4" stroke-width="2">
+      <path d="M 420 0 V 584"/>
+      <path d="M 795 0 V 584"/>
+      <path d="M 1300 0 V 584"/>
+      <path d="M 0 166 H 1812"/>
+      <path d="M 0 250 H 1812"/>
+      <path d="M 0 334 H 1812"/>
+      <path d="M 0 418 H 1812"/>
+      <path d="M 0 502 H 1812"/>
+    </g>
+
+    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" letter-spacing="0">
+      <text x="40" y="135" fill="#0b2533" font-size="27" font-weight="850">Linux x86-64 + glibc</text>
+      <text x="460" y="135" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">x86_64-linux-gnu</text>
+      <text x="835" y="135" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">x86_64-unknown-linux-gnu</text>
+      <text x="1340" y="135" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">GOOS=linux GOARCH=amd64</text>
+
+      <text x="40" y="219" fill="#0b2533" font-size="27" font-weight="850">Linux ARM64 + glibc</text>
+      <text x="460" y="219" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">aarch64-linux-gnu</text>
+      <text x="835" y="219" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">aarch64-unknown-linux-gnu</text>
+      <text x="1340" y="219" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">GOOS=linux GOARCH=arm64</text>
+
+      <text x="40" y="303" fill="#0b2533" font-size="27" font-weight="850">Linux x86-64 + musl</text>
+      <text x="460" y="303" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">x86_64-linux-musl</text>
+      <text x="835" y="303" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">x86_64-unknown-linux-musl</text>
+      <text x="1340" y="303" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">GOOS=linux GOARCH=amd64</text>
+
+      <text x="40" y="387" fill="#0b2533" font-size="27" font-weight="850">Linux ARM64 + musl</text>
+      <text x="460" y="387" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">aarch64-linux-musl</text>
+      <text x="835" y="387" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">aarch64-unknown-linux-musl</text>
+      <text x="1340" y="387" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">GOOS=linux GOARCH=arm64</text>
+
+      <text x="40" y="471" fill="#0b2533" font-size="27" font-weight="850">Windows x86-64 GNU ABI</text>
+      <text x="460" y="471" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">x86_64-windows-gnu</text>
+      <text x="835" y="471" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">x86_64-pc-windows-gnu</text>
+      <text x="1340" y="471" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">GOOS=windows GOARCH=amd64</text>
+
+      <text x="40" y="555" fill="#0b2533" font-size="27" font-weight="850">macOS ARM64</text>
+      <text x="460" y="555" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">aarch64-macos</text>
+      <text x="835" y="555" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">aarch64-apple-darwin</text>
+      <text x="1340" y="555" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">GOOS=darwin GOARCH=arm64</text>
+    </g>
+  </g>
+</svg>

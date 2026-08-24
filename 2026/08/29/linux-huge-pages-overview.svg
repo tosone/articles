@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="408" viewBox="0 0 2800 408" role="img" aria-label="Linux huge pages mechanism overview table">
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#8ac9d8" stroke-width="1" opacity="0.12"/>
+    </pattern>
+    <filter id="shadow" x="-4%" y="-8%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#006d88" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect width="2800" height="408" fill="#fbfdff"/>
+  <rect width="2800" height="408" fill="url(#grid)"/>
+  <g transform="translate(24 24)" filter="url(#shadow)">
+    <rect width="2752" height="360" rx="24" fill="#ffffff" stroke="#b7e8f2" stroke-width="2"/>
+    <rect width="2752" height="64" rx="24" fill="#e6f9fd"/>
+    <path d="M 0 64 H 2752" stroke="#00add8" stroke-width="3"/>
+    <path d="M 180 0 V 360 M 650 0 V 360 M 1160 0 V 360 M 1960 0 V 360" stroke="#d7eef3" stroke-width="2"/>
+    <path d="M 0 138 H 2752 M 0 212 H 2752 M 0 286 H 2752" stroke="#d7eef3" stroke-width="2"/>
+    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" font-size="24" letter-spacing="0">
+      <g fill="#0b2533" font-weight="850">
+        <text x="34" y="40">机制</text>
+        <text x="214" y="40">常见页大小</text>
+        <text x="684" y="40">使用方式</text>
+        <text x="1194" y="40">适合场景</text>
+        <text x="1994" y="40">主要风险</text>
+      </g>
+      <g fill="#12313d" font-weight="650">
+        <text x="34" y="109">普通页</text>
+        <text x="214" y="109">4KB</text>
+        <text x="684" y="109">系统默认</text>
+        <text x="1194" y="109">Web 服务、微服务、短生命周期对象、小块随机分配</text>
+        <text x="1994" y="109">页表数量更多，超大工作集下 TLB 压力更高</text>
+        <text x="34" y="183">THP</text>
+        <text x="214" y="183">常见 2MB，也可能有 mTHP</text>
+        <text x="684" y="183">内核自动合并，或 madvise 提示</text>
+        <text x="1194" y="183">大块匿名内存、缓存、部分 JVM/Go/Rust 进程、虚拟机</text>
+        <text x="1994" y="183">内存压缩、页面合并、单次缺页成本可能带来延迟抖动</text>
+        <text x="34" y="257">HugeTLB</text>
+        <text x="214" y="257">2MB / 1GB 等</text>
+        <text x="684" y="257">预留大页池，应用显式使用</text>
+        <text x="1194" y="257">数据库共享内存、DPDK、KVM、HPC、低延迟专用服务</text>
+        <text x="1994" y="257">需要连续物理内存，不可 swap，预留后普通内存不可用</text>
+        <text x="34" y="331">1GB 大页</text>
+        <text x="214" y="331">1GB</text>
+        <text x="684" y="331">通常启动参数预留</text>
+        <text x="1194" y="331">超大连续内存、虚拟化宿主机、少数数据库/HPC 场景</text>
+        <text x="1994" y="331">粒度太粗，NUMA 和容量规划要求更高</text>
+      </g>
+    </g>
+  </g>
+</svg>

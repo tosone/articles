@@ -237,6 +237,20 @@ SVG implementation notes:
 - Use filters sparingly; a single subtle drop shadow is enough.
 - Do not let text overlap with the right-side Go emblem or pipeline diagram.
 
+## Table SVG Assets
+
+When turning Markdown tables into standalone SVG/PNG assets:
+
+- Generate separate SVG and PNG files alongside the article. Do not replace or embed the image back into the Markdown article unless explicitly requested.
+- Do not add a title above the table image. The image should contain only the table.
+- Keep the table canvas as compact as the content allows. Column widths should wrap the longest cell text plus reasonable inner padding, instead of using a fixed wide canvas.
+- Keep all cell text on one line whenever practical. Prefer adjusting column widths over wrapping text.
+- Use consistent cell padding. The first column should not feel cramped, especially for mixed Chinese/English labels.
+- Do not use alternating row background colors. Keep the table body on a single clean white background, using borders/grid lines for row separation.
+- Keep header styling consistent with the article visual family: cyan/teal/amber accents, dark text, subtle grid paper background, and restrained shadow.
+- Prefer `PingFang SC, Avenir Next, Helvetica Neue, sans-serif` for mixed Chinese/English table text to reduce baseline drift in PNG export. Use monospace only for code, commands, target triples, and environment variables.
+- After editing table SVGs, export PNG files at the SVG's native width and height with `rsvg-convert`, verify dimensions with `sips`, and visually inspect the PNG for clipping, overlap, cramped padding, and excessive empty columns.
+
 ## Cover PNG Export
 
 After creating or updating `image.svg`, export PNG assets from the article directory with `rsvg-convert` and verify dimensions with `sips`.

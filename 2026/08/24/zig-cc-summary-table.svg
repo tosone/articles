@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2630" height="680" viewBox="0 0 2630 680" role="img" aria-label="Zig cross compilation summary table">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfdff"/>
+      <stop offset="0.56" stop-color="#edfaff"/>
+      <stop offset="1" stop-color="#f6f1e6"/>
+    </linearGradient>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f7a41d"/>
+      <stop offset="0.48" stop-color="#00add8"/>
+      <stop offset="1" stop-color="#12c7b8"/>
+    </linearGradient>
+    <filter id="shadow" x="-4%" y="-8%" width="108%" height="116%">
+      <feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#0b2533" flood-opacity="0.13"/>
+    </filter>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#00add8" stroke-width="1" opacity="0.07"/>
+    </pattern>
+  </defs>
+
+  <rect width="2630" height="680" fill="url(#paper)"/>
+  <rect width="2630" height="680" fill="url(#grid)"/>
+
+  <g transform="translate(24 38)" filter="url(#shadow)">
+    <rect x="0" y="0" width="2582" height="604" rx="24" fill="#ffffff"/>
+    <rect x="0" y="0" width="2582" height="88" rx="24" fill="url(#header)"/>
+    <path d="M 0 64 H 2582 V 88 H 0 Z" fill="url(#header)"/>
+
+    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" letter-spacing="0">
+      <text x="40" y="56" fill="#ffffff" font-size="28" font-weight="850">场景</text>
+      <text x="380" y="56" fill="#ffffff" font-size="28" font-weight="850">不使用 Zig</text>
+      <text x="1010" y="56" fill="#ffffff" font-size="28" font-weight="850">使用 Zig</text>
+      <text x="1710" y="56" fill="#ffffff" font-size="28" font-weight="850">仍然需要自己准备什么</text>
+    </g>
+
+    <g stroke="#d5eef4" stroke-width="2">
+      <path d="M 340 0 V 604"/>
+      <path d="M 970 0 V 604"/>
+      <path d="M 1670 0 V 604"/>
+      <path d="M 0 174 H 2582"/>
+      <path d="M 0 260 H 2582"/>
+      <path d="M 0 346 H 2582"/>
+      <path d="M 0 432 H 2582"/>
+      <path d="M 0 518 H 2582"/>
+    </g>
+
+    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" letter-spacing="0">
+      <text x="40" y="142" fill="#0b2533" font-size="28" font-weight="850">纯 Rust</text>
+      <text x="380" y="142" fill="#173642" font-size="26" font-weight="650">rustup 目标标准库，部分目标还要外部 linker。</text>
+      <text x="1010" y="142" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="750">cargo zigbuild --target ...</text>
+      <text x="1710" y="142" fill="#173642" font-size="26" font-weight="650">Rust 目标标准库。</text>
+
+      <text x="40" y="228" fill="#0b2533" font-size="28" font-weight="850">Rust + C/C++ crate</text>
+      <text x="380" y="228" fill="#173642" font-size="26" font-weight="650">目标 GCC/Clang、sysroot、C/C++ 运行库。</text>
+      <text x="1010" y="228" fill="#173642" font-size="26" font-weight="650">cargo-zigbuild 注入 Zig linker 和编译器包装。</text>
+      <text x="1710" y="228" fill="#173642" font-size="26" font-weight="650">第三方库、非系统头文件，部分场景还要 bindgen 的宿主机 libclang。</text>
+
+      <text x="40" y="314" fill="#0b2533" font-size="28" font-weight="850">纯 Go</text>
+      <text x="380" y="314" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="750">GOOS</text>
+      <text x="455" y="314" fill="#173642" font-size="26" font-weight="650">、</text>
+      <text x="483" y="314" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="750">GOARCH</text>
+      <text x="585" y="314" fill="#173642" font-size="26" font-weight="650">通常已经够用。</text>
+      <text x="1010" y="314" fill="#173642" font-size="26" font-weight="650">通常没必要使用 Zig。</text>
+      <text x="1710" y="314" fill="#173642" font-size="26" font-weight="650">无。</text>
+
+      <text x="40" y="400" fill="#0b2533" font-size="28" font-weight="850">Go + cgo</text>
+      <text x="380" y="400" fill="#173642" font-size="26" font-weight="650">目标 C/C++ 编译器、libc、外部 linker。</text>
+      <text x="1010" y="400" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="750">CC="zig cc -target ..."</text>
+      <text x="1368" y="400" fill="#173642" font-size="26" font-weight="650">，必要时再设置</text>
+      <text x="1575" y="400" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="750">CXX</text>
+      <text x="1630" y="400" fill="#173642" font-size="26" font-weight="650">。</text>
+      <text x="1710" y="400" fill="#173642" font-size="26" font-weight="650">第三方目标库、头文件、正确的 pkg-config 配置。</text>
+
+      <text x="40" y="486" fill="#0b2533" font-size="28" font-weight="850">Linux glibc 兼容</text>
+      <text x="380" y="486" fill="#173642" font-size="26" font-weight="650">在老发行版或对应 sysroot 中构建。</text>
+      <text x="1010" y="486" fill="#173642" font-size="26" font-weight="650">目标名可声明 glibc 版本下限。</text>
+      <text x="1710" y="486" fill="#173642" font-size="26" font-weight="650">在真实旧系统上验证。</text>
+
+      <text x="40" y="572" fill="#0b2533" font-size="28" font-weight="850">Linux 静态发布</text>
+      <text x="380" y="572" fill="#173642" font-size="26" font-weight="650">单独安装 musl 工具链。</text>
+      <text x="1010" y="572" fill="#173642" font-size="26" font-weight="650">选择</text>
+      <text x="1070" y="572" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="750">*-linux-musl</text>
+      <text x="1255" y="572" fill="#173642" font-size="26" font-weight="650">并走外部静态链接。</text>
+      <text x="1710" y="572" fill="#173642" font-size="26" font-weight="650">确认所有原生依赖都能静态链接。</text>
+    </g>
+  </g>
+</svg>

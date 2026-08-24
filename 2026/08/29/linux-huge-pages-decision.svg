@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="408" viewBox="0 0 1120 408" role="img" aria-label="Huge pages decision table">
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#8ac9d8" stroke-width="1" opacity="0.12"/>
+    </pattern>
+    <filter id="shadow" x="-5%" y="-8%" width="110%" height="116%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#006d88" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect width="1120" height="408" fill="#fbfdff"/>
+  <rect width="1120" height="408" fill="url(#grid)"/>
+  <g transform="translate(24 24)" filter="url(#shadow)">
+    <rect width="1072" height="360" rx="24" fill="#ffffff" stroke="#b7e8f2" stroke-width="2"/>
+    <rect width="1072" height="60" rx="24" fill="#e6f9fd"/>
+    <path d="M 0 60 H 1072" stroke="#00add8" stroke-width="3"/>
+    <path d="M 610 0 V 360" stroke="#d7eef3" stroke-width="2"/>
+    <path d="M 0 120 H 1072 M 0 180 H 1072 M 0 240 H 1072 M 0 300 H 1072" stroke="#d7eef3" stroke-width="2"/>
+    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" font-size="24" letter-spacing="0">
+      <g fill="#0b2533" font-weight="850">
+        <text x="34" y="38">业务特征</text>
+        <text x="644" y="38">建议</text>
+      </g>
+      <g fill="#12313d" font-weight="650">
+        <text x="34" y="98">大块连续内存、长期持有、重复访问</text>
+        <text x="644" y="98">测试 THP madvise 或 HugeTLB</text>
+        <text x="34" y="158">专用数据库、DPDK、KVM、HPC</text>
+        <text x="644" y="158">可以认真规划 HugeTLB</text>
+        <text x="34" y="218">小对象密集、短请求、延迟敏感</text>
+        <text x="644" y="218">默认 4KB 页，谨慎使用 THP</text>
+        <text x="34" y="278">内存紧张、容器混部、资源超卖</text>
+        <text x="644" y="278">不要预留过多 HugeTLB</text>
+        <text x="34" y="338">只听说“能减少 TLB miss”</text>
+        <text x="644" y="338">先测，不要上线改全局</text>
+      </g>
+    </g>
+  </g>
+</svg>

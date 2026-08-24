@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2350" height="1000" viewBox="0 0 2350 1000" role="img" aria-label="Linux huge pages article cover">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfdff"/>
+      <stop offset="0.58" stop-color="#edfaff"/>
+      <stop offset="1" stop-color="#f5f2e9"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00add8"/>
+      <stop offset="1" stop-color="#12c7b8"/>
+    </linearGradient>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M 46 0 L 0 0 0 46" fill="none" stroke="#8ac9d8" stroke-width="1" opacity="0.18"/>
+    </pattern>
+    <filter id="shadow" x="-12%" y="-12%" width="124%" height="124%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#006d88" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="2350" height="1000" fill="url(#paper)"/>
+  <rect width="2350" height="1000" fill="url(#grid)"/>
+
+  <g transform="translate(150 190)">
+    <rect x="0" y="0" width="266" height="58" rx="0" fill="#f6b73c"/>
+    <text x="133" y="39" text-anchor="middle" fill="#0b2533" font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="28" font-weight="900" letter-spacing="0">LINUX MM</text>
+
+    <text x="0" y="190" fill="#0b2533" font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="124" font-weight="900" letter-spacing="0">Huge Pages</text>
+    <text x="0" y="308" fill="#12313d" font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="70" font-weight="850" letter-spacing="0">不是性能万能开关</text>
+    <text x="2" y="388" fill="#5b6f79" font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="34" font-weight="600" letter-spacing="0">TLB / THP / HugeTLB / NUMA / latency trade-offs</text>
+  </g>
+
+  <g transform="translate(150 742)" filter="url(#shadow)">
+    <rect x="0" y="0" width="860" height="108" rx="26" fill="#ffffff" stroke="#b7e8f2" stroke-width="2"/>
+    <text x="40" y="45" fill="#007d9c" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="28" font-weight="800" letter-spacing="0">echo madvise &gt; transparent_hugepage/enabled</text>
+    <text x="40" y="79" fill="#5b6f79" font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="24" font-weight="650" letter-spacing="0">select per workload, verify with p99 and memory pressure</text>
+  </g>
+
+  <g transform="translate(1004 150)">
+    <rect x="392" y="112" width="430" height="290" rx="28" fill="#ffffff" stroke="#9bdce8" stroke-width="3" filter="url(#shadow)"/>
+    <rect x="430" y="150" width="354" height="64" rx="18" fill="#e6f9fd"/>
+    <text x="607" y="191" text-anchor="middle" fill="#0b2533" font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="32" font-weight="900" letter-spacing="0">TLB</text>
+    <g fill="#00add8" opacity="0.9">
+      <rect x="430" y="246" width="78" height="42" rx="12"/>
+      <rect x="522" y="246" width="78" height="42" rx="12"/>
+      <rect x="614" y="246" width="78" height="42" rx="12"/>
+      <rect x="706" y="246" width="78" height="42" rx="12"/>
+      <rect x="430" y="306" width="78" height="42" rx="12"/>
+      <rect x="522" y="306" width="78" height="42" rx="12"/>
+      <rect x="614" y="306" width="78" height="42" rx="12"/>
+      <rect x="706" y="306" width="78" height="42" rx="12"/>
+    </g>
+
+    <g transform="translate(0 30)">
+      <rect x="0" y="0" width="268" height="268" rx="26" fill="#ffffff" stroke="#b7e8f2" stroke-width="3"/>
+      <g fill="#dff8fd">
+        <rect x="34" y="34" width="42" height="42" rx="8"/>
+        <rect x="88" y="34" width="42" height="42" rx="8"/>
+        <rect x="142" y="34" width="42" height="42" rx="8"/>
+        <rect x="196" y="34" width="42" height="42" rx="8"/>
+        <rect x="34" y="88" width="42" height="42" rx="8"/>
+        <rect x="88" y="88" width="42" height="42" rx="8"/>
+        <rect x="142" y="88" width="42" height="42" rx="8"/>
+        <rect x="196" y="88" width="42" height="42" rx="8"/>
+        <rect x="34" y="142" width="42" height="42" rx="8"/>
+        <rect x="88" y="142" width="42" height="42" rx="8"/>
+        <rect x="142" y="142" width="42" height="42" rx="8"/>
+        <rect x="196" y="142" width="42" height="42" rx="8"/>
+        <rect x="34" y="196" width="42" height="42" rx="8"/>
+        <rect x="88" y="196" width="42" height="42" rx="8"/>
+        <rect x="142" y="196" width="42" height="42" rx="8"/>
+        <rect x="196" y="196" width="42" height="42" rx="8"/>
+      </g>
+      <text x="134" y="326" text-anchor="middle" fill="#5b6f79" font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="26" font-weight="750" letter-spacing="0">4KB pages</text>
+    </g>
+
+    <g transform="translate(928 30)">
+      <rect x="0" y="0" width="268" height="268" rx="26" fill="url(#cyan)"/>
+      <text x="134" y="150" text-anchor="middle" fill="#ffffff" font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="54" font-weight="900" letter-spacing="0">2MB</text>
+      <text x="134" y="326" text-anchor="middle" fill="#5b6f79" font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="26" font-weight="750" letter-spacing="0">huge page</text>
+    </g>
+
+    <path d="M 306 164 H 366" fill="none" stroke="#7ccfdc" stroke-width="7" stroke-linecap="round"/>
+    <path d="M 854 164 H 914" fill="none" stroke="#7ccfdc" stroke-width="7" stroke-linecap="round"/>
+    <path d="M 346 140 L 370 164 L 346 188" fill="none" stroke="#7ccfdc" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 894 140 L 918 164 L 894 188" fill="none" stroke="#7ccfdc" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  </g>
+</svg>

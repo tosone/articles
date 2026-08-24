@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="306" viewBox="0 0 760 306" role="img" aria-label="Memory page count comparison table">
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#8ac9d8" stroke-width="1" opacity="0.12"/>
+    </pattern>
+    <filter id="shadow" x="-6%" y="-10%" width="112%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#006d88" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect width="760" height="306" fill="#fbfdff"/>
+  <rect width="760" height="306" fill="url(#grid)"/>
+  <g transform="translate(24 24)" filter="url(#shadow)">
+    <rect width="712" height="258" rx="24" fill="#ffffff" stroke="#b7e8f2" stroke-width="2"/>
+    <rect width="712" height="60" rx="24" fill="#e6f9fd"/>
+    <path d="M 0 60 H 712" stroke="#00add8" stroke-width="3"/>
+    <path d="M 180 0 V 258 M 482 0 V 258" stroke="#d7eef3" stroke-width="2"/>
+    <path d="M 0 126 H 712 M 0 192 H 712" stroke="#d7eef3" stroke-width="2"/>
+    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" font-size="24" letter-spacing="0">
+      <g fill="#0b2533" font-weight="850">
+        <text x="34" y="38">页大小</text>
+        <text x="214" y="38">覆盖 1GB 需要的页数</text>
+        <text x="516" y="38">相对 4KB 页</text>
+      </g>
+      <g fill="#12313d" font-weight="700">
+        <text x="34" y="101">4KB</text>
+        <text x="448" y="101" text-anchor="end">262144</text>
+        <text x="678" y="101" text-anchor="end">1 倍</text>
+        <text x="34" y="167">2MB</text>
+        <text x="448" y="167" text-anchor="end">512</text>
+        <text x="678" y="167" text-anchor="end">少 512 倍</text>
+        <text x="34" y="233">1GB</text>
+        <text x="448" y="233" text-anchor="end">1</text>
+        <text x="678" y="233" text-anchor="end">少 262144 倍</text>
+      </g>
+    </g>
+  </g>
+</svg>
