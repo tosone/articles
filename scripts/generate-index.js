@@ -30,6 +30,7 @@ function readArticle(articlePath) {
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const title = readTitle(lines, articlePath);
   const summary = readSummary(markdown, lines);
+  const tags = readTags(markdown);
   const cover = articlePath.replace(/[^/]+\.md$/, "image.svg");
 
   return {
@@ -38,6 +39,7 @@ function readArticle(articlePath) {
     path: articlePath,
     cover: fs.existsSync(path.join(root, cover)) ? cover : "",
     summary,
+    tags,
   };
 }
 
@@ -62,6 +64,9 @@ function readSummary(markdown, lines) {
     if (!line.trim()) {
       continue;
     }
+    if (line.trim().startsWith("<!--")) {
+      continue;
+    }
     if (
       line.startsWith("```") ||
       line.startsWith("|") ||
@@ -73,6 +78,17 @@ function readSummary(markdown, lines) {
   }
 
   return "";
+}
+
+function readTags(markdown) {
+  const marked = markdown.match(/<!--\s*tags:\s*([\s\S]*?)\s*-->/i);
+  if (!marked) {
+    return [];
+  }
+  return marked[1]
+    .split(/[,，、]/)
+    .map((tag) => plainText(tag))
+    .filter(Boolean);
 }
 
 function summaryText(value) {

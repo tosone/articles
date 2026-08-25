@@ -6,6 +6,7 @@ const state = {
 const list = document.querySelector("#article-list");
 const content = document.querySelector("#content");
 const coverWrap = document.querySelector("#cover-wrap");
+const reader = document.querySelector(".reader");
 let shikiModule;
 
 init().catch((error) => {
@@ -36,10 +37,14 @@ function renderList(articles) {
   list.innerHTML = articles
     .map((article) => {
       const active = state.current?.path === article.path ? " active" : "";
+      const tags = (article.tags || [])
+        .map((tag) => `<span class="article-tag">${escapeHtml(tag)}</span>`)
+        .join("");
       return `
       <button class="article-link${active}" type="button" data-path="${escapeAttr(article.path)}">
         <span class="article-date">${escapeHtml(article.date)}</span>
         <span class="article-title">${escapeHtml(article.title)}</span>
+        ${tags ? `<span class="article-tags">${tags}</span>` : ""}
         <span class="article-summary">${escapeHtml(article.summary)}</span>
       </button>
     `;
@@ -59,23 +64,51 @@ function renderList(articles) {
 }
 
 async function openArticle(article) {
+  const hadArticle = Boolean(state.current);
+  const loadId = Symbol(article.path);
   state.current = article;
+  state.loadId = loadId;
   location.hash = encodeURIComponent(article.path);
   renderList(state.articles);
-  content.innerHTML = `<p class="loading">正在加载 ${escapeHtml(article.title)}...</p>`;
-  coverWrap.innerHTML = article.cover
-    ? `<img src="${escapeAttr(article.cover)}" alt="${escapeAttr(article.title)}">`
-    : "";
 
   const response = await fetch(`./${article.path}`, { cache: "no-store" });
   if (!response.ok) {
     throw new Error(`无法加载文章：${article.path}`);
   }
 
-  content.innerHTML = renderMarkdown(await response.text());
+  if (state.loadId !== loadId) {
+    return;
+  }
+
+  const markdown = await response.text();
+  const updateArticle = () => {
+    coverWrap.innerHTML = article.cover
+      ? `<img src="${escapeAttr(article.cover)}" alt="${escapeAttr(article.title)}">`
+      : "";
+    content.innerHTML = renderMarkdown(markdown);
+    document.title = `${article.title} - Articles`;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  if (
+    hadArticle &&
+    document.startViewTransition &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    const transition = document.startViewTransition(updateArticle);
+    await transition.finished;
+  } else {
+    updateArticle();
+    restartReaderAnimation();
+  }
+
   await highlightCodeBlocks(article.path);
-  document.title = `${article.title} - Articles`;
-  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function restartReaderAnimation() {
+  reader.classList.remove("reader-enter");
+  void reader.offsetWidth;
+  reader.classList.add("reader-enter");
 }
 
 function renderMarkdown(markdown) {

@@ -1,5 +1,7 @@
 # Docker v29 与 Moby v2 重构全解读
 
+<!-- tags: Docker, Moby, Go SDK, 容器运行时 -->
+
 ## 引子：从 Docker 到 Moby，再到今天的 v2
 
 很多人第一次接触 Docker 的 Go SDK，都会从 `github.com/docker/docker` 开始。这个路径很有历史感：它来自 Docker 早期那个“一切都在一个仓库里”的时代。Docker daemon、Engine API、CLI 相关类型、内部工具包，都曾经挤在同一套代码和同一条 import path 下面。

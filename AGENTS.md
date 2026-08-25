@@ -15,6 +15,11 @@ Existing references:
 
 Article directories use a nested date path: `YYYY/MM/DD/`. The main article is Markdown. The cover image is `image.svg` in the same day directory.
 
+Article metadata uses HTML comments near the top of the Markdown file:
+
+- `<!-- summary: ... -->` for the article summary.
+- `<!-- tags: tag1, tag2, tag3 -->` for one or more tags. Tags may be separated by English commas, Chinese commas, or Chinese enumeration commas.
+
 ## Writing Style
 
 Write the article body in Chinese. Keep the technical tone calm, concrete, and engineering-oriented.
@@ -205,8 +210,9 @@ Suggested layout:
   - `func (s Stream[T]) Map[U any](...)`.
   - `receiver type params meet method type params`.
 - Right visual:
-  - Use a concrete technical structure diagram that explains the article topic, not a decorative or cartoon-like symbol.
+  - Use a concrete technical structure diagram or a compact set of topic-specific icons that explains the article topic; do not force every cover into a flowchart.
   - For runtime or migration topics, show clear before/after or layer relationships, such as source implementation, runtime core, ownership/lifecycle, API surface, compatibility boundary, and flow arrows.
+  - For security and incident-analysis topics, the right visual may use symbolic attack indicators such as shields, cracked package marks, terminal windows, alert marks, network nodes, or lock/key motifs, without explanatory text inside the visual.
   - Keep enough whitespace around the right-side visual.
 - Use cyan, teal, and amber accents so the image is not one-note.
 

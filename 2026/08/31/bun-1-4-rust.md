@@ -1,6 +1,7 @@
 # Bun 1.4.0：从 Zig 到 Rust，Bun 真正变快和变稳的地方
 
 <!-- summary: Bun 1.4.0 的重点不只是 Rust 重写，而是内存、兼容、可观测性和一体化工具链的整体推进。 -->
+<!-- tags: Bun, Rust, JavaScript Runtime, 工具链 -->
 
 Bun 1.4.0 最容易被传播的标题，是“Bun 从 Zig 重写到了 Rust”。这个标题没错，但如果只停在语言替换，很容易把问题看浅。
 
