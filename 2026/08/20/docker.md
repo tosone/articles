@@ -1,11 +1,5 @@
 # Docker v29 与 Moby v2 重构全解读
 
-> 备选标题：
->
-> - 《pkg.go.dev 上那个 beta 了一年的「v2」，藏着 Docker 十年来最大的一次换家》
-> - 《从 Docker v29 到 Moby v2：改动清单、兼容坑位与正在进行的工作》
-> - 《Docker v29 不只是升级：Moby v2、containerd image store 与 Go SDK 断层》
-
 ## 引子：从 Docker 到 Moby，再到今天的 v2
 
 很多人第一次接触 Docker 的 Go SDK，都会从 `github.com/docker/docker` 开始。这个路径很有历史感：它来自 Docker 早期那个“一切都在一个仓库里”的时代。Docker daemon、Engine API、CLI 相关类型、内部工具包，都曾经挤在同一套代码和同一条 import path 下面。
@@ -169,8 +163,8 @@ v29 之后，第一步确实是换 import path：
 
 ```go
 images, err := cli.ImageList(ctx, types.ImageListOptions{
-    All: true,
-    Filters: filters.NewArgs(filters.Arg("reference", "alpine")),
+  All: true,
+  Filters: filters.NewArgs(filters.Arg("reference", "alpine")),
 })
 ```
 
@@ -181,8 +175,8 @@ var imageFilters client.Filters
 imageFilters = imageFilters.Add("reference", "alpine")
 
 images, err := cli.ImageList(ctx, client.ImageListOptions{
-    All:     true,
-    Filters: imageFilters,
+  All:     true,
+  Filters: imageFilters,
 })
 ```
 

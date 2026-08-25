@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="600" viewBox="0 0 1900 600" role="img" aria-label="Bun 1.4 runtime changes table">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfdff"/>
+      <stop offset="0.62" stop-color="#edfaff"/>
+      <stop offset="1" stop-color="#f6f1e6"/>
+    </linearGradient>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00add8"/>
+      <stop offset="1" stop-color="#12c7b8"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#8ac9d8" stroke-width="1" opacity="0.12"/>
+    </pattern>
+    <filter id="shadow" x="-5%" y="-8%" width="110%" height="116%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#006d88" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1900" height="600" fill="url(#paper)"/>
+  <rect width="1900" height="600" fill="url(#grid)"/>
+
+  <g transform="translate(24 24)" filter="url(#shadow)">
+    <rect width="1852" height="552" rx="24" fill="#ffffff" stroke="#b7e8f2" stroke-width="2"/>
+    <rect width="1852" height="72" rx="24" fill="url(#header)"/>
+    <path d="M 0 56 H 1852 V 72 H 0 Z" fill="url(#header)"/>
+
+    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" letter-spacing="0">
+      <g fill="#ffffff" font-size="25" font-weight="850">
+        <text x="34" y="45">方向</text>
+        <text x="205" y="45">Zig 版本的边界</text>
+        <text x="725" y="45">Bun 1.4.0 的变化</text>
+        <text x="1445" y="45">开发者意义</text>
+      </g>
+
+      <g stroke="#d7eef3" stroke-width="2">
+        <path d="M 170 0 V 552"/>
+        <path d="M 690 0 V 552"/>
+        <path d="M 1410 0 V 552"/>
+        <path d="M 0 152 H 1852"/>
+        <path d="M 0 232 H 1852"/>
+        <path d="M 0 312 H 1852"/>
+        <path d="M 0 392 H 1852"/>
+        <path d="M 0 472 H 1852"/>
+      </g>
+
+      <g fill="#12313d" font-size="23" font-weight="650">
+        <text x="34" y="122" fill="#0b2533" font-weight="850">内存安全</text>
+        <text x="205" y="122">GC 与手动内存管理交错，生命周期难审</text>
+        <text x="725" y="122">用 Rust ownership / Drop 收紧释放边界</text>
+        <text x="1445" y="122">减少泄漏、UAF、double-free 风险</text>
+
+        <text x="34" y="202" fill="#0b2533" font-weight="850">资源占用</text>
+        <text x="205" y="202">空闲 CPU 和 HTTP 内存曲线仍有压力</text>
+        <text x="725" y="202">统一 allocator，优化 GC timer 和 futex</text>
+        <text x="1445" y="202">常驻服务和 SSR 更值得复测</text>
+
+        <text x="34" y="282" fill="#0b2533" font-weight="850">启动速度</text>
+        <text x="205" y="282">Linux hello.js 约 10.9 ms</text>
+        <text x="725" y="282">Linux hello.js 约 5.1 ms</text>
+        <text x="1445" y="282">CLI、serverless、脚本体感更明显</text>
+
+        <text x="34" y="362" fill="#0b2533" font-weight="850">兼容性</text>
+        <text x="205" y="362">生态工具仍会踩 Node 内置模块细节</text>
+        <text x="725" y="362">新增 1517 个 Node 测试通过项</text>
+        <text x="1445" y="362">迁移风险下降，但仍需实测</text>
+
+        <text x="34" y="442" fill="#0b2533" font-weight="850">诊断</text>
+        <text x="205" y="442">生产 profile 和异步栈能力不足</text>
+        <text x="725" y="442">CPU/heap profile、Markdown 报告、inspector</text>
+        <text x="1445" y="442">线上问题更容易定位</text>
+
+        <text x="34" y="522" fill="#0b2533" font-weight="850">工具链</text>
+        <text x="205" y="522">部分常用能力仍靠 npm 包补齐</text>
+        <text x="725" y="522">Image/WebView/Markdown/Cron/Terminal 内置</text>
+        <text x="1445" y="522">脚本和内部工具依赖更少</text>
+      </g>
+    </g>
+  </g>
+</svg>

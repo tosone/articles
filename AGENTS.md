@@ -22,12 +22,11 @@ Write the article body in Chinese. Keep the technical tone calm, concrete, and e
 Prefer this structure:
 
 1. A direct H1 title with one core claim.
-2. A blockquote list of 2-3 alternative titles.
-3. A short intro that explains why the topic matters now.
-4. An early summary table for the main changes or decisions.
-5. Numbered sections with concrete examples, code snippets, and migration notes.
-6. A practical checklist before the conclusion.
-7. A conclusion that restates the engineering meaning, not just the feature list.
+2. A short intro that explains why the topic matters now.
+3. An early summary table for the main changes or decisions.
+4. Numbered sections with concrete examples, code snippets, and migration notes.
+5. A practical checklist before the conclusion.
+6. A conclusion that restates the engineering meaning, not just the feature list.
 
 Do not write a translation of release notes. Reorder information by developer impact:
 
@@ -38,6 +37,8 @@ Do not write a translation of release notes. Reorder information by developer im
 - What to do next.
 
 Use tables when comparing versions, boundaries, compatibility risks, or migration paths. Use short Go code examples when explaining API shape. Avoid unexplained jargon, hype, and marketing language.
+
+All fenced code snippets in Markdown articles must use two-space indentation. Do not use tabs or four-space indentation inside article code blocks.
 
 ## New Article Target
 
@@ -56,16 +57,6 @@ Suggested main title:
 
 ```markdown
 # Go 1.27 的 generic methods：为什么等了这么久，它真正改变了什么
-```
-
-Suggested alternative titles:
-
-```markdown
-> 备选标题：
->
-> - 《Go 1.27 终于支持泛型方法：语法、限制与 API 设计影响》
-> - 《从 Map 函数到 Stream.Map：generic methods 给 Go 带来了什么》
-> - 《Go 泛型方法来了，但它不是另一套 trait 系统》
 ```
 
 ## Suggested Outline
@@ -189,6 +180,7 @@ Create a 2350x1000 SVG named `image.svg` alongside the article. Match the reposi
 - Canvas: `width="2350" height="1000" viewBox="0 0 2350 1000"`.
 - Typography: use `Avenir Next`, `Inter`, `Helvetica Neue`, `PingFang SC`, and fallback sans-serif.
 - Letter spacing must be `0`.
+- Use normal text weight on cover SVGs. Do not add explicit `font-weight` attributes.
 - Keep the visual geometry precise and evenly spaced.
 - Use real text, not outlined text paths.
 - Keep the cover readable at thumbnail size.
@@ -197,7 +189,7 @@ Recommended art direction:
 
 - Theme: Go cyan on a light technical paper background, continuing the `go127` visual family.
 - Background: pale blue-white paper gradient with subtle grid or curved flow lines.
-- Main object: a large Go mark or circular cyan emblem on the right.
+- Main object: a concrete technical diagram or topic-specific mark on the right.
 - Core metaphor: a concise generic method signature anchoring the lower-left area.
 - Avoid decorative blobs. If soft background highlights are used, keep them subtle and aligned.
 - Do not add mid-page code cards, node boxes, arrow chains, or a bottom chip strip unless explicitly requested.
@@ -213,8 +205,9 @@ Suggested layout:
   - `func (s Stream[T]) Map[U any](...)`.
   - `receiver type params meet method type params`.
 - Right visual:
-  - Large Go emblem with short horizontal speed lines.
-  - Keep enough whitespace around the emblem.
+  - Use a concrete technical structure diagram that explains the article topic, not a decorative or cartoon-like symbol.
+  - For runtime or migration topics, show clear before/after or layer relationships, such as source implementation, runtime core, ownership/lifecycle, API surface, compatibility boundary, and flow arrows.
+  - Keep enough whitespace around the right-side visual.
 - Use cyan, teal, and amber accents so the image is not one-note.
 
 Suggested color palette:
@@ -234,8 +227,8 @@ SVG implementation notes:
 
 - Prefer explicit coordinates over complex responsive logic.
 - Use `rx` consistently, around `22` to `28`, for visual continuity with existing covers.
-- Use filters sparingly; a single subtle drop shadow is enough.
-- Do not let text overlap with the right-side Go emblem or pipeline diagram.
+- Do not use SVG filters or drop shadows in cover images. Avoid `filter`, `feDropShadow`, and shadow-like effects.
+- Do not let text overlap with the right-side visual or pipeline diagram.
 
 ## Table SVG Assets
 

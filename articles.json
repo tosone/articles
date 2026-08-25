@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-08-31",
+    "title": "Bun 1.4.0：从 Zig 到 Rust，Bun 真正变快和变稳的地方",
+    "path": "2026/08/31/bun-1-4-rust.md",
+    "cover": "2026/08/31/image.svg",
+    "summary": "Bun 1.4.0 的重点不只是 Rust 重写，而是内存、兼容、可观测性和一体化工具链的整体推进。"
+  },
+  {
     "date": "2026-08-30",
     "title": "Linux 内核为什么曾经难用 Clang 编译：那些绕不开的 GNU C 扩展",
     "path": "2026/08/30/linux-kernel-clang-gcc-extensions.md",

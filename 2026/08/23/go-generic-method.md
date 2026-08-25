@@ -1,22 +1,16 @@
 # Go 1.27 的 generic methods：为什么等了这么久，它真正改变了什么
 
-> 备选标题：
->
-> - 《Go 1.27 终于支持泛型方法：语法、限制与 API 设计影响》
-> - 《从 Map 函数到 Stream.Map：generic methods 给 Go 带来了什么》
-> - 《Go 泛型方法来了，但它不是另一套 trait 系统》
-
 Go 1.18 把泛型带进 Go 之后，很多人第一时间期待的是集合、stream、parser、builder 这些 API 能写得更自然。但真正开始设计库的时候，很快会遇到一个有点别扭的限制：**类型可以有类型参数，函数可以有类型参数，但方法不能声明自己的类型参数。**
 
 也就是说，你可以写：
 
 ```go
 type Stream[T any] struct {
-	items []T
+  items []T
 }
 
 func Map[T, U any](s Stream[T], fn func(T) U) Stream[U] {
-	// ...
+  // ...
 }
 ```
 
@@ -24,7 +18,7 @@ func Map[T, U any](s Stream[T], fn func(T) U) Stream[U] {
 
 ```go
 func (s Stream[T]) Map[U any](fn func(T) U) Stream[U] {
-	// ...
+  // ...
 }
 ```
 
@@ -52,11 +46,11 @@ Go 1.27 之前，泛型能力大概可以分成两类。
 
 ```go
 type Box[T any] struct {
-	value T
+  value T
 }
 
 func (b Box[T]) Value() T {
-	return b.value
+  return b.value
 }
 ```
 
@@ -66,7 +60,7 @@ func (b Box[T]) Value() T {
 
 ```go
 func (b Box[T]) Map[U any](fn func(T) U) Box[U] {
-	return Box[U]{value: fn(b.value)}
+  return Box[U]{value: fn(b.value)}
 }
 ```
 
@@ -76,7 +70,7 @@ func (b Box[T]) Map[U any](fn func(T) U) Box[U] {
 
 ```go
 func MapBox[T, U any](b Box[T], fn func(T) U) Box[U] {
-	return Box[U]{value: fn(b.value)}
+  return Box[U]{value: fn(b.value)}
 }
 ```
 
@@ -94,7 +88,7 @@ func MapBox[T, U any](b Box[T], fn func(T) U) Box[U] {
 
 ```go
 type Mapper[T any] interface {
-	Map[U any](func(T) U) Stream[U]
+  Map[U any](func(T) U) Stream[U]
 }
 ```
 
@@ -116,16 +110,16 @@ Go 1.27 的变化可以理解成一个谨慎落点：让具体类型的方法可
 package stream
 
 type Stream[T any] struct {
-	items []T
+  items []T
 }
 
 func FromSlice[T any](items []T) Stream[T] {
-	copied := append([]T(nil), items...)
-	return Stream[T]{items: copied}
+  copied := append([]T(nil), items...)
+  return Stream[T]{items: copied}
 }
 
 func (s Stream[T]) Slice() []T {
-	return append([]T(nil), s.items...)
+  return append([]T(nil), s.items...)
 }
 ```
 
@@ -133,21 +127,21 @@ func (s Stream[T]) Slice() []T {
 
 ```go
 func Map[T, U any](s Stream[T], fn func(T) U) Stream[U] {
-	out := make([]U, 0, len(s.items))
-	for _, item := range s.items {
-		out = append(out, fn(item))
-	}
-	return Stream[U]{items: out}
+  out := make([]U, 0, len(s.items))
+  for _, item := range s.items {
+    out = append(out, fn(item))
+  }
+  return Stream[U]{items: out}
 }
 
 func Filter[T any](s Stream[T], keep func(T) bool) Stream[T] {
-	out := make([]T, 0, len(s.items))
-	for _, item := range s.items {
-		if keep(item) {
-			out = append(out, item)
-		}
-	}
-	return Stream[T]{items: out}
+  out := make([]T, 0, len(s.items))
+  for _, item := range s.items {
+    if keep(item) {
+      out = append(out, item)
+    }
+  }
+  return Stream[T]{items: out}
 }
 ```
 
@@ -155,16 +149,16 @@ func Filter[T any](s Stream[T], keep func(T) bool) Stream[T] {
 
 ```go
 users := []User{
-	{Name: "alice", Age: 20},
-	{Name: "bob", Age: 17},
+  {Name: "alice", Age: 20},
+  {Name: "bob", Age: 17},
 }
 
 adults := stream.Filter(stream.FromSlice(users), func(user User) bool {
-	return user.Age >= 18
+  return user.Age >= 18
 })
 
 names := stream.Map(adults, func(user User) string {
-	return user.Name
+  return user.Name
 })
 ```
 
@@ -174,21 +168,21 @@ names := stream.Map(adults, func(user User) string {
 
 ```go
 func (s Stream[T]) Filter(keep func(T) bool) Stream[T] {
-	out := make([]T, 0, len(s.items))
-	for _, item := range s.items {
-		if keep(item) {
-			out = append(out, item)
-		}
-	}
-	return Stream[T]{items: out}
+  out := make([]T, 0, len(s.items))
+  for _, item := range s.items {
+    if keep(item) {
+      out = append(out, item)
+    }
+  }
+  return Stream[T]{items: out}
 }
 
 func (s Stream[T]) Map[U any](fn func(T) U) Stream[U] {
-	out := make([]U, 0, len(s.items))
-	for _, item := range s.items {
-		out = append(out, fn(item))
-	}
-	return Stream[U]{items: out}
+  out := make([]U, 0, len(s.items))
+  for _, item := range s.items {
+    out = append(out, fn(item))
+  }
+  return Stream[U]{items: out}
 }
 ```
 
@@ -196,13 +190,13 @@ func (s Stream[T]) Map[U any](fn func(T) U) Stream[U] {
 
 ```go
 names := stream.FromSlice(users).
-	Filter(func(user User) bool {
-		return user.Age >= 18
-	}).
-	Map(func(user User) string {
-		return user.Name
-	}).
-	Slice()
+  Filter(func(user User) bool {
+    return user.Age >= 18
+  }).
+  Map(func(user User) string {
+    return user.Name
+  }).
+  Slice()
 ```
 
 这里的收益不是“看起来像函数式编程”这么简单。更实际的收益是：
@@ -227,22 +221,22 @@ C++ 很早就支持成员函数模板。对应 Go 的例子，可以写成这样
 template <typename T>
 class Stream {
 public:
-    explicit Stream(std::vector<T> items) : items_(std::move(items)) {}
+  explicit Stream(std::vector<T> items) : items_(std::move(items)) {}
 
-    template <typename U>
-    Stream<U> map(std::function<U(const T&)> fn) const {
-        std::vector<U> out;
-        out.reserve(items_.size());
+  template <typename U>
+  Stream<U> map(std::function<U(const T&)> fn) const {
+    std::vector<U> out;
+    out.reserve(items_.size());
 
-        for (const auto& item : items_) {
-            out.push_back(fn(item));
-        }
-
-        return Stream<U>(std::move(out));
+    for (const auto& item : items_) {
+      out.push_back(fn(item));
     }
 
+    return Stream<U>(std::move(out));
+  }
+
 private:
-    std::vector<T> items_;
+  std::vector<T> items_;
 };
 ```
 
@@ -250,14 +244,14 @@ private:
 
 ```cpp
 struct User {
-    std::string name;
-    int age;
+  std::string name;
+  int age;
 };
 
 auto names = Stream<User>({{"alice", 20}, {"bob", 17}})
-    .map<std::string>([](const User& user) {
-        return user.name;
-    });
+  .map<std::string>([](const User& user) {
+    return user.name;
+  });
 ```
 
 C++ 的模板非常强。成员函数模板只是它的一小部分。你还可以做偏特化、SFINAE、concepts、模板模板参数、编译期计算，甚至把大量逻辑都推到类型系统里。
@@ -284,15 +278,15 @@ class Stream<T> {
   constructor(private readonly items: T[]) {}
 
   map<U>(fn: (item: T) => U): Stream<U> {
-    return new Stream(this.items.map(fn));
+  return new Stream(this.items.map(fn));
   }
 
   filter(fn: (item: T) => boolean): Stream<T> {
-    return new Stream(this.items.filter(fn));
+  return new Stream(this.items.filter(fn));
   }
 
   toArray(): T[] {
-    return [...this.items];
+  return [...this.items];
   }
 }
 ```
@@ -337,25 +331,25 @@ Rust 也支持泛型方法，而且这种能力在日常代码里非常常见。
 
 ```rust
 pub struct Stream<T> {
-    items: Vec<T>,
+  items: Vec<T>,
 }
 
 impl<T> Stream<T> {
-    pub fn new(items: Vec<T>) -> Self {
-        Self { items }
-    }
+  pub fn new(items: Vec<T>) -> Self {
+    Self { items }
+  }
 
-    pub fn map<U, F>(self, mut f: F) -> Stream<U>
-    where
-        F: FnMut(T) -> U,
-    {
-        let items = self.items.into_iter().map(|item| f(item)).collect();
-        Stream { items }
-    }
+  pub fn map<U, F>(self, mut f: F) -> Stream<U>
+  where
+    F: FnMut(T) -> U,
+  {
+    let items = self.items.into_iter().map(|item| f(item)).collect();
+    Stream { items }
+  }
 
-    pub fn into_vec(self) -> Vec<T> {
-        self.items
-    }
+  pub fn into_vec(self) -> Vec<T> {
+    self.items
+  }
 }
 ```
 
@@ -363,24 +357,24 @@ impl<T> Stream<T> {
 
 ```rust
 struct User {
-    name: String,
-    age: u8,
+  name: String,
+  age: u8,
 }
 
 let users = vec![
-    User {
-        name: "alice".to_string(),
-        age: 20,
-    },
-    User {
-        name: "bob".to_string(),
-        age: 17,
-    },
+  User {
+    name: "alice".to_string(),
+    age: 20,
+  },
+  User {
+    name: "bob".to_string(),
+    age: 17,
+  },
 ];
 
 let names = Stream::new(users)
-    .map(|user| user.name)
-    .into_vec();
+  .map(|user| user.name)
+  .into_vec();
 ```
 
 这里 `T` 属于 `Stream<T>`，`U` 和 `F` 属于 `map` 方法。`F` 是回调函数类型，约束为 `FnMut(T) -> U`。Rust 的类型推断通常能从闭包返回值推出 `U`，调用端不需要显式写 `map::<String, _>(...)`。
@@ -389,9 +383,9 @@ Rust 的泛型方法不只可以写在具体类型的 `impl` 上，也可以写�
 
 ```rust
 trait Mapper<T> {
-    fn map<U, F>(self, f: F) -> Stream<U>
-    where
-        F: FnMut(T) -> U;
+  fn map<U, F>(self, f: F) -> Stream<U>
+  where
+    F: FnMut(T) -> U;
 }
 ```
 
@@ -424,13 +418,13 @@ C++ 的泛型服务于系统编程和零成本抽象，它愿意把大量复杂�
 
 ```go
 scores := stream.FromSlice(users).
-	Map(func(user User) Score {
-		return Score{
-			Name:  user.Name,
-			Value: user.Points,
-		}
-	}).
-	Slice()
+  Map(func(user User) Score {
+    return Score{
+      Name:  user.Name,
+      Value: user.Points,
+    }
+  }).
+  Slice()
 ```
 
 这种 API 的特点是接收者很明确：操作属于 `Stream[T]`，并且返回新的 `Stream[U]`。泛型方法能让文档和调用点都更自然。
@@ -439,20 +433,20 @@ scores := stream.FromSlice(users).
 
 ```go
 type Parser[T any] struct {
-	parse func(input string) (T, string, error)
+  parse func(input string) (T, string, error)
 }
 
 func (p Parser[T]) Then[U any](next func(T) Parser[U]) Parser[U] {
-	return Parser[U]{
-		parse: func(input string) (U, string, error) {
-			value, rest, err := p.parse(input)
-			if err != nil {
-				var zero U
-				return zero, input, err
-			}
-			return next(value).parse(rest)
-		},
-	}
+  return Parser[U]{
+    parse: func(input string) (U, string, error) {
+      value, rest, err := p.parse(input)
+      if err != nil {
+        var zero U
+        return zero, input, err
+      }
+      return next(value).parse(rest)
+    },
+  }
 }
 ```
 
@@ -462,11 +456,11 @@ func (p Parser[T]) Then[U any](next func(T) Parser[U]) Parser[U] {
 
 ```go
 type Query[T any] struct {
-	table string
+  table string
 }
 
 func (q Query[T]) Select[U any](project func(T) U) Query[U] {
-	return Query[U]{table: q.table}
+  return Query[U]{table: q.table}
 }
 ```
 
@@ -476,15 +470,15 @@ func (q Query[T]) Select[U any](project func(T) U) Query[U] {
 
 ```go
 type Result[T any] struct {
-	value T
-	err   error
+  value T
+  err   error
 }
 
 func (r Result[T]) Then[U any](fn func(T) Result[U]) Result[U] {
-	if r.err != nil {
-		return Result[U]{err: r.err}
-	}
-	return fn(r.value)
+  if r.err != nil {
+    return Result[U]{err: r.err}
+  }
+  return fn(r.value)
 }
 ```
 
@@ -500,11 +494,11 @@ Go 项目不一定要大规模引入这类抽象。很多时候显式 `if err !=
 
 ```go
 func Keys[K comparable, V any](m map[K]V) []K {
-	keys := make([]K, 0, len(m))
-	for key := range m {
-		keys = append(keys, key)
-	}
-	return keys
+  keys := make([]K, 0, len(m))
+  for key := range m {
+    keys = append(keys, key)
+  }
+  return keys
 }
 ```
 
@@ -514,10 +508,10 @@ func Keys[K comparable, V any](m map[K]V) []K {
 
 ```go
 out := source.
-	StepA(...).
-	StepB(...).
-	StepC(...).
-	StepD(...)
+  StepA(...).
+  StepB(...).
+  StepC(...).
+  StepD(...)
 ```
 
 如果每一步都改变类型，读者可能需要依赖 IDE 才能知道当前表达式到底是什么类型。这样的 API 在 TypeScript 里很常见，在 Go 里则要更谨慎。Go 的代码阅读体验很依赖局部显式性，过度链式调用会抵消泛型方法带来的可读性收益。
@@ -547,7 +541,7 @@ query.Select(...)
 
 ```go
 func Map[T, U any](s Stream[T], fn func(T) U) Stream[U] {
-	return s.Map(fn)
+  return s.Map(fn)
 }
 ```
 
@@ -592,7 +586,7 @@ Go 的类型推断一直偏向局部、明确、可解释。这个原则很好�
 
 ```go
 names := users.Map(func(user User) string {
-	return user.Name
+  return user.Name
 })
 ```
 
@@ -600,7 +594,7 @@ names := users.Map(func(user User) string {
 
 ```go
 names := users.Map[string](func(user User) string {
-	return user.Name
+  return user.Name
 })
 ```
 

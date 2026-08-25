@@ -55,21 +55,11 @@ function readSummary(markdown, lines) {
     return summaryText(marked[1].replace(/\s+/g, " "));
   }
 
-  let skippingQuote = false;
-
   for (const line of lines) {
     if (line.startsWith("# ")) {
       continue;
     }
-    if (line.startsWith(">")) {
-      skippingQuote = true;
-      continue;
-    }
-    if (skippingQuote && !line.trim()) {
-      skippingQuote = false;
-      continue;
-    }
-    if (skippingQuote || !line.trim()) {
+    if (!line.trim()) {
       continue;
     }
     if (

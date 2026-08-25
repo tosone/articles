@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="564" viewBox="0 0 1480 564" role="img" aria-label="Bun and Node.js choice table">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfdff"/>
+      <stop offset="0.6" stop-color="#edfaff"/>
+      <stop offset="1" stop-color="#f6f1e6"/>
+    </linearGradient>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00add8"/>
+      <stop offset="1" stop-color="#12c7b8"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#8ac9d8" stroke-width="1" opacity="0.12"/>
+    </pattern>
+    <filter id="shadow" x="-5%" y="-8%" width="110%" height="116%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#006d88" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1480" height="564" fill="url(#paper)"/>
+  <rect width="1480" height="564" fill="url(#grid)"/>
+
+  <g transform="translate(24 24)" filter="url(#shadow)">
+    <rect width="1432" height="516" rx="24" fill="#ffffff" stroke="#b7e8f2" stroke-width="2"/>
+    <rect width="1432" height="72" rx="24" fill="url(#header)"/>
+    <path d="M 0 56 H 1432 V 72 H 0 Z" fill="url(#header)"/>
+
+    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" letter-spacing="0">
+      <g fill="#ffffff" font-size="25" font-weight="850">
+        <text x="34" y="45">项目类型</text>
+        <text x="284" y="45">更适合 Bun</text>
+        <text x="790" y="45">更适合 Node.js</text>
+      </g>
+
+      <g stroke="#d7eef3" stroke-width="2">
+        <path d="M 250 0 V 516"/>
+        <path d="M 756 0 V 516"/>
+        <path d="M 0 146 H 1432"/>
+        <path d="M 0 220 H 1432"/>
+        <path d="M 0 294 H 1432"/>
+        <path d="M 0 368 H 1432"/>
+        <path d="M 0 442 H 1432"/>
+      </g>
+
+      <g fill="#12313d" font-size="23" font-weight="650">
+        <text x="34" y="119" fill="#0b2533" font-weight="850">新 TS 服务</text>
+        <text x="284" y="119">低配置、快速启动、依赖较新</text>
+        <text x="790" y="119">公司基线必须统一 Node LTS</text>
+
+        <text x="34" y="193" fill="#0b2533" font-weight="850">旧 API 服务</text>
+        <text x="284" y="193">依赖简单，测试完整，有性能或内存痛点</text>
+        <text x="790" y="193">依赖老插件、native addon、复杂 APM patch</text>
+
+        <text x="34" y="267" fill="#0b2533" font-weight="850">CLI / 工具</text>
+        <text x="284" y="267">启动速度、单二进制、直接跑 TS 很重要</text>
+        <text x="790" y="267">分发环境只保证 Node</text>
+
+        <text x="34" y="341" fill="#0b2533" font-weight="850">Serverless</text>
+        <text x="284" y="341">冷启动敏感，依赖轻，能接受灰度</text>
+        <text x="790" y="341">平台只支持 Node LTS 或合规要求保守</text>
+
+        <text x="34" y="415" fill="#0b2533" font-weight="850">前端 monorepo</text>
+        <text x="284" y="415">install / test / build 时间是主要瓶颈</text>
+        <text x="790" y="415">pnpm / Vite / Vitest 插件链已经稳定</text>
+
+        <text x="34" y="489" fill="#0b2533" font-weight="850">企业核心系统</text>
+        <text x="284" y="489">适合作为灰度或新模块试点</text>
+        <text x="790" y="489">默认仍应选择 Node LTS，除非收益被实测证明</text>
+      </g>
+    </g>
+  </g>
+</svg>

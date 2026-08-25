@@ -1,11 +1,5 @@
 # 用一套 Zig 搞定 Rust 与 Go 的 C/C++ 交叉编译
 
-> 备选标题：
->
-> - 《不再安装一排交叉 GCC：Zig 如何接管 Rust 和 Go 的 C/C++ 工具链》
-> - 《从 cargo-zigbuild 到 cgo：用 Zig 统一 Linux 多架构构建》
-> - 《Rust、Go 都绕不开的 C 交叉编译，为什么 Zig 能把它变简单》
-
 Rust 和 Go 本身都擅长交叉编译，但一旦项目引入 C/C++ 依赖，编译器、链接器、libc 和目标架构就会让构建迅速复杂化。Zig 可以作为两者共用的 C/C++ 工具链，用一套环境覆盖常见 Linux 架构与 libc 目标。
 
 纯 Rust 项目通常只要安装目标标准库，再指定 `--target`；纯 Go 项目通常只要设置 `GOOS` 和 `GOARCH`。真正让事情复杂起来的，往往不是 Rust 或 Go 本身，而是依赖树里突然出现的 C 和 C++：
@@ -195,11 +189,11 @@ target/x86_64-unknown-linux-gnu/release/
 #include <stddef.h>
 
 uint32_t checksum(const uint8_t *data, size_t len) {
-    uint32_t value = 0;
-    for (size_t i = 0; i < len; i++) {
-        value = value * 33 + data[i];
-    }
-    return value;
+  uint32_t value = 0;
+  for (size_t i = 0; i < len; i++) {
+    value = value * 33 + data[i];
+  }
+  return value;
 }
 ```
 
@@ -207,11 +201,11 @@ uint32_t checksum(const uint8_t *data, size_t len) {
 
 ```rust
 fn main() {
-    println!("cargo:rerun-if-changed=native/checksum.c");
+  println!("cargo:rerun-if-changed=native/checksum.c");
 
-    cc::Build::new()
-        .file("native/checksum.c")
-        .compile("checksum");
+  cc::Build::new()
+    .file("native/checksum.c")
+    .compile("checksum");
 }
 ```
 
@@ -234,20 +228,20 @@ cargo zigbuild --release \
 use std::{env, path::PathBuf};
 
 fn main() {
-    let target = env::var("TARGET").unwrap();
-    let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
+  let target = env::var("TARGET").unwrap();
+  let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
 
-    println!("cargo:rerun-if-changed=native/checksum.h");
+  println!("cargo:rerun-if-changed=native/checksum.h");
 
-    let bindings = bindgen::Builder::default()
-        .header("native/checksum.h")
-        .clang_arg(format!("--target={target}"))
-        .generate()
-        .expect("generate bindings");
+  let bindings = bindgen::Builder::default()
+    .header("native/checksum.h")
+    .clang_arg(format!("--target={target}"))
+    .generate()
+    .expect("generate bindings");
 
-    bindings
-        .write_to_file(out_dir.join("bindings.rs"))
-        .expect("write bindings");
+  bindings
+    .write_to_file(out_dir.join("bindings.rs"))
+    .expect("write bindings");
 }
 ```
 
@@ -374,11 +368,11 @@ package checksum
 #include <stddef.h>
 
 static uint32_t checksum(const uint8_t *data, size_t len) {
-	uint32_t value = 0;
-	for (size_t i = 0; i < len; i++) {
-		value = value * 33 + data[i];
-	}
-	return value;
+  uint32_t value = 0;
+  for (size_t i = 0; i < len; i++) {
+    value = value * 33 + data[i];
+  }
+  return value;
 }
 */
 import "C"
@@ -386,14 +380,14 @@ import "C"
 import "unsafe"
 
 func Sum(data []byte) uint32 {
-	if len(data) == 0 {
-		return 0
-	}
+  if len(data) == 0 {
+    return 0
+  }
 
-	return uint32(C.checksum(
-		(*C.uint8_t)(unsafe.Pointer(&data[0])),
-		C.size_t(len(data)),
-	))
+  return uint32(C.checksum(
+    (*C.uint8_t)(unsafe.Pointer(&data[0])),
+    C.size_t(len(data)),
+  ))
 }
 ```
 
@@ -408,11 +402,11 @@ cgo 面向 C ABI，不能直接把模板、重载、类、异常等 C++ 接口�
 #include "engine.hpp"
 
 extern "C" int engine_score(const char *input) {
-    try {
-        return Engine{}.score(input);
-    } catch (...) {
-        return -1;
-    }
+  try {
+    return Engine{}.score(input);
+  } catch (...) {
+    return -1;
+  }
 }
 ```
 
@@ -448,9 +442,9 @@ build_go() {
   goarch="$1"
 
   case "$goarch" in
-    amd64) zig_target="x86_64-linux-musl" ;;
-    arm64) zig_target="aarch64-linux-musl" ;;
-    *) echo "unsupported GOARCH: $goarch" >&2; return 1 ;;
+  amd64) zig_target="x86_64-linux-musl" ;;
+  arm64) zig_target="aarch64-linux-musl" ;;
+  *) echo "unsupported GOARCH: $goarch" >&2; return 1 ;;
   esac
 
   CGO_ENABLED=1 \
@@ -459,10 +453,10 @@ build_go() {
   CC="zig cc -target $zig_target" \
   CXX="zig c++ -target $zig_target" \
   go build \
-    -trimpath \
-    -ldflags="-s -w -linkmode external -extldflags -static" \
-    -o "dist/app-linux-$goarch" \
-    ./cmd/app
+  -trimpath \
+  -ldflags="-s -w -linkmode external -extldflags -static" \
+  -o "dist/app-linux-$goarch" \
+  ./cmd/app
 }
 
 build_go amd64

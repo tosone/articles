@@ -1,11 +1,5 @@
 # Linux 内核为什么曾经难用 Clang 编译：那些绕不开的 GNU C 扩展
 
-> 备选标题：
->
-> - 《Linux 内核、GCC 扩展与 Clang：一次兼容性攻坚的技术账本》
-> - 《从 asm goto 到 section attribute：Clang 编译 Linux 内核到底难在哪》
-> - 《Linux 内核不是普通 C 项目：GNU C 扩展如何塑造内核代码》
-
 先澄清一个重要现状：今天再说“Linux 内核很难用 Clang 编译”，已经不准确了。
 
 这句话更适合描述过去，尤其是 Linux 5.9 之前的历史阶段。得益于 Google、LLVM 社区和内核社区多年的投入，Clang/LLVM 现在已经是 Linux 内核官方支持的编译器路径之一。对很多架构和配置来说，编译内核已经可以直接写成：
@@ -64,12 +58,12 @@ Linux 内核里最难兼容的部分，一直是内联汇编。
 
 ```c
 asm goto(
-	"test %0, %0\n\t"
-	"jz %l[zero]"
-	:
-	: "r"(value)
-	: "cc"
-	: zero
+  "test %0, %0\n\t"
+  "jz %l[zero]"
+  :
+  : "r"(value)
+  : "cc"
+  : zero
 );
 
 /* value is not zero. */
@@ -85,11 +79,11 @@ return 0;
 
 ```c
 asm goto(
-	"/* arch-specific sequence */"
-	: "=r"(out)
-	: "r"(in)
-	: "memory"
-	: failed
+  "/* arch-specific sequence */"
+  : "=r"(out)
+  : "r"(in)
+  : "memory"
+  : failed
 );
 ```
 
@@ -120,9 +114,9 @@ __typeof__(x)
 
 ```c
 #define min(x, y) ({			\
-	typeof(x) _x = (x);		\
-	typeof(y) _y = (y);		\
-	_x < _y ? _x : _y;		\
+  typeof(x) _x = (x);		\
+  typeof(y) _y = (y);		\
+  _x < _y ? _x : _y;		\
 })
 ```
 
@@ -140,8 +134,8 @@ int v = bad_min(i++, j);
 
 ```c
 #define container_of(ptr, type, member) ({			\
-	const typeof(((type *)0)->member) *__mptr = (ptr);	\
-	(type *)((char *)__mptr - offsetof(type, member));	\
+  const typeof(((type *)0)->member) *__mptr = (ptr);	\
+  (type *)((char *)__mptr - offsetof(type, member));	\
 })
 ```
 
@@ -156,25 +150,25 @@ GNU C 允许取一个局部标签的地址：
 ```c
 static void run(unsigned int op)
 {
-	static void *targets[] = {
-		&&op_load,
-		&&op_add,
-		&&op_store,
-	};
+  static void *targets[] = {
+    &&op_load,
+    &&op_add,
+    &&op_store,
+  };
 
-	goto *targets[op];
+  goto *targets[op];
 
 op_load:
-	/* ... */
-	return;
+  /* ... */
+  return;
 
 op_add:
-	/* ... */
-	return;
+  /* ... */
+  return;
 
 op_store:
-	/* ... */
-	return;
+  /* ... */
+  return;
 }
 ```
 
@@ -212,7 +206,7 @@ Linux 内核大量使用 section 属性：
 ```c
 void generic_memcpy(void *dst, const void *src, unsigned long n);
 void memcpy(void *dst, const void *src, unsigned long n)
-	__attribute__((weak, alias("generic_memcpy")));
+  __attribute__((weak, alias("generic_memcpy")));
 ```
 
 内核常用通用实现提供默认符号，再让架构代码提供更优实现覆盖它。Clang/LLVM 必须在优化、LTO 和链接阶段都尊重这些符号关系。否则编译器可能觉得自己只是做了一个合理优化，内核看到的却是启动路径、异常路径或架构覆盖实现被破坏。
@@ -223,8 +217,8 @@ void memcpy(void *dst, const void *src, unsigned long n)
 
 ```c
 struct packet {
-	unsigned int len;
-	unsigned char data[0];
+  unsigned int len;
+  unsigned char data[0];
 };
 ```
 
@@ -232,8 +226,8 @@ struct packet {
 
 ```c
 struct packet {
-	unsigned int len;
-	unsigned char data[];
+  unsigned int len;
+  unsigned char data[];
 };
 ```
 
@@ -245,8 +239,8 @@ Clang 早期在一些边界上和 GCC 不完全一致。例如 `sizeof` 推导�
 
 ```c
 static int table[16] = {
-	[0 ... 7] = 1,
-	[8 ... 15] = 2,
+  [0 ... 7] = 1,
+  [8 ... 15] = 2,
 };
 ```
 
@@ -273,7 +267,7 @@ __builtin_add_overflow(a, b, &out)
 
 ```c
 #define fast_or_slow(x)						\
-	(__builtin_constant_p(x) ? fast_const_path(x) : slow_path(x))
+  (__builtin_constant_p(x) ? fast_const_path(x) : slow_path(x))
 ```
 
 GCC 可能在某个优化阶段判断 `x` 是常量，于是选择 `fast_const_path`。Clang 的常量传播时机不同，可能认为它不是常量，于是走到 `slow_path`。如果两个分支的类型、约束或可用上下文不完全一样，就会出现 GCC 能过、Clang 不能过的情况。
@@ -313,7 +307,7 @@ make LLVM=1
 ```c
 void f(unsigned int n)
 {
-	char buf[n];
+  char buf[n];
 }
 ```
 

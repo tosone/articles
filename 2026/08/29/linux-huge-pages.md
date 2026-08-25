@@ -1,11 +1,5 @@
 # Linux 大页不是性能开关：什么时候该用，什么时候该关
 
-> 备选标题：
->
-> - 《Linux Huge Pages 不是玄学优化：TLB、THP、HugeTLB 与使用边界》
-> - 《别把 2MB 大页当万能药：Linux 内存页大小的真实取舍》
-> - 《从 4KB 到 2MB：Linux 大页适合哪些后端负载》
-
 Linux 大页经常出现在性能优化建议里：减少页表、提高 TLB 命中率、降低地址翻译成本。这个方向本身没有错，但它很容易被简化成一句危险的话：把 4KB 小页换成 2MB 大页，性能就会变好。
 
 真实情况要克制得多。大页优化的对象不是“所有内存访问”，而是“工作集很大、访问相对连续、生命周期较长”的内存区域。它能减少地址翻译开销，也会改变内存分配粒度、回收行为、NUMA 分布、缺页延迟和系统抖动特征。
@@ -191,20 +185,20 @@ sudo mount -t hugetlbfs nodev /mnt/huge
 #include <sys/mman.h>
 
 int main(void) {
-    size_t size = 512UL * 1024 * 1024;
-    void *buf = aligned_alloc(2 * 1024 * 1024, size);
-    if (buf == NULL) {
-        return 1;
-    }
+  size_t size = 512UL * 1024 * 1024;
+  void *buf = aligned_alloc(2 * 1024 * 1024, size);
+  if (buf == NULL) {
+    return 1;
+  }
 
-    if (madvise(buf, size, MADV_HUGEPAGE) != 0) {
-        perror("madvise");
-    }
+  if (madvise(buf, size, MADV_HUGEPAGE) != 0) {
+    perror("madvise");
+  }
 
-    /* 这里放真正的大块连续访问逻辑。 */
+  /* 这里放真正的大块连续访问逻辑。 */
 
-    free(buf);
-    return 0;
+  free(buf);
+  return 0;
 }
 ```
 

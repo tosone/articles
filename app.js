@@ -134,10 +134,6 @@ function renderMarkdown(markdown) {
     if (!quote.length) {
       return;
     }
-    if (quote[0].trim().startsWith("备选标题")) {
-      quote = [];
-      return;
-    }
     const blocks = [];
     let items = [];
     let text = [];

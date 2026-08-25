@@ -6,6 +6,7 @@
 
 | 日期 | 标题 |
 | --- | --- |
+| 2026-08-31 | [Bun 1.4.0：从 Zig 到 Rust，Bun 真正变快和变稳的地方](./2026/08/31/bun-1-4-rust.md) |
 | 2026-08-30 | [Linux 内核为什么曾经难用 Clang 编译：那些绕不开的 GNU C 扩展](./2026/08/30/linux-kernel-clang-gcc-extensions.md) |
 | 2026-08-29 | [Linux 大页不是性能开关：什么时候该用，什么时候该关](./2026/08/29/linux-huge-pages.md) |
 | 2026-08-24 | [用一套 Zig 搞定 Rust 与 Go 的 C/C++ 交叉编译](./2026/08/24/zig-cc.md) |
