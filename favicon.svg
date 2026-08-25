@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Blog icon">
+  <defs>
+    <linearGradient id="paper" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fbfdff"/>
+      <stop offset="1" stop-color="#edfaff"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00add8"/>
+      <stop offset="1" stop-color="#12c7b8"/>
+    </linearGradient>
+  </defs>
+  <rect x="5" y="5" width="54" height="54" rx="14" fill="url(#paper)"/>
+  <rect x="5" y="5" width="54" height="54" rx="14" fill="none" stroke="#00add8" stroke-width="4"/>
+  <path d="M18 14h19l9 9v27H18z" fill="#ffffff" stroke="#0b2533" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M37 14v10h9" fill="none" stroke="#0b2533" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M25 29h15M25 36h13M25 43h8" fill="none" stroke="url(#cyan)" stroke-width="4" stroke-linecap="round"/>
+</svg>

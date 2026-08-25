@@ -1,4 +1,4 @@
-# 告别 `github.com/docker/docker`：Docker v29 与 Moby「v2」重构全解读
+# Docker v29 与 Moby v2 重构全解读
 
 > 备选标题：
 >

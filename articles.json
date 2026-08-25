@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-08-30",
+    "title": "Linux 内核为什么曾经难用 Clang 编译：那些绕不开的 GNU C 扩展",
+    "path": "2026/08/30/linux-kernel-clang-gcc-extensions.md",
+    "cover": "2026/08/30/image.svg",
+    "summary": "先澄清一个重要现状：今天再说“Linux 内核很难用 Clang 编译”，已经不准确了。"
+  },
+  {
+    "date": "2026-08-29",
+    "title": "Linux 大页不是性能开关：什么时候该用，什么时候该关",
+    "path": "2026/08/29/linux-huge-pages.md",
+    "cover": "2026/08/29/image.svg",
+    "summary": "Linux 大页经常出现在性能优化建议里：减少页表、提高 TLB 命中率、降低地址翻译成本。这个方向本身没有错，但它很容易被简化成一句危险的话：把 4KB 小页换成 2MB 大页，性能就会变好。"
+  },
+  {
+    "date": "2026-08-24",
+    "title": "用一套 Zig 搞定 Rust 与 Go 的 C/C++ 交叉编译",
+    "path": "2026/08/24/zig-cc.md",
+    "cover": "2026/08/24/image.svg",
+    "summary": "Rust 和 Go 本身都擅长交叉编译，但一旦项目引入 C/C++ 依赖，编译器、链接器、libc 和目标架构就会让构建迅速复杂化。Zig 可以作为两者共用的 C/C++ 工具链，用一套环境覆盖常见 Linux 架构与 libc 目标。"
+  },
+  {
+    "date": "2026-08-23",
+    "title": "Go 1.27 的 generic methods：为什么等了这么久，它真正改变了什么",
+    "path": "2026/08/23/go-generic-method.md",
+    "cover": "2026/08/23/image.svg",
+    "summary": "Go 1.18 把泛型带进 Go 之后，很多人第一时间期待的是集合、stream、parser、builder 这些 API 能写得更自然。"
+  },
+  {
+    "date": "2026-08-21",
+    "title": "Go 1.27.0 发布：标准库继续现代化，runtime 更会“找泄漏”",
+    "path": "2026/08/21/go127.md",
+    "cover": "2026/08/21/image.svg",
+    "summary": "Go 1.27.0 是一个很典型的 Go 版本：没有把语言本身推向“完全不同的 Go”，但把工程实践里最常遇到的几类问题继续往标准库和工具链里收。"
+  },
+  {
+    "date": "2026-08-20",
+    "title": "Docker v29 与 Moby v2 重构全解读",
+    "path": "2026/08/20/docker.md",
+    "cover": "2026/08/20/image.svg",
+    "summary": "很多人第一次接触 Docker 的 Go SDK，都会从 github.com/docker/docker 开始。这个路径很有历史感：它来自 Docker 早期那个“一切都在一个仓库里”的时代。"
+  }
+]
