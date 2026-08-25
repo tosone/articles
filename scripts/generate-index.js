@@ -4,7 +4,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
-const articlePattern = /^\d{4}\/\d{2}\/\d{2}\/[^/]+\.md$/;
+const articlePattern = /^articles\/\d{4}\/\d{2}\/\d{2}\/[^/]+\.md$/;
 
 const articles = walk(root)
   .map((file) => path.relative(root, file).split(path.sep).join("/"))
@@ -35,7 +35,7 @@ function readArticle(articlePath) {
   const cover = articlePath.replace(/[^/]+\.md$/, "image.svg");
 
   return {
-    date: articlePath.slice(0, 10).replaceAll("/", "-"),
+    date: articlePath.match(/\d{4}\/\d{2}\/\d{2}/)[0].replaceAll("/", "-"),
     title,
     path: articlePath,
     cover: fs.existsSync(path.join(root, cover)) ? cover : "",

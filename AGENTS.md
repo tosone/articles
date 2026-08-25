@@ -8,12 +8,12 @@ This repository stores long-form WeChat public account articles and their SVG co
 
 Existing references:
 
-- `2026/08/20/docker.md`: Docker Engine v29, Moby v2, SDK migration, compatibility risks, and upgrade actions.
-- `2026/08/21/go127.md`: Go 1.27 release analysis, standard library changes, runtime diagnostics, tooling updates, and upgrade checklist.
-- `2026/08/23/go-generic-method.md`: Go 1.27 generic methods, language comparison, and Go generics limitations.
-- `2026/08/*/image.svg`: 2350x1000 SVG covers for WeChat article sharing.
+- `articles/2026/08/20/docker.md`: Docker Engine v29, Moby v2, SDK migration, compatibility risks, and upgrade actions.
+- `articles/2026/08/21/go127.md`: Go 1.27 release analysis, standard library changes, runtime diagnostics, tooling updates, and upgrade checklist.
+- `articles/2026/08/23/go-generic-method.md`: Go 1.27 generic methods, language comparison, and Go generics limitations.
+- `articles/2026/08/*/image.svg`: 2350x1000 SVG covers for WeChat article sharing.
 
-Article directories use a nested date path: `YYYY/MM/DD/`. The main article is Markdown. The cover image is `image.svg` in the same day directory.
+Article directories use a nested date path under `articles/`: `articles/YYYY/MM/DD/`. The main article is Markdown. The cover image is `image.svg` in the same day directory.
 
 Article metadata uses HTML comments near the top of the Markdown file:
 
@@ -49,7 +49,7 @@ All fenced code snippets in Markdown articles must use two-space indentation. Do
 
 Draft target file:
 
-- `2026/08/23/go-generic-method.md`
+- `articles/2026/08/23/go-generic-method.md`
 
 Working topic:
 
