@@ -1,6 +1,6 @@
 # Linux 大页不是性能开关：什么时候该用，什么时候该关
 
-<!-- tags: Linux, 内存管理, Huge Pages, 性能优化 -->
+<!-- tags: Linux, Memory Management, Huge Pages, Performance -->
 
 Linux 大页经常出现在性能优化建议里：减少页表、提高 TLB 命中率、降低地址翻译成本。这个方向本身没有错，但它很容易被简化成一句危险的话：把 4KB 小页换成 2MB 大页，性能就会变好。
 

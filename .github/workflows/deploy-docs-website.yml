@@ -38,11 +38,11 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p .pages
-          rsync -av \
-            --exclude '.git' \
-            --exclude '.github' \
-            --exclude '.pages' \
-            ./ .pages/
+          rsync -av web/ .pages/
+          for dir in [0-9][0-9][0-9][0-9]; do
+            [ -d "$dir" ] && rsync -av "$dir/" ".pages/$dir/"
+          done
+          cp README.md .pages/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5

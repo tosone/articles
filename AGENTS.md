@@ -18,7 +18,7 @@ Article directories use a nested date path: `YYYY/MM/DD/`. The main article is M
 Article metadata uses HTML comments near the top of the Markdown file:
 
 - `<!-- summary: ... -->` for the article summary.
-- `<!-- tags: tag1, tag2, tag3 -->` for one or more tags. Tags may be separated by English commas, Chinese commas, or Chinese enumeration commas.
+- `<!-- tags: tag1, tag2, tag3 -->` for one or more tags. Tags must use English text only, and may be separated by English commas, Chinese commas, or Chinese enumeration commas.
 
 ## Writing Style
 

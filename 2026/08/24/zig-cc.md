@@ -1,6 +1,6 @@
 # 用一套 Zig 搞定 Rust 与 Go 的 C/C++ 交叉编译
 
-<!-- tags: Zig, Rust, Go, 交叉编译, C/C++ -->
+<!-- tags: Zig, Rust, Go, Cross Compilation, C/C++ -->
 
 Rust 和 Go 本身都擅长交叉编译，但一旦项目引入 C/C++ 依赖，编译器、链接器、libc 和目标架构就会让构建迅速复杂化。Zig 可以作为两者共用的 C/C++ 工具链，用一套环境覆盖常见 Linux 架构与 libc 目标。
 

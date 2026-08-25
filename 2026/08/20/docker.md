@@ -1,6 +1,6 @@
 # Docker v29 与 Moby v2 重构全解读
 
-<!-- tags: Docker, Moby, Go SDK, 容器运行时 -->
+<!-- tags: Docker, Moby, Go SDK, Container Runtime -->
 
 ## 引子：从 Docker 到 Moby，再到今天的 v2
 

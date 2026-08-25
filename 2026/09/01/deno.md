@@ -1,7 +1,7 @@
 # Deno 没有掉队，它只是押注了更底层的 AI 基建
 
 <!-- summary: Bun 把 JavaScript 运行时竞争推到台前，Deno 的声量却显得安静很多。但从 Deno 2、Deno Deploy、Claw Patrol 到 Deno Desktop 看，它并没有停滞，而是在把自己重新定位成安全、标准化、可部署的 JavaScript 基础设施。 -->
-<!-- tags: Deno, JavaScript Runtime, AI Agent, 安全沙箱 -->
+<!-- tags: Deno, JavaScript Runtime, AI Agent, Security Sandbox -->
 
 这两年讨论 JavaScript 运行时时，Bun 很容易成为主角。它快、锋利、发布节奏高，创始人也很会把工程进展转化成社区话题。相比之下，Deno 的存在感弱了不少，尤其在 AI 编程工具、Agent、全栈框架都被放大讨论的时候，Deno 看起来不像那个当年带着“修正 Node.js 遗憾”出场的挑战者。
 

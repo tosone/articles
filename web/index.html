@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Articles</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      href="https://cdn.jsdelivr.net/npm/@fontsource-variable/geist/index.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <main class="shell">
-      <aside class="sidebar" aria-label="文章列表">
+      <aside class="sidebar" aria-label="Article list">
         <header class="brand">
           <p>Engineering Notes</p>
           <h1>Articles</h1>
@@ -26,11 +25,11 @@
       <section class="reader" aria-live="polite">
         <div id="cover-wrap" class="cover-wrap"></div>
         <article id="content" class="markdown markdown-body">
-          <p class="loading">正在加载文章...</p>
+          <p class="loading">Loading article...</p>
         </article>
       </section>
     </main>
 
-    <script src="./app.js" defer></script>
+    <script src="./index.js" defer></script>
   </body>
 </html>

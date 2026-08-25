@@ -1,15 +1,28 @@
 [
   {
+    "date": "2026-09-03",
+    "title": "大模型进化史：从 Transformer 到 Agentic Engineering",
+    "path": "2026/09/03/llm.md",
+    "cover": "2026/09/03/image.svg",
+    "summary": "大模型的发展不是一条单纯的模型参数增长曲线，而是模型能力、工程方法和公众感知三条线同时演进的结果。",
+    "tags": [
+      "LLM",
+      "ChatGPT",
+      "Agentic Engineering",
+      "AI Engineering"
+    ]
+  },
+  {
     "date": "2026-09-02",
     "title": "阿里开发者生态遭 npm 定向投毒：这次供应链攻击真正危险在哪里",
     "path": "2026/09/02/attack.md",
     "cover": "2026/09/02/image.svg",
     "summary": "这次针对阿里开发者生态的 npm 供应链攻击，不是简单的恶意包投放，而是一次围绕私有包命名、分层依赖、配置执行、跨平台 RAT 和企业协作工具横向移动设计的定向攻击。",
     "tags": [
-      "供应链安全",
+      "Supply Chain Security",
       "npm",
       "RAT",
-      "事件分析"
+      "Incident Analysis"
     ]
   },
   {
@@ -22,7 +35,7 @@
       "Deno",
       "JavaScript Runtime",
       "AI Agent",
-      "安全沙箱"
+      "Security Sandbox"
     ]
   },
   {
@@ -35,7 +48,7 @@
       "Bun",
       "Rust",
       "JavaScript Runtime",
-      "工具链"
+      "Tooling"
     ]
   },
   {
@@ -48,7 +61,7 @@
       "Linux",
       "Clang",
       "GCC",
-      "内核编译"
+      "Kernel Build"
     ]
   },
   {
@@ -59,9 +72,9 @@
     "summary": "Linux 大页经常出现在性能优化建议里：减少页表、提高 TLB 命中率、降低地址翻译成本。这个方向本身没有错，但它很容易被简化成一句危险的话：把 4KB 小页换成 2MB 大页，性能就会变好。",
     "tags": [
       "Linux",
-      "内存管理",
+      "Memory Management",
       "Huge Pages",
-      "性能优化"
+      "Performance"
     ]
   },
   {
@@ -74,7 +87,7 @@
       "Zig",
       "Rust",
       "Go",
-      "交叉编译",
+      "Cross Compilation",
       "C/C++"
     ]
   },
@@ -86,9 +99,9 @@
     "summary": "Go 1.18 把泛型带进 Go 之后，很多人第一时间期待的是集合、stream、parser、builder 这些 API 能写得更自然。",
     "tags": [
       "Go",
-      "泛型",
-      "generic methods",
-      "API 设计"
+      "Generics",
+      "Generic Methods",
+      "API Design"
     ]
   },
   {
@@ -100,8 +113,8 @@
     "tags": [
       "Go",
       "Go 1.27",
-      "标准库",
-      "runtime"
+      "Standard Library",
+      "Runtime"
     ]
   },
   {
@@ -114,7 +127,7 @@
       "Docker",
       "Moby",
       "Go SDK",
-      "容器运行时"
+      "Container Runtime"
     ]
   }
 ]

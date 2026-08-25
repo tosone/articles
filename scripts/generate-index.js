@@ -9,6 +9,7 @@ const articlePattern = /^\d{4}\/\d{2}\/\d{2}\/[^/]+\.md$/;
 const articles = walk(root)
   .map((file) => path.relative(root, file).split(path.sep).join("/"))
   .filter((file) => articlePattern.test(file))
+  .filter((file) => !path.basename(file).includes("大纲"))
   .map(readArticle)
   .sort((a, b) => b.date.localeCompare(a.date) || a.path.localeCompare(b.path));
 
@@ -115,8 +116,10 @@ function plainText(value) {
 }
 
 function writeJson() {
+  const webDir = path.join(root, "web");
+  fs.mkdirSync(webDir, { recursive: true });
   fs.writeFileSync(
-    path.join(root, "articles.json"),
+    path.join(webDir, "articles.json"),
     `${JSON.stringify(articles, null, 2)}\n`,
   );
 }

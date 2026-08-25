@@ -7,6 +7,7 @@ const list = document.querySelector("#article-list");
 const content = document.querySelector("#content");
 const coverWrap = document.querySelector("#cover-wrap");
 const reader = document.querySelector(".reader");
+const contentRoot = location.pathname.includes("/web/") ? "../" : "./";
 let shikiModule;
 
 init().catch((error) => {
@@ -14,9 +15,11 @@ init().catch((error) => {
 });
 
 async function init() {
-  const response = await fetch("./articles.json", { cache: "no-store" });
+  const response = await fetch("./articles.json", {
+    cache: "no-store",
+  });
   if (!response.ok) {
-    throw new Error("无法加载 articles.json。");
+    throw new Error("Failed to load articles.json.");
   }
 
   state.articles = (await response.json()).sort((a, b) =>
@@ -38,20 +41,25 @@ function renderList(articles) {
     .map((article) => {
       const active = state.current?.path === article.path ? " active" : "";
       const tags = (article.tags || [])
-        .map((tag) => `<span class="article-tag">${escapeHtml(tag)}</span>`)
+        .map(
+          (tag) =>
+            `<a class="article-tag" href="./tags.html?tag=${encodeURIComponent(tag)}">${escapeHtml(tag)}</a>`,
+        )
         .join("");
       return `
-      <button class="article-link${active}" type="button" data-path="${escapeAttr(article.path)}">
-        <span class="article-date">${escapeHtml(article.date)}</span>
-        <span class="article-title">${escapeHtml(article.title)}</span>
+      <div class="article-link${active}">
+        <button class="article-open" type="button" data-path="${escapeAttr(article.path)}">
+          <span class="article-date">${escapeHtml(article.date)}</span>
+          <span class="article-title">${escapeHtml(article.title)}</span>
+        </button>
         ${tags ? `<span class="article-tags">${tags}</span>` : ""}
         <span class="article-summary">${escapeHtml(article.summary)}</span>
-      </button>
+      </div>
     `;
     })
     .join("");
 
-  list.querySelectorAll("button").forEach((button) => {
+  list.querySelectorAll(".article-open").forEach((button) => {
     button.addEventListener("click", () => {
       const article = state.articles.find(
         (item) => item.path === button.dataset.path,
@@ -71,9 +79,11 @@ async function openArticle(article) {
   location.hash = encodeURIComponent(article.path);
   renderList(state.articles);
 
-  const response = await fetch(`./${article.path}`, { cache: "no-store" });
+  const response = await fetch(`${contentRoot}${article.path}`, {
+    cache: "no-store",
+  });
   if (!response.ok) {
-    throw new Error(`无法加载文章：${article.path}`);
+    throw new Error(`Failed to load article: ${article.path}`);
   }
 
   if (state.loadId !== loadId) {
@@ -83,7 +93,7 @@ async function openArticle(article) {
   const markdown = await response.text();
   const updateArticle = () => {
     coverWrap.innerHTML = article.cover
-      ? `<img src="${escapeAttr(article.cover)}" alt="${escapeAttr(article.title)}">`
+      ? `<img src="${escapeAttr(`${contentRoot}${article.cover}`)}" alt="${escapeAttr(article.title)}">`
       : "";
     content.innerHTML = renderMarkdown(markdown);
     document.title = `${article.title} - Articles`;

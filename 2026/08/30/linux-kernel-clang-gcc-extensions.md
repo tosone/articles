@@ -1,6 +1,6 @@
 # Linux 内核为什么曾经难用 Clang 编译：那些绕不开的 GNU C 扩展
 
-<!-- tags: Linux, Clang, GCC, 内核编译 -->
+<!-- tags: Linux, Clang, GCC, Kernel Build -->
 
 先澄清一个重要现状：今天再说“Linux 内核很难用 Clang 编译”，已经不准确了。
 
