@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="776" viewBox="0 0 2500 776" role="img"
+  aria-label="Bun 1.4.0 summary table">
+  <foreignObject x="0" y="0" width="2500" height="776">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 2500px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          overflow: hidden;
+          border-radius: 0;
+          background: #ffffff;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          color: #173642;
+          letter-spacing: 0;
+        }
+        col:nth-child(1) { width: 220px; }
+        col:nth-child(2) { width: 800px; }
+        col:nth-child(3) { width: 790px; }
+        col:nth-child(4) { width: 690px; }
+        th, td {
+          padding: 22px 28px;
+          border-right: 2px solid #d5eef4;
+          border-bottom: 2px solid #d5eef4;
+          text-align: left;
+          vertical-align: middle;
+          line-height: 1.45;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+          white-space: normal;
+        }
+        th {
+          height: 82px;
+          background: #00add8;
+          color: #ffffff;
+          font-size: 28px;
+          font-weight: 850;
+        }
+        td {
+          font-size: 24px;
+          font-weight: 650;
+        }
+        td:first-child {
+          color: #0b2533;
+          font-size: 25px;
+          font-weight: 850;
+        }
+        th:last-child, td:last-child { border-right: 0; }
+        tr:last-child td { border-bottom: 0; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.94em;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>方向</th>
+            <th>Zig 版本 Bun 的问题或边界</th>
+            <th>Bun 1.4.0 的变化</th>
+            <th>对开发者的意义</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>内存安全</td>
+            <td>手动管理内存，和 JavaScriptCore GC 混用时容易出现 use-after-free、double-free、泄漏。</td>
+            <td>Bun 主体从 Zig 迁到 Rust，借助 ownership、borrow checker 和 <code>Drop</code> 收紧生命周期。</td>
+            <td>长期运行服务更值得重新评估，崩溃和泄漏类问题有机会系统性减少。</td>
+          </tr>
+          <tr>
+            <td>资源占用</td>
+            <td>部分 HTTP、SSR、工具链场景内存回收不够稳定，空闲 CPU 也偏高。</td>
+            <td>官方给出空闲 CPU 降 5x、HTTP 服务内存降 13%-48%、Linux 启动约 2x 的数据。</td>
+            <td>对 serverless、CLI、开发服务器和常驻服务都有直接收益。</td>
+          </tr>
+          <tr>
+            <td>Node.js 兼容</td>
+            <td>“大多数能跑”，但很多工具链仍会撞到 Node 内置模块细节。</td>
+            <td>新增 1517 个 Node.js 测试通过项，<code>http</code>、<code>fs</code>、<code>cluster</code>、<code>
+              stream</code>、<code>vm</code> 等继续补齐。</td>
+            <td>迁移现有 Node 项目的风险下降，但仍不能假设 100% 等价。</td>
+          </tr>
+          <tr>
+            <td>生态工具</td>
+            <td>Playwright、Vitest、OpenTelemetry、dd-trace 等工具兼容仍有缺口。</td>
+            <td>Playwright、Vitest、Next.js 16、OpenTelemetry、Datadog 等场景获得明确改进。</td>
+            <td>Bun 不再只适合小工具和新项目，开始能承接更真实的工程栈。</td>
+          </tr>
+          <tr>
+            <td>内置能力</td>
+            <td>很多常见任务仍要安装 npm 包。</td>
+            <td>新增 <code>Bun.Image</code>、<code>Bun.WebView</code>、<code>Bun.markdown</code>、<code>
+              Bun.cron()</code>、<code>Bun.Terminal</code>。</td>
+            <td>小型服务、脚本、自动化工具可以少装一批依赖。</td>
+          </tr>
+          <tr>
+            <td>运维诊断</td>
+            <td>CPU/heap profiling、异步栈、生产观测链路还不够顺。</td>
+            <td>新增 Markdown profile、V8 兼容 heap snapshot、<code>node:inspector</code>、OTel/dd-trace
+              改进。</td>
+            <td>线上排查更接近 Node.js 生态已有工作流。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

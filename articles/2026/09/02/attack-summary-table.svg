@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1750" height="653" viewBox="0 0 1750 653" role="img"
+  aria-label="attack summary table">
+  <foreignObject width="1750" height="653">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1750px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 170px; }
+        col:nth-child(2) { width: 820px; }
+        col:nth-child(3) { width: 760px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th>这次攻击怎么做</th>
+            <th>工程含义</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>初始入口</td>
+            <td>发布未加 scope 的 npm 包，伪装成阿里 <code>@ali</code> scope 下的私有包或相关工具。</td>
+            <td>私有包命名不是安全边界，公开 registry 上的同名/近似名仍可能进入依赖树。</td>
+          </tr>
+          <tr>
+            <td>依赖结构</td>
+            <td>把 loader 拆到 top-layer lure、middle-layer bridge、low-layer config/parser 多个包里。</td>
+            <td>单独审一个包可能看不出问题，必须审整棵依赖树和安装期行为。</td>
+          </tr>
+          <tr>
+            <td>执行方式</td>
+            <td>下载 <code>.cloud-preferences.json</code>，再通过 <code>local-config-parser</code> 的规则引擎执行隐藏逻辑。</td>
+            <td>“配置即代码”一旦能执行表达式，就要按代码执行面管理，而不是按普通 JSON 管理。</td>
+          </tr>
+          <tr>
+            <td>逃逸方式</td>
+            <td>借助 Node.js <code>vm</code> 沙箱逃逸思路重新拿到 <code>process</code> 和模块加载能力。</td>
+            <td><code>vm</code> 不是强安全沙箱，不能用来运行不可信规则。</td>
+          </tr>
+          <tr>
+            <td>后续载荷</td>
+            <td>按 Windows、Linux、macOS 选择不同持久化方式，最终落到 <code>aone-cli</code> RAT。</td>
+            <td>开发者工作站已经是高价值资产，不能只按“个人终端”看待。</td>
+          </tr>
+          <tr>
+            <td>横向移动</td>
+            <td>针对 DingTalk、Wukong、Qoder 等企业协作和开发工具注入或伪装通信。</td>
+            <td>攻击者理解目标组织工具链，响应时要查业务工具目录和插件目录。</td>
+          </tr>
+          <tr>
+            <td>归因</td>
+            <td>有中文注释、UTC+08 提交时间等线索，但不能作为强归因证据。</td>
+            <td>防守重点应放在影响面、凭证轮换和终端取证，而不是过早确定攻击者身份。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

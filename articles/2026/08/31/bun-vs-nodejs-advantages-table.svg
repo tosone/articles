@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2440" height="844" viewBox="0 0 2440 844" role="img"
+  aria-label="Bun 1.4.0 versus Node.js advantages table">
+  <foreignObject x="0" y="0" width="2440" height="844">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 2440px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          overflow: hidden;
+          border-radius: 0;
+          background: #ffffff;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          color: #173642;
+          letter-spacing: 0;
+        }
+        col:nth-child(1) { width: 300px; }
+        col:nth-child(2) { width: 820px; }
+        col:nth-child(3) { width: 660px; }
+        col:nth-child(4) { width: 660px; }
+        th, td {
+          padding: 22px 28px;
+          border-right: 2px solid #d5eef4;
+          border-bottom: 2px solid #d5eef4;
+          text-align: left;
+          vertical-align: middle;
+          line-height: 1.45;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+          white-space: normal;
+        }
+        th {
+          height: 82px;
+          background: #00add8;
+          color: #ffffff;
+          font-size: 28px;
+          font-weight: 850;
+        }
+        td {
+          font-size: 24px;
+          font-weight: 650;
+        }
+        td:first-child {
+          color: #0b2533;
+          font-size: 25px;
+          font-weight: 850;
+        }
+        th:last-child, td:last-child { border-right: 0; }
+        tr:last-child td { border-bottom: 0; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.94em;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th>Bun 1.4.0 的优势</th>
+            <th>Node.js 的现状</th>
+            <th>适合采用 Bun 的场景</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>启动速度</td>
+            <td>单二进制、JSC 和 runtime 路径更轻，Linux hello.js 官方数据 5.1 ms。</td>
+            <td>Node.js 26 官方对比数据为 27.2 ms。</td>
+            <td>CLI、serverless、短生命周期脚本、开发工具。</td>
+          </tr>
+          <tr>
+            <td>TypeScript 体验</td>
+            <td>直接运行 <code>.ts</code> / <code>.tsx</code>，很多脚本不需要额外 loader。</td>
+            <td>通常仍依赖 <code>tsx</code>、<code>ts-node</code>、构建步骤或实验能力。</td>
+            <td>内部工具、脚本、轻量服务、原型开发。</td>
+          </tr>
+          <tr>
+            <td>包安装</td>
+            <td><code>bun install</code> 是核心能力，锁文件和安装器一起优化。</td>
+            <td>npm 稳定但相对慢；团队常额外引入 pnpm/yarn。</td>
+            <td>依赖频繁安装的 CI、monorepo、本地开发。</td>
+          </tr>
+          <tr>
+            <td>Bundler/transpiler</td>
+            <td><code>bun build</code>、TS/JSX transpiler 内置。</td>
+            <td>通常组合 esbuild、Vite、Webpack、SWC 等。</td>
+            <td>CLI、库、服务端 bundle、简单前端构建。</td>
+          </tr>
+          <tr>
+            <td>测试</td>
+            <td><code>bun test</code> 内置，Jest 风格 API，1.4 支持并行。</td>
+            <td>Node 自带 test runner 已进步，但 Jest/Vitest 仍常见。</td>
+            <td>小中型项目、工具库、追求低配置测试。</td>
+          </tr>
+          <tr>
+            <td>HTTP/IO</td>
+            <td>官方 benchmark 中 HTTP 和内存占用更有优势。</td>
+            <td>稳定、生态成熟，性能也在持续改进。</td>
+            <td>高并发 API、边缘服务、资源敏感容器。</td>
+          </tr>
+          <tr>
+            <td>内置能力</td>
+            <td>Image、WebView、Markdown、Cron、Terminal、SQLite、S3 等能力可减少依赖。</td>
+            <td>大多依赖 npm 包或外部工具。</td>
+            <td>自动化平台、脚本服务、内部工具、轻量数据处理。</td>
+          </tr>
+          <tr>
+            <td>开发心智</td>
+            <td>一个 <code>bun</code> 命令覆盖 install/run/test/build。</td>
+            <td>工具链可组合性强，但配置面更宽。</td>
+            <td>希望降低项目模板复杂度的新项目。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

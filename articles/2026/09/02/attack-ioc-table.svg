@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1370" height="965" viewBox="0 0 1370 965" role="img"
+  aria-label="attack ioc table">
+  <foreignObject width="1370" height="965">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1370px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 21px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 12px 16px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 280px; }
+        col:nth-child(2) { width: 1090px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>类型</th>
+            <th>指标</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GitHub 账号</td>
+            <td><code>smi1e2u</code></td>
+          </tr>
+          <tr>
+            <td>GitHub 仓库</td>
+            <td><code>fast-transform-pipeline</code>、<code>smart-config-manager</code></td>
+          </tr>
+          <tr>
+            <td>主 C2</td>
+            <td><code>xemzqli2vu[.]ai-app[.]pub</code></td>
+          </tr>
+          <tr>
+            <td>反向代理 WebSocket C2</td>
+            <td><code>diamond-cli-znsxphqell[.]cn-shanghai[.]fcapp[.]run</code></td>
+          </tr>
+          <tr>
+            <td>配置投递</td>
+            <td><code>hxxps://raw[.]githubusercontent[.]com/smi1e2u/smart-config-manager/main/defaults/preferences.json</code></td>
+          </tr>
+          <tr>
+            <td>三阶段 loader</td>
+            <td><code>hxxps://aone-cli-next[.]oss-cn-beijing[.]aliyuncs[.]com/config/setting.js</code></td>
+          </tr>
+          <tr>
+            <td>payload 投递</td>
+            <td><code>hxxps://aone-ai-cli[.]oss-cn-beijing[.]aliyuncs[.]com/app/release/aone-cli.js</code></td>
+          </tr>
+          <tr>
+            <td>payload 投递</td>
+            <td><code>hxxps://aone-ai-cli[.]oss-cn-beijing[.]aliyuncs[.]com/app/release/aone-cli-deps.tar.gz</code></td>
+          </tr>
+          <tr>
+            <td>payload 投递</td>
+            <td><code>hxxps://aone-ai-cli[.]oss-cn-beijing[.]aliyuncs[.]com/app/release/aone-cli</code></td>
+          </tr>
+          <tr>
+            <td>payload 投递</td>
+            <td><code>hxxps://aone-ai-cli[.]oss-cn-beijing[.]aliyuncs[.]com/app/release/aone-cli.zip</code></td>
+          </tr>
+          <tr>
+            <td>lib-mtop 后续载荷</td>
+            <td><code>hxxps://aone-kit[.]oss-cn-beijing[.]aliyuncs[.]com/plugins/crypto.js</code></td>
+          </tr>
+          <tr>
+            <td>lib-mtop 后续载荷</td>
+            <td><code>hxxps://aone-kit[.]oss-cn-beijing[.]aliyuncs[.]com/aone-kit-update/aone-kit.js</code></td>
+          </tr>
+          <tr>
+            <td>lib-mtop 后续载荷</td>
+            <td><code>hxxps://aone-kit[.]oss-cn-beijing[.]aliyuncs[.]com/aone-kit-update/app.asar</code></td>
+          </tr>
+          <tr>
+            <td>lib-mtop 后续载荷</td>
+            <td><code>hxxps://aone-kit[.]oss-cn-beijing[.]aliyuncs[.]com/aone-kit-update/aone-kit-update</code></td>
+          </tr>
+          <tr>
+            <td>代码标记</td>
+            <td><code># __INJECT_MARKER__</code></td>
+          </tr>
+          <tr>
+            <td>环境变量</td>
+            <td><code>ROBOT_UID=3201d407b7899a12d6d439950511c6a5</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

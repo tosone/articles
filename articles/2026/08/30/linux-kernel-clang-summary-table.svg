@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2350" height="692" viewBox="0 0 2350 692" role="img"
+  aria-label="Linux kernel Clang and GNU C extensions summary table">
+  <foreignObject x="0" y="0" width="2350" height="692">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 2350px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          overflow: hidden;
+          border-radius: 0;
+          background: #ffffff;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          color: #173642;
+          letter-spacing: 0;
+        }
+        col:nth-child(1) { width: 360px; }
+        col:nth-child(2) { width: 540px; }
+        col:nth-child(3) { width: 760px; }
+        col:nth-child(4) { width: 690px; }
+        th, td {
+          padding: 20px 24px;
+          border-right: 2px solid #d5eef4;
+          border-bottom: 2px solid #d5eef4;
+          text-align: left;
+          vertical-align: middle;
+          line-height: 1.45;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+          white-space: normal;
+        }
+        th {
+          height: 78px;
+          background: #00add8;
+          color: #ffffff;
+          font-size: 28px;
+          font-weight: 400;
+        }
+        td {
+          font-size: 24px;
+          font-weight: 400;
+        }
+        td:first-child {
+          color: #0b2533;
+          font-size: 25px;
+          font-weight: 400;
+        }
+        th:last-child, td:last-child { border-right: 0; }
+        tr:last-child td { border-bottom: 0; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.94em;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>扩展或机制</th>
+            <th>内核用途</th>
+            <th>Clang 曾经的主要难点</th>
+            <th>今天的状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>asm goto</code> 与复杂内联汇编</td>
+            <td>静态分支、异常表、原子操作、架构热路径</td>
+            <td>控制流、输出操作数、寄存器约束和汇编模板语义难以完全模拟 GCC</td>
+            <td>已是 Clang 内核支持的核心能力，但仍是最容易暴露架构差异的区域</td>
+          </tr>
+          <tr>
+            <td>语句表达式与 <code>typeof</code></td>
+            <td>类型安全宏、<code>container_of</code>、<code>min</code>/<code>max</code>、一次求值</td>
+            <td>宏展开、类型推导、常量求值和诊断细节与 GCC 不完全一致</td>
+            <td>Clang 支持成熟，但内核仍会为边界语义写兼容宏</td>
+          </tr>
+          <tr>
+            <td>标号作为值</td>
+            <td>computed goto、低层调度和解释器式分发</td>
+            <td>后端重定位、优化后控制流保持、架构差异</td>
+            <td>语法可用，少数架构和优化组合曾经需要修复</td>
+          </tr>
+          <tr>
+            <td><code>section</code>、<code>weak</code>、<code>alias</code> 等属性</td>
+            <td>初始化段、只读段、异常表、架构覆盖实现</td>
+            <td>LTO 下符号被错误内联、丢弃、改名或跨段移动</td>
+            <td>ThinLTO 可用，但依赖内核和 LLVM 双方约束语义</td>
+          </tr>
+          <tr>
+            <td>零长度数组、柔性数组和范围初始化</td>
+            <td>可变长度结构、协议头、表驱动初始化</td>
+            <td><code>sizeof</code>、边界检查、sanitizer 诊断与 GCC 行为不同</td>
+            <td>内核逐步迁移到更明确的 flexible array 写法</td>
+          </tr>
+          <tr>
+            <td><code>__builtin_*</code> 内置函数</td>
+            <td>编译期分支、分支预测、溢出检查、位操作</td>
+            <td>常量传播时机、返回值语义、诊断差异</td>
+            <td>大多数已对齐，内核也引入更稳健的封装</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

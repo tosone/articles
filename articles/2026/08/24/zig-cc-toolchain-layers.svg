@@ -1,60 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="430" viewBox="0 0 1700 430" role="img" aria-label="Zig toolchain responsibility table">
-  <defs>
-    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fbfdff"/>
-      <stop offset="0.56" stop-color="#edfaff"/>
-      <stop offset="1" stop-color="#f6f1e6"/>
-    </linearGradient>
-    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#f7a41d"/>
-      <stop offset="0.48" stop-color="#00add8"/>
-      <stop offset="1" stop-color="#12c7b8"/>
-    </linearGradient>
-    <filter id="shadow" x="-4%" y="-8%" width="108%" height="116%">
-      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0b2533" flood-opacity="0.12"/>
-    </filter>
-    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
-      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#00add8" stroke-width="1" opacity="0.07"/>
-    </pattern>
-  </defs>
-
-  <rect width="1700" height="430" fill="url(#paper)"/>
-  <rect width="1700" height="430" fill="url(#grid)"/>
-
-  <g transform="translate(24 38)" filter="url(#shadow)">
-    <rect x="0" y="0" width="1652" height="348" rx="24" fill="#ffffff"/>
-    <rect x="0" y="0" width="1652" height="82" rx="24" fill="url(#header)"/>
-    <path d="M 0 58 H 1652 V 82 H 0 Z" fill="url(#header)"/>
-
-    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" letter-spacing="0">
-      <text x="40" y="52" fill="#ffffff" font-size="28" font-weight="850">概念</text>
-      <text x="400" y="52" fill="#ffffff" font-size="28" font-weight="850">负责什么</text>
-      <text x="1060" y="52" fill="#ffffff" font-size="28" font-weight="850">Zig 能否直接提供</text>
-    </g>
-
-    <g stroke="#d5eef4" stroke-width="2">
-      <path d="M 360 0 V 348"/>
-      <path d="M 1020 0 V 348"/>
-      <path d="M 0 170 H 1652"/>
-      <path d="M 0 258 H 1652"/>
-    </g>
-
-    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" letter-spacing="0">
-      <text x="40" y="137" fill="#0b2533" font-size="28" font-weight="850">编译器与 linker driver</text>
-      <text x="400" y="137" fill="#173642" font-size="27" font-weight="650">编译 C/C++，组织链接参数，调用链接器。</text>
-      <text x="1060" y="137" fill="#173642" font-size="27" font-weight="650">能，使用</text>
-      <text x="1175" y="137" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">zig cc</text>
-      <text x="1270" y="137" fill="#173642" font-size="27" font-weight="650">/</text>
-      <text x="1300" y="137" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">zig c++</text>
-      <text x="1412" y="137" fill="#173642" font-size="27" font-weight="650">。</text>
-
-      <text x="40" y="225" fill="#0b2533" font-size="28" font-weight="850">libc 与基础 sysroot</text>
-      <text x="400" y="225" fill="#173642" font-size="27" font-weight="650">libc 头文件、ABI 信息、启动对象。</text>
-      <text x="1060" y="225" fill="#173642" font-size="27" font-weight="650">对 Zig 支持的常见目标可以提供或生成。</text>
-
-      <text x="40" y="314" fill="#0b2533" font-size="28" font-weight="850">第三方原生依赖</text>
-      <text x="400" y="314" fill="#173642" font-size="27" font-weight="650">OpenSSL、SQLite、CUDA、厂商 SDK 等。</text>
-      <text x="1060" y="314" fill="#173642" font-size="27" font-weight="650">通常不能，需要源码交叉编译或准备目标库。</text>
-    </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1580" height="320" viewBox="0 0 1580 320" role="img"
+  aria-label="Zig toolchain responsibility table">
+  <foreignObject x="0" y="0" width="1580" height="320">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1580px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          background: #ffffff;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          color: #173642;
+          letter-spacing: 0;
+        }
+        col:nth-child(1) { width: 340px; }
+        col:nth-child(2) { width: 610px; }
+        col:nth-child(3) { width: 630px; }
+        th, td {
+          padding: 16px 22px;
+          border-right: 2px solid #d5eef4;
+          border-bottom: 2px solid #d5eef4;
+          text-align: left;
+          vertical-align: middle;
+          line-height: 1.42;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+          white-space: normal;
+          font-weight: 400;
+        }
+        th {
+          height: 68px;
+          background: #00add8;
+          color: #ffffff;
+          font-size: 25px;
+        }
+        td {
+          height: 84px;
+          font-size: 23px;
+        }
+        td:first-child {
+          color: #0b2533;
+        }
+        th:last-child, td:last-child { border-right: 0; }
+        tr:last-child td { border-bottom: 0; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>概念</th>
+            <th>负责什么</th>
+            <th>Zig 能否直接提供</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>编译器与 linker driver</td>
+            <td>编译 C/C++，组织链接参数，调用链接器。</td>
+            <td>能，使用 <code>zig cc</code> / <code>zig c++</code>。</td>
+          </tr>
+          <tr>
+            <td>libc 与基础 sysroot</td>
+            <td>libc 头文件、ABI 信息、启动对象。</td>
+            <td>对 Zig 支持的常见目标可以提供或生成。</td>
+          </tr>
+          <tr>
+            <td>第三方原生依赖</td>
+            <td>OpenSSL、SQLite、CUDA、厂商 SDK 等。</td>
+            <td>通常不能，需要源码交叉编译或准备目标库。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
 </svg>

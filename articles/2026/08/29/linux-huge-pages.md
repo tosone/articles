@@ -15,6 +15,7 @@ Linux 大页经常出现在性能优化建议里：减少页表、提高 TLB 命
 
 ## 一、先看结论
 
+<!-- table-svg: linux-huge-pages-overview.svg -->
 | 机制     | 常见页大小              | 使用方式                        | 适合场景                                          | 主要风险                                          |
 | -------- | ----------------------- | ------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
 | 普通页   | 4KB                     | 系统默认                        | Web 服务、微服务、短生命周期对象、小块随机分配    | 页表数量更多，超大工作集下 TLB 压力更高           |
@@ -36,6 +37,7 @@ CPU 访问内存时使用的是虚拟地址。虚拟地址要转换成物理地�
 
 2MB 大页的优势是覆盖范围大。相同 1GB 内存：
 
+<!-- table-svg: linux-huge-pages-counts.svg -->
 | 页大小 | 覆盖 1GB 需要的页数 |  相对 4KB 页 |
 | ------ | ------------------: | -----------: |
 | 4KB    |              262144 |         1 倍 |
@@ -72,6 +74,7 @@ echo never   > /sys/kernel/mm/transparent_hugepage/enabled
 
 含义大致是：
 
+<!-- table-svg: linux-huge-pages-thp-policy.svg -->
 | 策略      | 含义                           | 适用倾向                               |
 | --------- | ------------------------------ | -------------------------------------- |
 | `always`  | 内核尽量自动使用 THP           | 吞吐优先、延迟不敏感、已验证收益的机器 |
@@ -309,6 +312,7 @@ cat /sys/kernel/mm/transparent_hugepage/defrag
 
 TLB miss 下降不等于业务性能一定提升。正确的验证指标至少包括：
 
+<!-- table-svg: linux-huge-pages-metrics.svg -->
 | 维度         | 观察指标                                                     |
 | ------------ | ------------------------------------------------------------ |
 | CPU 地址翻译 | `dTLB-load-misses`、`iTLB-load-misses`、page walk 相关事件   |
@@ -356,6 +360,7 @@ echo 4096 | sudo tee /proc/sys/vm/nr_hugepages
 
 ### 4. 给不同语言运行时分别判断
 
+<!-- table-svg: linux-huge-pages-runtime.svg -->
 | 运行时/系统      | 建议                                                                 |
 | ---------------- | -------------------------------------------------------------------- |
 | PostgreSQL/MySQL | 优先看官方 huge page 配置，配合 shared buffer/buffer pool 大小规划。 |
@@ -382,6 +387,7 @@ echo 4096 | sudo tee /proc/sys/vm/nr_hugepages
 
 可以用一个简单规则收尾：
 
+<!-- table-svg: linux-huge-pages-decision.svg -->
 | 业务特征                         | 建议                          |
 | -------------------------------- | ----------------------------- |
 | 大块连续内存、长期持有、重复访问 | 测试 THP `madvise` 或 HugeTLB |

@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2320" height="494" viewBox="0 0 2320 494" role="img"
-  aria-label="Go generic methods capability table">
-  <foreignObject x="0" y="0" width="2320" height="494">
+<svg xmlns="http://www.w3.org/2000/svg" width="2030" height="540" viewBox="0 0 2030 540" role="img"
+  aria-label="Go 1.27 summary table">
+  <foreignObject x="0" y="0" width="2030" height="540">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
         body { margin: 0; }
         table {
-          width: 2320px;
+          width: 2030px;
           border-collapse: separate;
           border-spacing: 0;
           table-layout: fixed;
@@ -17,9 +17,9 @@
           color: #173642;
           letter-spacing: 0;
         }
-        col:nth-child(1) { width: 300px; }
-        col:nth-child(2) { width: 1290px; }
-        col:nth-child(3) { width: 730px; }
+        col:nth-child(1) { width: 210px; }
+        col:nth-child(2) { width: 1110px; }
+        col:nth-child(3) { width: 710px; }
         th, td {
           padding: 22px 28px;
           border-right: 2px solid #d5eef4;
@@ -63,36 +63,33 @@
         </colgroup>
         <thead>
           <tr>
-            <th>能力</th>
-            <th>Go 1.18 到 Go 1.26</th>
-            <th>Go 1.27</th>
+            <th>方向</th>
+            <th>变化</th>
+            <th>对开发者的意义</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>泛型类型</td>
-            <td>支持，例如 <code>type Set[T comparable] map[T]struct{}</code></td>
-            <td>继续支持</td>
+            <td>JSON</td>
+            <td>新增 <code>encoding/json/v2</code> 和 <code>encoding/json/jsontext</code>，<code>
+              encoding/json</code> 底层切到 v2 实现。</td>
+            <td>JSON 处理更严格、更可配置，反序列化性能提升明显，但错误信息和边界行为需要回归测试。</td>
           </tr>
           <tr>
-            <td>泛型函数</td>
-            <td>支持，例如 <code>func Map[T, U any](...) ...</code></td>
-            <td>继续支持</td>
+            <td>标准库补齐</td>
+            <td>新增 <code>uuid</code>、<code>crypto/mldsa</code>，继续推进 SIMD 实验包。</td>
+            <td>常用能力继续进入标准库，减少三方依赖；密码学和高性能计算方向继续演进。</td>
           </tr>
           <tr>
-            <td>泛型方法</td>
-            <td>方法只能使用接收者类型已有的类型参数</td>
-            <td>方法可以声明自己的类型参数</td>
+            <td>runtime</td>
+            <td>小对象分配更快，<code>goroutineleak</code> profile 可用。</td>
+            <td>分配密集型程序有机会获得小幅收益；并发泄漏排查多了一个官方工具。</td>
           </tr>
           <tr>
-            <td>接口方法类型参数</td>
-            <td>不支持</td>
-            <td>仍然不建议理解为完整 trait 系统</td>
-          </tr>
-          <tr>
-            <td>高阶类型参数</td>
-            <td>不支持</td>
-            <td>仍不支持</td>
+            <td>工具链</td>
+            <td><code>go test</code> 默认跑 <code>stdversion</code>，<code>go doc</code> 更懂版本，<code>go
+              fix</code> 更会现代化代码。</td>
+            <td>CI 更容易提前发现“用了太新的标准库 API”；日常查文档和迁移代码更方便。</td>
           </tr>
         </tbody>
       </table>

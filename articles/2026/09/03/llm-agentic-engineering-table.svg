@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="282" viewBox="0 0 560 282" role="img"
-  aria-label="Memory page count comparison table">
-  <foreignObject width="560" height="282">
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="374" viewBox="0 0 920 374" role="img"
+  aria-label="llm agentic engineering table">
+  <foreignObject width="920" height="374">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
         body { margin: 0; }
         table {
-          width: 560px;
+          width: 920px;
           border-collapse: separate;
           border-spacing: 0;
           table-layout: fixed;
@@ -34,42 +34,47 @@
         td {
           background: #ffffff;
         }
-        th:nth-child(2), th:nth-child(3),
-        td:nth-child(2), td:nth-child(3) {
-          text-align: right;
+        col:nth-child(1) { width: 200px; }
+        col:nth-child(2) { width: 720px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
         }
-        col:nth-child(1) { width: 110px; }
-        col:nth-child(2) { width: 260px; }
-        col:nth-child(3) { width: 190px; }
       </style>
       <table>
         <colgroup>
           <col />
           <col />
-          <col />
         </colgroup>
         <thead>
           <tr>
-            <th>页大小</th>
-            <th>覆盖 1GB 需要的页数</th>
-            <th>相对 4KB 页</th>
+            <th>部分</th>
+            <th>要解决的问题</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>4KB</td>
-            <td>262144</td>
-            <td>1 倍</td>
+            <td>目标定义</td>
+            <td>模型到底要完成什么，不完成什么。</td>
           </tr>
           <tr>
-            <td>2MB</td>
-            <td>512</td>
-            <td>少 512 倍</td>
+            <td>上下文管理</td>
+            <td>模型能看到哪些文件、文档、日志和历史决策。</td>
           </tr>
           <tr>
-            <td>1GB</td>
-            <td>1</td>
-            <td>少 262144 倍</td>
+            <td>工具权限</td>
+            <td>模型能调用哪些工具，能否写文件、执行命令、访问网络。</td>
+          </tr>
+          <tr>
+            <td>过程观测</td>
+            <td>人能否看到模型做了什么、为什么这么做。</td>
+          </tr>
+          <tr>
+            <td>验证回滚</td>
+            <td>修改能否测试、审查、回滚和归责。</td>
           </tr>
         </tbody>
       </table>

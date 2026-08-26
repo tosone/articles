@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2320" height="494" viewBox="0 0 2320 494" role="img"
-  aria-label="Go generic methods capability table">
-  <foreignObject x="0" y="0" width="2320" height="494">
+<svg xmlns="http://www.w3.org/2000/svg" width="2110" height="430" viewBox="0 0 2110 430" role="img"
+  aria-label="Docker version boundary table">
+  <foreignObject x="0" y="0" width="2110" height="430">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
         body { margin: 0; }
         table {
-          width: 2320px;
+          width: 2110px;
           border-collapse: separate;
           border-spacing: 0;
           table-layout: fixed;
@@ -17,9 +17,9 @@
           color: #173642;
           letter-spacing: 0;
         }
-        col:nth-child(1) { width: 300px; }
-        col:nth-child(2) { width: 1290px; }
-        col:nth-child(3) { width: 730px; }
+        col:nth-child(1) { width: 620px; }
+        col:nth-child(2) { width: 970px; }
+        col:nth-child(3) { width: 520px; }
         th, td {
           padding: 22px 28px;
           border-right: 2px solid #d5eef4;
@@ -63,36 +63,30 @@
         </colgroup>
         <thead>
           <tr>
-            <th>能力</th>
-            <th>Go 1.18 到 Go 1.26</th>
-            <th>Go 1.27</th>
+            <th>你看到的版本</th>
+            <th>它是什么</th>
+            <th>应该怎么用</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>泛型类型</td>
-            <td>支持，例如 <code>type Set[T comparable] map[T]struct{}</code></td>
-            <td>继续支持</td>
+            <td>
+              <code>docker-v29.x.x</code>
+            </td>
+            <td>Docker Engine 的软件发布 tag。从 v29 起加 <code>docker-</code> 前缀，避免 Go 工具链把 <code>v29.0.0</code>
+              当成 Go module 的第 29 个大版本。</td>
+            <td>给 Engine 用户、发行版维护者和构建流程使用。</td>
           </tr>
           <tr>
-            <td>泛型函数</td>
-            <td>支持，例如 <code>func Map[T, U any](...) ...</code></td>
-            <td>继续支持</td>
+            <td><code>github.com/moby/moby/v2</code> @ <code>v2.0.0-beta.N</code></td>
+            <td>Moby 仓库根模块，用来构建容器引擎二进制。官方明确说它是内部实现细节，不保证 API 稳定。</td>
+            <td>不要在业务代码里 <code>go get</code>。除非你在构建自定义 Engine。</td>
           </tr>
           <tr>
-            <td>泛型方法</td>
-            <td>方法只能使用接收者类型已有的类型参数</td>
-            <td>方法可以声明自己的类型参数</td>
-          </tr>
-          <tr>
-            <td>接口方法类型参数</td>
-            <td>不支持</td>
-            <td>仍然不建议理解为完整 trait 系统</td>
-          </tr>
-          <tr>
-            <td>高阶类型参数</td>
-            <td>不支持</td>
-            <td>仍不支持</td>
+            <td><code>github.com/moby/moby/client</code>、<code>github.com/moby/moby/api</code> @ <code>
+              v1.x.x</code></td>
+            <td>Docker Engine API 的公共 Go SDK，独立打 tag、独立演进。</td>
+            <td>Go 项目迁移时应该使用的模块。</td>
           </tr>
         </tbody>
       </table>

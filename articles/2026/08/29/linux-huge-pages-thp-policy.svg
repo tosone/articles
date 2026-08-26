@@ -1,37 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="306" viewBox="0 0 1180 306" role="img" aria-label="Transparent huge pages policy table">
-  <defs>
-    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
-      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#8ac9d8" stroke-width="1" opacity="0.12"/>
-    </pattern>
-    <filter id="shadow" x="-5%" y="-10%" width="110%" height="120%">
-      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#006d88" flood-opacity="0.10"/>
-    </filter>
-  </defs>
-  <rect width="1180" height="306" fill="#fbfdff"/>
-  <rect width="1180" height="306" fill="url(#grid)"/>
-  <g transform="translate(24 24)" filter="url(#shadow)">
-    <rect width="1132" height="258" rx="24" fill="#ffffff" stroke="#b7e8f2" stroke-width="2"/>
-    <rect width="1132" height="60" rx="24" fill="#e6f9fd"/>
-    <path d="M 0 60 H 1132" stroke="#00add8" stroke-width="3"/>
-    <path d="M 190 0 V 258 M 580 0 V 258" stroke="#d7eef3" stroke-width="2"/>
-    <path d="M 0 126 H 1132 M 0 192 H 1132" stroke="#d7eef3" stroke-width="2"/>
-    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" font-size="24" letter-spacing="0">
-      <g fill="#0b2533" font-weight="850">
-        <text x="34" y="38">策略</text>
-        <text x="224" y="38">含义</text>
-        <text x="614" y="38">适用倾向</text>
-      </g>
-      <g fill="#12313d" font-weight="650">
-        <text x="34" y="101" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-weight="800">always</text>
-        <text x="224" y="101">内核尽量自动使用 THP</text>
-        <text x="614" y="101">吞吐优先、延迟不敏感、已验证收益的机器</text>
-        <text x="34" y="167" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-weight="800">madvise</text>
-        <text x="224" y="167">只有应用明确标记的区域使用 THP</text>
-        <text x="614" y="167">更稳妥的生产默认策略</text>
-        <text x="34" y="233" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-weight="800">never</text>
-        <text x="224" y="233">普通 THP 路径不主动启用</text>
-        <text x="614" y="233">强延迟敏感、曾因 THP 抖动的服务</text>
-      </g>
-    </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="242" viewBox="0 0 1020 242" role="img"
+  aria-label="Transparent huge pages policy table">
+  <foreignObject width="1020" height="242">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1020px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 140px; }
+        col:nth-child(2) { width: 390px; }
+        col:nth-child(3) { width: 490px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>策略</th>
+            <th>含义</th>
+            <th>适用倾向</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>always</code>
+            </td>
+            <td>内核尽量自动使用 THP</td>
+            <td>吞吐优先、延迟不敏感、已验证收益的机器</td>
+          </tr>
+          <tr>
+            <td>
+              <code>madvise</code>
+            </td>
+            <td>只有应用明确标记的区域使用 THP</td>
+            <td>更稳妥的生产默认策略</td>
+          </tr>
+          <tr>
+            <td>
+              <code>never</code>
+            </td>
+            <td>普通 THP 路径不主动启用</td>
+            <td>强延迟敏感、曾因 THP 抖动的服务</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
 </svg>

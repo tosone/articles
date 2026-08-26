@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="282" viewBox="0 0 560 282" role="img"
-  aria-label="Memory page count comparison table">
-  <foreignObject width="560" height="282">
+<svg xmlns="http://www.w3.org/2000/svg" width="1150" height="281" viewBox="0 0 1150 281" role="img"
+  aria-label="llm china phases table">
+  <foreignObject width="1150" height="281">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
         body { margin: 0; }
         table {
-          width: 560px;
+          width: 1150px;
           border-collapse: separate;
           border-spacing: 0;
           table-layout: fixed;
@@ -34,13 +34,16 @@
         td {
           background: #ffffff;
         }
-        th:nth-child(2), th:nth-child(3),
-        td:nth-child(2), td:nth-child(3) {
-          text-align: right;
+        col:nth-child(1) { width: 220px; }
+        col:nth-child(2) { width: 190px; }
+        col:nth-child(3) { width: 740px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
         }
-        col:nth-child(1) { width: 110px; }
-        col:nth-child(2) { width: 260px; }
-        col:nth-child(3) { width: 190px; }
       </style>
       <table>
         <colgroup>
@@ -50,26 +53,26 @@
         </colgroup>
         <thead>
           <tr>
-            <th>页大小</th>
-            <th>覆盖 1GB 需要的页数</th>
-            <th>相对 4KB 页</th>
+            <th>阶段</th>
+            <th>时间</th>
+            <th>特征</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>4KB</td>
-            <td>262144</td>
-            <td>1 倍</td>
+            <td>追赶期</td>
+            <td>2023</td>
+            <td>大厂和创业公司密集发布通用大模型。</td>
           </tr>
           <tr>
-            <td>2MB</td>
-            <td>512</td>
-            <td>少 512 倍</td>
+            <td>应用期</td>
+            <td>2024</td>
+            <td>长上下文、办公、搜索、客服、教育、代码等场景落地。</td>
           </tr>
           <tr>
-            <td>1GB</td>
-            <td>1</td>
-            <td>少 262144 倍</td>
+            <td>成本与开源期</td>
+            <td>2025-2026</td>
+            <td>DeepSeek、Qwen、GLM 等推动开源、低成本推理和私有化部署。</td>
           </tr>
         </tbody>
       </table>

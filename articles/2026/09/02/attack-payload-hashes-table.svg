@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="497" viewBox="0 0 1560 497" role="img"
+  aria-label="attack payload hashes table">
+  <foreignObject width="1560" height="497">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1560px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 21px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 12px 16px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 900px; }
+        col:nth-child(2) { width: 660px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>SHA-256</th>
+            <th>含义</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>84a6ccaaab1596139d28e822f40cc99c68d337d4c81d1c6d9692c1d6bb22e4af</code></td>
+            <td>带二阶段 loader 的 <code>preferences.json</code>。</td>
+          </tr>
+          <tr>
+            <td><code>6044974c633b3a319c31bb32110411520c425e89722a64806528553227e7a50a</code></td>
+            <td>三阶段 <code>setting.js</code> loader。</td>
+          </tr>
+          <tr>
+            <td><code>0910ecfa049738ef3f2540855341a380df89224ff71da94b4c21689fd66f62e3</code></td>
+            <td>macOS 上部署的 <code>aone-cli.js</code>。</td>
+          </tr>
+          <tr>
+            <td><code>b8b81af76163bdcc5b4f7d8fe6795f164991f8a62678c971db031b9e90a27813</code></td>
+            <td>Linux 上部署的 <code>aone-cli</code>。</td>
+          </tr>
+          <tr>
+            <td><code>ef9a1896eeaae929800eade768276e2240ef252d26d0d96c1950a1a5e1aadb34</code></td>
+            <td>Windows 上部署的 <code>aone-cli.zip</code>。</td>
+          </tr>
+          <tr>
+            <td><code>e5d8350f1540fe91145dc262c455bca7748ad97dafb2d9facd5adebed9f66d2d</code></td>
+            <td>包含旧版 <code>aone-cli.js</code> 的 <code>aone-cli-deps.tar.gz</code>。</td>
+          </tr>
+          <tr>
+            <td><code>41957bd0ba2d9c07af2e069f10780fdf6b2102c065bebe0db2136dfe07d67a28</code></td>
+            <td><code>lib-mtop</code> 链路中的 <code>crypto.js</code> 三阶段 loader。</td>
+          </tr>
+          <tr>
+            <td><code>33b58598eb317553942e27545982d4c25ce6120eae10e42393746eb0e02ecae9</code></td>
+            <td><code>lib-mtop</code> 链路在 Linux 上投递的 <code>aone-kit-update</code>。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

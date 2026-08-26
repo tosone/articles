@@ -240,15 +240,46 @@ SVG implementation notes:
 
 When turning Markdown tables into standalone SVG/PNG assets:
 
+- Use `foreignObject` with an embedded HTML `<table>` as the default implementation for table SVGs, so table layout can be adjusted directly in HTML/CSS.
 - Generate separate SVG and PNG files alongside the article. Do not replace or embed the image back into the Markdown article unless explicitly requested.
+- When drafting or revising an article that has a corresponding table SVG, add `<!-- table-svg: filename.svg -->` immediately above the matching Markdown table in the same edit. The marker must directly touch the Markdown table with no blank line between them. Keep the Markdown table below the marker as the source fallback.
+- Use the exact same filename as the SVG asset in the article directory, for example `<!-- table-svg: zig-cc-summary-table.svg -->`.
 - Do not add a title above the table image. The image should contain only the table.
+- Table SVGs should keep the HTML table directly inside the SVG file; do not depend on a separate generation script for normal edits.
+- Do not use shadows in table SVGs. Avoid `filter`, `feDropShadow`, `drop-shadow`, and shadow-like effects.
+- Do not add an outer margin, outer background frame, or rounded table corners. The SVG canvas should fit the table itself.
+- Use a solid cyan header, clean white table body, thin `#d5eef4` grid lines, and dark text. Do not use gradient or grid backgrounds. Prefer `border-collapse: separate` with `border-spacing: 0`, and draw grid lines with cell `border-right` and `border-bottom` so the top and left edges do not render as clipped white seams.
 - Keep the table canvas as compact as the content allows. Column widths should wrap the longest cell text plus reasonable inner padding, instead of using a fixed wide canvas.
 - Keep all cell text on one line whenever practical. Prefer adjusting column widths over wrapping text.
 - Use consistent cell padding. The first column should not feel cramped, especially for mixed Chinese/English labels.
+- Do not special-case padding for a specific row or cell to fix visual spacing. Adjust the whole table's padding, row sizing, canvas size, or content wrapping instead.
+- Keep table cell padding compact. When text must wrap, avoid placing punctuation at the beginning of a line and avoid breaking English words or code identifiers inside the word; prefer wrapping at spaces or separators such as `/`, `.`, `-`, and `_`.
 - Do not use alternating row background colors. Keep the table body on a single clean white background, using borders/grid lines for row separation.
-- Keep header styling consistent with the article visual family: cyan/teal/amber accents, dark text, subtle grid paper background, and restrained shadow.
-- Prefer `PingFang SC, Avenir Next, Helvetica Neue, sans-serif` for mixed Chinese/English table text to reduce baseline drift in PNG export. Use monospace only for code, commands, target triples, and environment variables.
-- After editing table SVGs, export PNG files at the SVG's native width and height with `rsvg-convert`, verify dimensions with `sips`, and visually inspect the PNG for clipping, overlap, cramped padding, and excessive empty columns.
+- Keep header styling consistent with the article visual family: solid cyan header, white table body, thin cyan grid lines, and dark text.
+- Prefer `PingFang SC, Avenir Next, Helvetica Neue, sans-serif` for mixed Chinese/English table text to reduce baseline drift in PNG export. Use monospace only for code, commands, target triples, and environment variables, with `Consolas` first in the code font stack.
+- For tables where wrapping or column widths need precise control, edit the HTML table directly inside the SVG `foreignObject`, including column widths, padding, and manual line breaks.
+- Set `foreignObject` width/height to the rendered table size. Keep the outer SVG `width`/`height` and `viewBox` consistent with that table size.
+- Because `rsvg-convert` does not reliably render `foreignObject`, export table PNG files with `bun scripts/export-svg-png.js path/to/table.svg`. Verify dimensions with `sips`, and visually inspect the PNG for clipping, overlap, cramped padding, and excessive empty columns.
+
+## WeChat HTML Publishing
+
+When the user asks to generate a WeChat public account HTML version of an article, use the `gzh-design` skill.
+
+- Generate the clean HTML fragment and the preview HTML in the same article day directory.
+- The clean HTML must be a pure `<section>...</section>` fragment, without `<!DOCTYPE>`, `<html>`, `<head>`, or `<body>`.
+- Use the Graphite Minimal / 石墨极简风 theme by default unless the user explicitly asks for another theme.
+- Do not add a top branding/title card such as `GRAPHITE MINIMAL` or a repeated article title unless explicitly requested.
+- Do not add a `本文看点` / highlights / TOC teaser section unless explicitly requested.
+- Do not add the default author placeholder sentence `我是 {{作者名}}，{{简介}}。` unless the user explicitly asks for an author signature.
+- Do not add final interaction / CTA blocks such as `点赞、在看、转发三连`, and do not add a decorative final `END` block.
+- Do not include the `参考资料` section in generated WeChat HTML unless the user explicitly asks to keep references.
+- Render unordered list items without pill/card background colors. Keep list markers subtle, and keep inline code backgrounds only for code spans.
+- If the Markdown article has corresponding table SVG assets in the same directory, replace those Markdown tables in the generated WeChat HTML with image components, instead of rendering them as HTML tables or linking to external files.
+- Match table assets to Markdown tables by topic and order. For example, `*-summary-table.svg` or its PNG export should replace the opening summary table, target mapping tables should use `*-target-map`, and libc comparison tables should use `*-libc-choice`.
+- Because WeChat does not reliably display SVG images, export table SVG assets to PNG and embed the PNGs as `data:image/png;base64,...` URLs in the clean HTML.
+- Do not add an extra visual frame around table images. The image wrapper should not have border, background, shadow, or padding; keep only simple spacing and centered image alignment.
+- After editing the clean HTML fragment, rerun the `gzh-design` validation script and regenerate the preview page with `wrap_preview.py`.
+- Generated WeChat HTML files should remain ignored by git under `/articles/*/*/*/*.html`.
 
 ## Cover PNG Export
 

@@ -1,39 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1540" height="468" viewBox="0 0 1540 468" role="img" aria-label="Huge pages runtime recommendation table">
-  <defs>
-    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
-      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#8ac9d8" stroke-width="1" opacity="0.12"/>
-    </pattern>
-    <filter id="shadow" x="-4%" y="-8%" width="108%" height="116%">
-      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#006d88" flood-opacity="0.10"/>
-    </filter>
-  </defs>
-  <rect width="1540" height="468" fill="#fbfdff"/>
-  <rect width="1540" height="468" fill="url(#grid)"/>
-  <g transform="translate(24 24)" filter="url(#shadow)">
-    <rect width="1492" height="420" rx="24" fill="#ffffff" stroke="#b7e8f2" stroke-width="2"/>
-    <rect width="1492" height="60" rx="24" fill="#e6f9fd"/>
-    <path d="M 0 60 H 1492" stroke="#00add8" stroke-width="3"/>
-    <path d="M 280 0 V 420" stroke="#d7eef3" stroke-width="2"/>
-    <path d="M 0 120 H 1492 M 0 180 H 1492 M 0 240 H 1492 M 0 300 H 1492 M 0 360 H 1492" stroke="#d7eef3" stroke-width="2"/>
-    <g font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" font-size="24" letter-spacing="0">
-      <g fill="#0b2533" font-weight="850">
-        <text x="34" y="38">运行时/系统</text>
-        <text x="314" y="38">建议</text>
-      </g>
-      <g fill="#12313d" font-weight="650">
-        <text x="34" y="98">PostgreSQL/MySQL</text>
-        <text x="314" y="98">优先看官方 huge page 配置，配合 shared buffer/buffer pool 大小规划。</text>
-        <text x="34" y="158">Redis</text>
-        <text x="314" y="158">通常谨慎对待 THP，重点观察 fork、持久化和延迟。</text>
-        <text x="34" y="218">JVM</text>
-        <text x="314" y="218">不要只看堆大小，结合 GC、region size、启动参数和容器限制测试。</text>
-        <text x="34" y="278">Go 服务</text>
-        <text x="314" y="278">默认先保守，除非 pprof/perf 证明 TLB 或 page walk 是瓶颈。</text>
-        <text x="34" y="338">DPDK</text>
-        <text x="314" y="338">HugeTLB 通常是基础要求，需要按 NUMA 和网卡拓扑规划。</text>
-        <text x="34" y="398">KVM</text>
-        <text x="314" y="398">大页可能有明显收益，但要和 vCPU 绑核、内存绑定、迁移策略一起看。</text>
-      </g>
-    </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="482" viewBox="0 0 1060 482" role="img"
+  aria-label="Huge pages runtime guidance table">
+  <foreignObject width="1060" height="482">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1060px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 260px; }
+        col:nth-child(2) { width: 800px; }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>运行时/系统</th>
+            <th>建议</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PostgreSQL/MySQL</td>
+            <td>优先看官方 huge page 配置，配合 shared buffer/buffer pool 大小规划。</td>
+          </tr>
+          <tr>
+            <td>Redis</td>
+            <td>通常谨慎对待 THP，重点观察 fork、持久化和延迟。</td>
+          </tr>
+          <tr>
+            <td>JVM</td>
+            <td>不要只看堆大小，结合 GC、region size、启动参数和容器限制测试。</td>
+          </tr>
+          <tr>
+            <td>Go 服务</td>
+            <td>默认先保守，除非 pprof/perf 证明 TLB 或 page walk 是瓶颈。</td>
+          </tr>
+          <tr>
+            <td>DPDK</td>
+            <td>HugeTLB 通常是基础要求，需要按 NUMA 和网卡拓扑规划。</td>
+          </tr>
+          <tr>
+            <td>KVM</td>
+            <td>大页可能有明显收益，但要和 vCPU 绑核、内存绑定、迁移策略一起看。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
 </svg>

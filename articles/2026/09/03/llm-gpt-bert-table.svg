@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="282" viewBox="0 0 560 282" role="img"
-  aria-label="Memory page count comparison table">
-  <foreignObject width="560" height="282">
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="188" viewBox="0 0 1440 188" role="img"
+  aria-label="llm gpt bert table">
+  <foreignObject width="1440" height="188">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
         body { margin: 0; }
         table {
-          width: 560px;
+          width: 1440px;
           border-collapse: separate;
           border-spacing: 0;
           table-layout: fixed;
@@ -34,42 +34,50 @@
         td {
           background: #ffffff;
         }
-        th:nth-child(2), th:nth-child(3),
-        td:nth-child(2), td:nth-child(3) {
-          text-align: right;
+        col:nth-child(1) { width: 150px; }
+        col:nth-child(2) { width: 360px; }
+        col:nth-child(3) { width: 220px; }
+        col:nth-child(4) { width: 300px; }
+        col:nth-child(5) { width: 410px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
         }
-        col:nth-child(1) { width: 110px; }
-        col:nth-child(2) { width: 260px; }
-        col:nth-child(3) { width: 190px; }
       </style>
       <table>
         <colgroup>
           <col />
           <col />
           <col />
+          <col />
+          <col />
         </colgroup>
         <thead>
           <tr>
-            <th>页大小</th>
-            <th>覆盖 1GB 需要的页数</th>
-            <th>相对 4KB 页</th>
+            <th>路线</th>
+            <th>代表模型</th>
+            <th>架构倾向</th>
+            <th>擅长任务</th>
+            <th>后续影响</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>4KB</td>
-            <td>262144</td>
-            <td>1 倍</td>
+            <td>GPT</td>
+            <td>GPT-1、GPT-2、GPT-3</td>
+            <td>Decoder-only</td>
+            <td>生成、补全、对话</td>
+            <td>走向 ChatGPT 和通用助手</td>
           </tr>
           <tr>
-            <td>2MB</td>
-            <td>512</td>
-            <td>少 512 倍</td>
-          </tr>
-          <tr>
-            <td>1GB</td>
-            <td>1</td>
-            <td>少 262144 倍</td>
+            <td>BERT</td>
+            <td>BERT、RoBERTa 等</td>
+            <td>Encoder-only</td>
+            <td>分类、抽取、检索理解</td>
+            <td>深入搜索、推荐、NLP 业务系统</td>
           </tr>
         </tbody>
       </table>

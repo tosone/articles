@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="1180" viewBox="0 0 980 1180" role="img"
+  aria-label="attack malicious packages table">
+  <foreignObject width="980" height="1180">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 980px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 340px; }
+        col:nth-child(2) { width: 640px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>包名</th>
+            <th>角色</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>lib-mtop</code></td>
+            <td>早期入口和 downloader。</td>
+          </tr>
+          <tr>
+            <td><code>aone-kit</code></td>
+            <td>顶层诱饵包，模仿内部工具命名。</td>
+          </tr>
+          <tr>
+            <td><code>aone-kit-cli</code></td>
+            <td>顶层诱饵包。</td>
+          </tr>
+          <tr>
+            <td><code>aone-sandbox</code></td>
+            <td>顶层诱饵包。</td>
+          </tr>
+          <tr>
+            <td><code>local-config-parser</code></td>
+            <td>配置解析器，负责读取并执行规则。</td>
+          </tr>
+          <tr>
+            <td><code>smart-config-manager</code></td>
+            <td>中间层桥接包，把诱饵包连接到低层 loader。</td>
+          </tr>
+          <tr>
+            <td><code>cloud-config-fetcher</code></td>
+            <td>获取远程配置并写入本地隐藏文件。</td>
+          </tr>
+          <tr>
+            <td><code>fast-transform-pipeline</code></td>
+            <td>低层或测试性质组件，参与分层投递。</td>
+          </tr>
+          <tr>
+            <td><code>aone-cloud-cli</code></td>
+            <td>顶层诱饵包。</td>
+          </tr>
+          <tr>
+            <td><code>colder-cli</code></td>
+            <td>顶层诱饵包。</td>
+          </tr>
+          <tr>
+            <td><code>def-open-client</code></td>
+            <td>顶层诱饵包。</td>
+          </tr>
+          <tr>
+            <td><code>feedback-ai-sdk</code></td>
+            <td>顶层诱饵包。</td>
+          </tr>
+          <tr>
+            <td><code>flight-compare-analyzer</code></td>
+            <td>顶层诱饵包。</td>
+          </tr>
+          <tr>
+            <td><code>lwp-web-client</code></td>
+            <td>顶层诱饵包。</td>
+          </tr>
+          <tr>
+            <td><code>lzd-unified-station-sdk</code></td>
+            <td>顶层诱饵包。</td>
+          </tr>
+          <tr>
+            <td><code>open-worker-cli</code></td>
+            <td>顶层诱饵包。</td>
+          </tr>
+          <tr>
+            <td><code>test-skill-zip</code></td>
+            <td>顶层诱饵包。</td>
+          </tr>
+          <tr>
+            <td><code>uniapi-bridge</code></td>
+            <td>顶层诱饵包。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2040" height="529" viewBox="0 0 2040 529" role="img"
+  aria-label="deno summary table">
+  <foreignObject width="2040" height="529">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 2040px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 360px; }
+        col:nth-child(2) { width: 900px; }
+        col:nth-child(3) { width: 780px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>问题</th>
+            <th>Deno 的答案</th>
+            <th>工程含义</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>还能不能迁移现有 Node 项目</td>
+            <td>Deno 2 开始强调 Node.js 和 npm 兼容，支持 <code>package.json</code>、<code>node_modules</code>、npm 包和工作区。</td>
+            <td>Deno 不再要求团队用“重写生态”的方式试用它，可以从工具链、测试、脚本、服务局部迁移。</td>
+          </tr>
+          <tr>
+            <td>AI 时代有什么新动作</td>
+            <td>Claw Patrol 把 Agent 到生产系统之间的网络和协议访问放到外部策略层控制。</td>
+            <td>Deno 把安全沙箱思路延伸到 Agent 基建，而不是只做聊天应用或 IDE 插件。</td>
+          </tr>
+          <tr>
+            <td>商业化靠什么</td>
+            <td>Deno Deploy、Deno Subhosting、Deno Sandbox、JSR 等产品组成运行和分发基础设施。</td>
+            <td>它更像面向平台团队和 SaaS 厂商的底座，而不是单纯的本地 runtime。</td>
+          </tr>
+          <tr>
+            <td>为什么声量不如 Bun</td>
+            <td>Bun 的性能叙事、All-in-One 体验和高频传播更适合社交媒体扩散。</td>
+            <td>开发者心智被“更快、更爽、更少配置”抓住，Deno 的安全和标准化价值需要更长周期验证。</td>
+          </tr>
+          <tr>
+            <td>应该怎么选</td>
+            <td>Bun 适合追求本地开发速度和一体化工具链的团队；Deno 适合重视权限、安全边界、标准 API 和边缘部署的团队。</td>
+            <td>不要按热度选 runtime，要按项目风险模型、生态依赖和部署形态选。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

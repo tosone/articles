@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2320" height="494" viewBox="0 0 2320 494" role="img"
-  aria-label="Go generic methods capability table">
-  <foreignObject x="0" y="0" width="2320" height="494">
+<svg xmlns="http://www.w3.org/2000/svg" width="1880" height="584" viewBox="0 0 1880 584" role="img"
+  aria-label="Bun and Node.js runtime choice table">
+  <foreignObject x="0" y="0" width="1880" height="584">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
         body { margin: 0; }
         table {
-          width: 2320px;
+          width: 1880px;
           border-collapse: separate;
           border-spacing: 0;
           table-layout: fixed;
@@ -17,9 +17,9 @@
           color: #173642;
           letter-spacing: 0;
         }
-        col:nth-child(1) { width: 300px; }
-        col:nth-child(2) { width: 1290px; }
-        col:nth-child(3) { width: 730px; }
+        col:nth-child(1) { width: 360px; }
+        col:nth-child(2) { width: 700px; }
+        col:nth-child(3) { width: 820px; }
         th, td {
           padding: 22px 28px;
           border-right: 2px solid #d5eef4;
@@ -50,10 +50,6 @@
         }
         th:last-child, td:last-child { border-right: 0; }
         tr:last-child td { border-bottom: 0; }
-        code {
-          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
-          font-size: 0.94em;
-        }
       </style>
       <table>
         <colgroup>
@@ -63,36 +59,41 @@
         </colgroup>
         <thead>
           <tr>
-            <th>能力</th>
-            <th>Go 1.18 到 Go 1.26</th>
-            <th>Go 1.27</th>
+            <th>项目类型</th>
+            <th>更适合 Bun</th>
+            <th>更适合 Node.js</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>泛型类型</td>
-            <td>支持，例如 <code>type Set[T comparable] map[T]struct{}</code></td>
-            <td>继续支持</td>
+            <td>新 TypeScript 服务</td>
+            <td>想要低配置、快速启动、少工具链，且依赖较新。</td>
+            <td>公司运行基线必须统一 Node LTS。</td>
           </tr>
           <tr>
-            <td>泛型函数</td>
-            <td>支持，例如 <code>func Map[T, U any](...) ...</code></td>
-            <td>继续支持</td>
+            <td>旧 Express/Fastify 服务</td>
+            <td>依赖简单，测试完整，性能或内存有明确痛点。</td>
+            <td>依赖老插件、native addon、APM agent 或复杂 monkey patch。</td>
           </tr>
           <tr>
-            <td>泛型方法</td>
-            <td>方法只能使用接收者类型已有的类型参数</td>
-            <td>方法可以声明自己的类型参数</td>
+            <td>CLI / 内部工具</td>
+            <td>启动速度、单二进制体验、直接跑 TS 很重要。</td>
+            <td>分发环境只保证 Node，或依赖 Node 专属调试工具。</td>
           </tr>
           <tr>
-            <td>接口方法类型参数</td>
-            <td>不支持</td>
-            <td>仍然不建议理解为完整 trait 系统</td>
+            <td>Serverless / Edge</td>
+            <td>冷启动敏感，依赖轻，能接受 runtime 灰度。</td>
+            <td>平台只支持 Node LTS，或合规要求保守。</td>
           </tr>
           <tr>
-            <td>高阶类型参数</td>
-            <td>不支持</td>
-            <td>仍不支持</td>
+            <td>大型前端 monorepo</td>
+            <td>install/test/build 时间是主要瓶颈。</td>
+            <td>现有 pnpm/Vite/Vitest 缓存和插件链已经稳定。</td>
+          </tr>
+          <tr>
+            <td>企业核心系统</td>
+            <td>适合作为灰度或新模块试点。</td>
+            <td>默认仍应选择 Node LTS，除非收益被实测证明。</td>
           </tr>
         </tbody>
       </table>

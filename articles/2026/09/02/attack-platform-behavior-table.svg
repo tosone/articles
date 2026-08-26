@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="362" viewBox="0 0 1160 362" role="img"
-  aria-label="Huge pages validation metrics table">
-  <foreignObject width="1160" height="362">
+<svg xmlns="http://www.w3.org/2000/svg" width="1610" height="343" viewBox="0 0 1610 343" role="img"
+  aria-label="attack platform behavior table">
+  <foreignObject width="1610" height="343">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
         body { margin: 0; }
         table {
-          width: 1160px;
+          width: 1610px;
           border-collapse: separate;
           border-spacing: 0;
           table-layout: fixed;
@@ -34,8 +34,9 @@
         td {
           background: #ffffff;
         }
-        col:nth-child(1) { width: 210px; }
-        col:nth-child(2) { width: 950px; }
+        col:nth-child(1) { width: 150px; }
+        col:nth-child(2) { width: 780px; }
+        col:nth-child(3) { width: 680px; }
         code {
           font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
           font-size: 0.92em;
@@ -48,33 +49,30 @@
         <colgroup>
           <col />
           <col />
+          <col />
         </colgroup>
         <thead>
           <tr>
-            <th>维度</th>
-            <th>观察指标</th>
+            <th>平台</th>
+            <th>公开报道中的行为</th>
+            <th>防守关注点</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>CPU 地址翻译</td>
-            <td><code>dTLB-load-misses</code>、<code>iTLB-load-misses</code>、page walk 相关事件</td>
+            <td>Windows</td>
+            <td>尝试终止或替换 Alilang 相关企业安全、VPN、办公应用核心文件，例如 <code>app.asar</code>。</td>
+            <td>检查企业工具安装目录、asar 文件哈希、异常进程终止记录。</td>
           </tr>
           <tr>
-            <td>内存行为</td>
-            <td>RSS、page cache、major/minor fault、swap、NUMA remote access</td>
+            <td>Linux</td>
+            <td>下载二进制到 <code>/tmp</code>，后台运行后删除磁盘文件。</td>
+            <td>检查 <code>/tmp</code> 执行痕迹、进程树、bash/zsh 历史、EDR 进程事件。</td>
           </tr>
           <tr>
-            <td>内核行为</td>
-            <td>compaction、khugepaged、direct reclaim、kswapd</td>
-          </tr>
-          <tr>
-            <td>业务效果</td>
-            <td>QPS、平均延迟、P95、P99、P999、错误率</td>
-          </tr>
-          <tr>
-            <td>稳定性</td>
-            <td>OOM、分配失败、容器重启、节点不可调度</td>
+            <td>macOS</td>
+            <td>修改 <code>~/.zshrc</code> 并创建 10 分钟周期的 Launch Agent。</td>
+            <td>检查 shell 启动文件、<code>~/Library/LaunchAgents</code>、定时任务和登录项。</td>
           </tr>
         </tbody>
       </table>

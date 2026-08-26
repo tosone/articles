@@ -95,7 +95,7 @@ async function openArticle(article) {
     coverWrap.innerHTML = article.cover
       ? `<img src="${escapeAttr(`${contentRoot}${article.cover}`)}" alt="${escapeAttr(article.title)}">`
       : "";
-    content.innerHTML = renderMarkdown(markdown);
+    content.innerHTML = renderMarkdown(markdown, article.path);
     document.title = `${article.title} - Articles`;
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -121,12 +121,13 @@ function restartReaderAnimation() {
   reader.classList.add("reader-enter");
 }
 
-function renderMarkdown(markdown) {
+function renderMarkdown(markdown, articlePath = "") {
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const html = [];
   let paragraph = [];
   let listType = "";
   let table = [];
+  let pendingTableSvg = "";
   let quote = [];
   let inCode = false;
   let inComment = false;
@@ -151,6 +152,15 @@ function renderMarkdown(markdown) {
 
   const flushTable = () => {
     if (!table.length) {
+      return;
+    }
+    if (pendingTableSvg) {
+      const src = resolveArticleAsset(articlePath, pendingTableSvg);
+      html.push(
+        `<figure class="table-svg"><img src="${escapeAttr(src)}" alt=""></figure>`,
+      );
+      table = [];
+      pendingTableSvg = "";
       return;
     }
     const rows = table.filter(
@@ -248,7 +258,18 @@ function renderMarkdown(markdown) {
       continue;
     }
 
-    if (line.trim().startsWith("<!--")) {
+    const comment = line.trim();
+    const tableSvg = comment.match(/^<!--\s*table-svg:\s*(.+?)\s*-->$/);
+    if (tableSvg) {
+      flushParagraph();
+      flushList();
+      flushTable();
+      flushQuote();
+      pendingTableSvg = tableSvg[1].trim();
+      continue;
+    }
+
+    if (comment.startsWith("<!--")) {
       flushParagraph();
       flushList();
       flushTable();
@@ -378,6 +399,14 @@ function splitTableRow(row) {
     .replace(/\|$/, "")
     .split("|")
     .map((cell) => cell.trim());
+}
+
+function resolveArticleAsset(articlePath, assetPath) {
+  if (/^(?:https?:)?\/\//.test(assetPath) || assetPath.startsWith("/")) {
+    return assetPath;
+  }
+  const basePath = articlePath.split("/").slice(0, -1).join("/");
+  return `${contentRoot}${basePath}/${assetPath}`;
 }
 
 function inline(text) {

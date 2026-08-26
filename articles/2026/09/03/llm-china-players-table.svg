@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="890" height="560" viewBox="0 0 890 560" role="img"
+  aria-label="llm china players table">
+  <foreignObject width="890" height="560">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 890px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 150px; }
+        col:nth-child(2) { width: 250px; }
+        col:nth-child(3) { width: 490px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>公司或团队</th>
+            <th>代表模型/产品</th>
+            <th>更值得关注的方向</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>百度</td>
+            <td>文心一言 / ERNIE</td>
+            <td>搜索、知识增强、办公和云服务。</td>
+          </tr>
+          <tr>
+            <td>阿里</td>
+            <td>通义千问 Qwen</td>
+            <td>开源模型、云服务、企业应用和工具链。</td>
+          </tr>
+          <tr>
+            <td>字节跳动</td>
+            <td>豆包</td>
+            <td>产品入口、内容生态、对话和应用分发。</td>
+          </tr>
+          <tr>
+            <td>智谱 AI</td>
+            <td>ChatGLM / GLM</td>
+            <td>国产基座模型、高校技术源流、企业服务。</td>
+          </tr>
+          <tr>
+            <td>月之暗面</td>
+            <td>Kimi</td>
+            <td>长上下文、阅读、搜索和内容处理。</td>
+          </tr>
+          <tr>
+            <td>MiniMax</td>
+            <td>abab / 海螺等</td>
+            <td>多模态、语音、角色对话和消费应用。</td>
+          </tr>
+          <tr>
+            <td>零一万物</td>
+            <td>Yi</td>
+            <td>开源模型和创业公司路径。</td>
+          </tr>
+          <tr>
+            <td>DeepSeek</td>
+            <td>DeepSeek-V3 / R1</td>
+            <td>MoE、开源推理、低成本训练和部署。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="591" viewBox="0 0 1120 591" role="img"
+  aria-label="attack response checklist table">
+  <foreignObject width="1120" height="591">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1120px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 200px; }
+        col:nth-child(2) { width: 920px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>检查项</th>
+            <th>具体动作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>registry 策略</td>
+            <td>固定 <code>@scope</code> 到内部 registry，禁止未授权 fallback 到公开 npm。</td>
+          </tr>
+          <tr>
+            <td>包名保护</td>
+            <td>为内部常用包名建立公开 registry 监控，发现同名、近似名、品牌相关包及时告警。</td>
+          </tr>
+          <tr>
+            <td>lockfile 审查</td>
+            <td>PR 中强制展示 lockfile diff，标出新增发布者、新包、install scripts、近期低下载包。</td>
+          </tr>
+          <tr>
+            <td>安装期执行</td>
+            <td>CI 默认禁用 scripts，对必须启用的包建立 allowlist。</td>
+          </tr>
+          <tr>
+            <td>终端监控</td>
+            <td>覆盖开发者工作站的进程、网络、启动项、脚本目录和敏感文件访问。</td>
+          </tr>
+          <tr>
+            <td>凭证治理</td>
+            <td>使用短期凭证和最小权限，避免开发机保存可长期访问生产的密钥。</td>
+          </tr>
+          <tr>
+            <td>工具完整性</td>
+            <td>对 IDE 插件、企业 IM、AI skills、本地 CLI 扩展做哈希或签名校验。</td>
+          </tr>
+          <tr>
+            <td>事件演练</td>
+            <td>预先准备“恶意包已安装”的响应流程：隔离、取证、轮换、回溯、重建。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

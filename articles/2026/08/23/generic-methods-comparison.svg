@@ -1,76 +1,118 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="3200" height="660" viewBox="0 0 3200 660" role="img" aria-label="Generic methods comparison table">
-  <defs>
-    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fbfdff"/>
-      <stop offset="0.58" stop-color="#edfaff"/>
-      <stop offset="1" stop-color="#f6f1e6"/>
-    </linearGradient>
-    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#00add8"/>
-      <stop offset="1" stop-color="#12c7b8"/>
-    </linearGradient>
-    <filter id="shadow" x="-5%" y="-8%" width="110%" height="116%">
-      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#006d88" flood-opacity="0.12"/>
-    </filter>
-    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
-      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#00add8" stroke-width="1" opacity="0.08"/>
-    </pattern>
-  </defs>
-
-  <rect width="3200" height="660" fill="url(#paper)"/>
-  <rect width="3200" height="660" fill="url(#grid)"/>
-
-  <g transform="translate(24 50)" filter="url(#shadow)">
-    <rect x="0" y="0" width="3152" height="560" rx="24" fill="#ffffff"/>
-    <rect x="0" y="0" width="3152" height="88" rx="24" fill="url(#header)"/>
-    <path d="M 0 64 H 3152 V 88 H 0 Z" fill="url(#header)"/>
-
-    <g font-family="Avenir Next, Helvetica Neue, PingFang SC, sans-serif" letter-spacing="0">
-      <text x="40" y="56" fill="#ffffff" font-size="28" font-weight="850">语言</text>
-      <text x="320" y="56" fill="#ffffff" font-size="28" font-weight="850">泛型方法形态</text>
-      <text x="1140" y="56" fill="#ffffff" font-size="28" font-weight="850">类型信息</text>
-      <text x="1860" y="56" fill="#ffffff" font-size="28" font-weight="850">主要优势</text>
-      <text x="2500" y="56" fill="#ffffff" font-size="28" font-weight="850">主要代价</text>
-    </g>
-
-    <g stroke="#d5eef4" stroke-width="2">
-      <path d="M 280 0 V 560"/>
-      <path d="M 1100 0 V 560"/>
-      <path d="M 1820 0 V 560"/>
-      <path d="M 2460 0 V 560"/>
-      <path d="M 0 198 H 3152"/>
-      <path d="M 0 308 H 3152"/>
-      <path d="M 0 418 H 3152"/>
-      <path d="M 0 528 H 3152"/>
-    </g>
-
-    <g font-family="Avenir Next, Helvetica Neue, PingFang SC, sans-serif" letter-spacing="0">
-      <rect x="0" y="88" width="3152" height="110" fill="#f7fcfe"/>
-      <rect x="0" y="308" width="3152" height="110" fill="#f7fcfe"/>
-
-      <text x="40" y="154" fill="#0b2533" font-size="30" font-weight="850">Go 1.27</text>
-      <text x="320" y="154" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">func (s Stream[T]) Map[U any](...) Stream[U]</text>
-      <text x="1140" y="154" fill="#173642" font-size="28" font-weight="650">编译期检查，保留 Go 的接口和包级编译模型</text>
-      <text x="1860" y="154" fill="#173642" font-size="28" font-weight="650">API 组织更自然，复杂度受控</text>
-      <text x="2500" y="154" fill="#173642" font-size="28" font-weight="650">表达力仍有限，不能当作 trait / HKT 使用</text>
-
-      <text x="40" y="264" fill="#0b2533" font-size="30" font-weight="850">C++</text>
-      <text x="320" y="264" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">template &lt;typename U&gt; Stream&lt;U&gt; map(...)</text>
-      <text x="1140" y="264" fill="#173642" font-size="28" font-weight="650">编译期模板实例化</text>
-      <text x="1860" y="264" fill="#173642" font-size="28" font-weight="650">表达力极强，零成本抽象空间大</text>
-      <text x="2500" y="264" fill="#173642" font-size="28" font-weight="650">编译成本、错误信息和复杂度高</text>
-
-      <text x="40" y="374" fill="#0b2533" font-size="30" font-weight="850">TypeScript</text>
-      <text x="320" y="374" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">map&lt;U&gt;(fn: (item: T) =&gt; U): Stream&lt;U&gt;</text>
-      <text x="1140" y="374" fill="#173642" font-size="28" font-weight="650">编译期类型，运行时擦除</text>
-      <text x="1860" y="374" fill="#173642" font-size="28" font-weight="650">推断强，类型变换能力丰富，写法自然</text>
-      <text x="2500" y="374" fill="#173642" font-size="28" font-weight="650">运行时没有泛型保证，类型可能和真实数据脱节</text>
-
-      <text x="40" y="484" fill="#0b2533" font-size="30" font-weight="850">Rust</text>
-      <text x="320" y="484" fill="#173642" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="25" font-weight="750">fn map&lt;U, F&gt;(self, f: F) -&gt; Stream&lt;U&gt;</text>
-      <text x="1140" y="484" fill="#173642" font-size="28" font-weight="650">编译期单态化，trait bound 明确</text>
-      <text x="1860" y="484" fill="#173642" font-size="28" font-weight="650">类型安全强，零成本抽象和 trait 组合成熟</text>
-      <text x="2500" y="484" fill="#173642" font-size="28" font-weight="650">trait object / object safety 边界更复杂</text>
-    </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="3170" height="412" viewBox="0 0 3170 412" role="img"
+  aria-label="Generic methods comparison table">
+  <foreignObject x="0" y="0" width="3170" height="412">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 3170px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          overflow: hidden;
+          border-radius: 0;
+          background: #ffffff;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          color: #173642;
+          letter-spacing: 0;
+        }
+        col:nth-child(1) { width: 270px; }
+        col:nth-child(2) { width: 900px; }
+        col:nth-child(3) { width: 690px; }
+        col:nth-child(4) { width: 620px; }
+        col:nth-child(5) { width: 690px; }
+        th, td {
+          padding: 22px 28px;
+          border-right: 2px solid #d5eef4;
+          border-bottom: 2px solid #d5eef4;
+          text-align: left;
+          vertical-align: middle;
+          line-height: 1.45;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+          white-space: normal;
+        }
+        th {
+          height: 82px;
+          background: #00add8;
+          color: #ffffff;
+          font-size: 28px;
+          font-weight: 850;
+        }
+        td {
+          font-size: 24px;
+          font-weight: 650;
+        }
+        td:first-child {
+          color: #0b2533;
+          font-size: 25px;
+          font-weight: 850;
+        }
+        th:last-child, td:last-child { border-right: 0; }
+        tr:last-child td { border-bottom: 0; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.94em;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>语言</th>
+            <th>泛型方法形态</th>
+            <th>类型信息</th>
+            <th>主要优势</th>
+            <th>主要代价</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Go 1.27</td>
+            <td>
+              <code>func (s Stream[T]) Map[U any](...) Stream[U]</code>
+            </td>
+            <td>编译期检查，保留 Go 的接口和包级编译模型</td>
+            <td>API 组织更自然，复杂度受控</td>
+            <td>表达力仍有限，不能当作 trait / HKT 使用</td>
+          </tr>
+          <tr>
+            <td>C++</td>
+            <td>
+              <code>template &lt;typename U&gt; Stream&lt;U&gt; map(...)</code>
+            </td>
+            <td>编译期模板实例化</td>
+            <td>表达力极强，零成本抽象空间大</td>
+            <td>编译成本、错误信息和复杂度高</td>
+          </tr>
+          <tr>
+            <td>TypeScript</td>
+            <td>
+              <code>map&lt;U&gt;(fn: (item: T) =&gt; U): Stream&lt;U&gt;</code>
+            </td>
+            <td>编译期类型，运行时擦除</td>
+            <td>推断强，类型变换能力丰富，写法自然</td>
+            <td>运行时没有泛型保证，类型可能和真实数据脱节</td>
+          </tr>
+          <tr>
+            <td>Rust</td>
+            <td>
+              <code>fn map&lt;U, F&gt;(self, f: F) -&gt; Stream&lt;U&gt;</code>
+            </td>
+            <td>编译期单态化，trait bound 明确</td>
+            <td>类型安全强，零成本抽象和 trait 组合成熟</td>
+            <td>trait object / object safety 边界更复杂</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
 </svg>

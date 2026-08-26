@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="362" viewBox="0 0 1160 362" role="img"
-  aria-label="Huge pages validation metrics table">
-  <foreignObject width="1160" height="362">
+<svg xmlns="http://www.w3.org/2000/svg" width="1580" height="405" viewBox="0 0 1580 405" role="img"
+  aria-label="attack patterns table">
+  <foreignObject width="1580" height="405">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
         body { margin: 0; }
         table {
-          width: 1160px;
+          width: 1580px;
           border-collapse: separate;
           border-spacing: 0;
           table-layout: fixed;
@@ -34,8 +34,9 @@
         td {
           background: #ffffff;
         }
-        col:nth-child(1) { width: 210px; }
-        col:nth-child(2) { width: 950px; }
+        col:nth-child(1) { width: 360px; }
+        col:nth-child(2) { width: 520px; }
+        col:nth-child(3) { width: 700px; }
         code {
           font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
           font-size: 0.92em;
@@ -48,33 +49,40 @@
         <colgroup>
           <col />
           <col />
+          <col />
         </colgroup>
         <thead>
           <tr>
-            <th>维度</th>
-            <th>观察指标</th>
+            <th>类型</th>
+            <th>传统风险</th>
+            <th>这次体现</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>CPU 地址翻译</td>
-            <td><code>dTLB-load-misses</code>、<code>iTLB-load-misses</code>、page walk 相关事件</td>
+            <td>dependency confusion</td>
+            <td>公开包和私有包同名，解析策略错误。</td>
+            <td>未加 scope 的包模仿 <code>@ali</code> 私有包命名，诱导目标环境安装。</td>
           </tr>
           <tr>
-            <td>内存行为</td>
-            <td>RSS、page cache、major/minor fault、swap、NUMA remote access</td>
+            <td>typosquatting / brand impersonation</td>
+            <td>名字相近，靠人工误装。</td>
+            <td><code>aone-*</code>、<code>lzd-*</code>、<code>uniapi-*</code> 等命名贴近目标组织语境。</td>
           </tr>
           <tr>
-            <td>内核行为</td>
-            <td>compaction、khugepaged、direct reclaim、kswapd</td>
+            <td>staged loader</td>
+            <td>包安装后下载二阶段。</td>
+            <td>远程配置、<code>setting.js</code>、平台专属 payload 分层执行。</td>
           </tr>
           <tr>
-            <td>业务效果</td>
-            <td>QPS、平均延迟、P95、P99、P999、错误率</td>
+            <td>living off trusted infra</td>
+            <td>借用可信服务降低告警。</td>
+            <td>GitHub 获取配置，阿里云形态域名承载后续载荷。</td>
           </tr>
           <tr>
-            <td>稳定性</td>
-            <td>OOM、分配失败、容器重启、节点不可调度</td>
+            <td>toolchain persistence</td>
+            <td>在开发工具或协作工具里驻留。</td>
+            <td>针对 DingTalk、Wukong、Qoder、<code>.skills</code> 目录做后续执行。</td>
           </tr>
         </tbody>
       </table>
