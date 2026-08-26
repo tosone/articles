@@ -125,10 +125,10 @@
       font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="28"
       letter-spacing="0">BUN 1.4.0</text>
 
-    <text x="0" y="190" fill="#0b2533"
+    <text x="0" y="190" fill="#0b2533" font-weight="900"
       font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="118"
       letter-spacing="0">Rust Runtime</text>
-    <text x="0" y="304" fill="#12313d"
+    <text x="0" y="304" fill="#12313d" font-weight="800"
       font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="72"
       letter-spacing="0">从 Zig 到 Rust 的一次底座重写</text>
     <text x="2" y="384" fill="#5b6f79"
