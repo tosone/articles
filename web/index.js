@@ -91,10 +91,13 @@ async function openArticle(article) {
   }
 
   const markdown = await response.text();
+  const coverHtml = await renderCover(article);
+  if (state.loadId !== loadId) {
+    return;
+  }
+
   const updateArticle = () => {
-    coverWrap.innerHTML = article.cover
-      ? `<img src="${escapeAttr(`${contentRoot}${article.cover}`)}" alt="${escapeAttr(article.title)}">`
-      : "";
+    coverWrap.innerHTML = coverHtml;
     content.innerHTML = renderMarkdown(markdown, article.path);
     document.title = `${article.title} - Articles`;
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -113,6 +116,19 @@ async function openArticle(article) {
   }
 
   await highlightCodeBlocks(article.path);
+}
+
+async function renderCover(article) {
+  if (!article.cover) {
+    return "";
+  }
+  const src = `${contentRoot}${article.cover}`;
+
+  const response = await fetch(src, { cache: "no-store" });
+  if (!response.ok) {
+    return `<img src="${escapeAttr(src)}" alt="${escapeAttr(article.title)}">`;
+  }
+  return await response.text();
 }
 
 function restartReaderAnimation() {

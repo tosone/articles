@@ -2,6 +2,20 @@
   role="img"
   aria-label="npm supply chain attack targeting Alibaba developer ecosystem article cover">
   <defs>
+    <style>
+      @font-face {
+        font-family: "Nunito";
+        src: url("https://cdn.jsdelivr.net/npm/@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+        font-weight: 200 1000;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Nunito Variable";
+        src: url("https://cdn.jsdelivr.net/npm/@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+        font-weight: 200 1000;
+        font-style: normal;
+      }
+    </style>
     <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#fbfdff" />
       <stop offset="0.58" stop-color="#edfaff" />
@@ -31,17 +45,17 @@
   <g transform="translate(170 158)">
     <rect x="0" y="0" width="288" height="58" rx="0" fill="#0b2533" />
     <text x="144" y="39" text-anchor="middle" fill="#ffffff"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="28"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="28"
       letter-spacing="0">SUPPLY CHAIN</text>
 
-    <text x="0" y="188" fill="#0b2533"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="112"
+    <text x="0" y="188" fill="#0b2533" font-weight="900"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="112"
       letter-spacing="0">npm 投毒</text>
-    <text x="0" y="304" fill="#12313d"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="70"
+    <text x="0" y="304" fill="#12313d" font-weight="800"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="70"
       letter-spacing="0">阿里开发者生态被定向攻击</text>
     <text x="2" y="384" fill="#5b6f79"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="34"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="34"
       letter-spacing="0">private package impersonation · staged loader · cross-platform RAT</text>
   </g>
 
@@ -52,7 +66,7 @@
       font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="30"
       letter-spacing="0">install -&gt; config -&gt; vm escape -&gt; aone-cli RAT</text>
     <text x="42" y="92" fill="#5b6f79"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="25"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="25"
       letter-spacing="0">developer workstation is part of the production security boundary</text>
   </g>
 

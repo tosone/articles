@@ -1,5 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2350" height="1000" viewBox="0 0 2350 1000" role="img" aria-label="Docker v29 to Moby v2 article cover">
   <defs>
+    <style>
+      @font-face {
+        font-family: "Nunito";
+        src: url("https://cdn.jsdelivr.net/npm/@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+        font-weight: 200 1000;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Nunito Variable";
+        src: url("https://cdn.jsdelivr.net/npm/@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+        font-weight: 200 1000;
+        font-style: normal;
+      }
+    </style>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0b1220"/>
       <stop offset="0.56" stop-color="#12303b"/>
@@ -14,25 +28,25 @@
   <rect width="2350" height="1000" fill="url(#grid)"/>
 
   <g transform="translate(170 138)">
-    <text x="0" y="0" fill="#93c5fd" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="36" font-weight="700" letter-spacing="0">Docker Engine v29</text>
-    <text x="0" y="106" fill="#f8fafc" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="88" font-weight="800" letter-spacing="0">从 Docker 到 Moby v2</text>
-    <text x="0" y="190" fill="#cbd5e1" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="38" font-weight="500" letter-spacing="0">模块迁移、兼容坑位与 Go SDK breaking changes</text>
+    <text x="0" y="0" fill="#93c5fd" font-family="Nunito, Nunito Variable, Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="36" font-weight="700" letter-spacing="0">Docker Engine v29</text>
+    <text x="0" y="106" fill="#f8fafc" font-family="Nunito, Nunito Variable, Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="88" font-weight="800" letter-spacing="0">从 Docker 到 Moby v2</text>
+    <text x="0" y="190" fill="#cbd5e1" font-family="Nunito, Nunito Variable, Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="38" font-weight="500" letter-spacing="0">模块迁移、兼容坑位与 Go SDK breaking changes</text>
   </g>
 
   <g>
     <rect x="270" y="405" width="760" height="310" rx="24" fill="#f8fafc"/>
-    <text x="334" y="482" fill="#0284c7" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="0">旧路径</text>
-    <text x="334" y="548" fill="#0f172a" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="0">docker/docker</text>
-    <text x="334" y="606" fill="#475569" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="0">v29 起 deprecated，不再更新。</text>
+    <text x="334" y="482" fill="#0284c7" font-family="Nunito, Nunito Variable, Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="0">旧路径</text>
+    <text x="334" y="548" fill="#0f172a" font-family="Nunito, Nunito Variable, Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="0">docker/docker</text>
+    <text x="334" y="606" fill="#475569" font-family="Nunito, Nunito Variable, Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="0">v29 起 deprecated，不再更新。</text>
     <rect x="334" y="633" width="500" height="42" rx="10" fill="#e0f2fe"/>
     <text x="356" y="662" fill="#075985" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">github.com/docker/docker</text>
   </g>
 
   <g>
     <rect x="1320" y="405" width="760" height="310" rx="24" fill="#f8fafc"/>
-    <text x="1384" y="482" fill="#0f766e" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="0">新边界</text>
-    <text x="1384" y="548" fill="#0f172a" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="0">Moby modules</text>
-    <text x="1384" y="606" fill="#475569" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="0">SDK 归 client / api，v2 只构建引擎。</text>
+    <text x="1384" y="482" fill="#0f766e" font-family="Nunito, Nunito Variable, Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="0">新边界</text>
+    <text x="1384" y="548" fill="#0f172a" font-family="Nunito, Nunito Variable, Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="0">Moby modules</text>
+    <text x="1384" y="606" fill="#475569" font-family="Nunito, Nunito Variable, Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="0">SDK 归 client / api，v2 只构建引擎。</text>
     <rect x="1384" y="633" width="500" height="42" rx="10" fill="#ccfbf1"/>
     <text x="1406" y="662" fill="#0f766e" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">github.com/moby/moby/v2</text>
   </g>
@@ -41,15 +55,15 @@
     <rect x="0" y="0" width="2010" height="120" rx="24" fill="#020617" opacity="0.52"/>
     <g transform="translate(60 38)">
       <circle cx="22" cy="22" r="22" fill="#38bdf8"/>
-      <text x="74" y="34" fill="#e0f2fe" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="700">containerd 默认镜像存储</text>
+      <text x="74" y="34" fill="#e0f2fe" font-family="Nunito, Nunito Variable, Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="700">containerd 默认镜像存储</text>
     </g>
     <g transform="translate(790 38)">
       <circle cx="22" cy="22" r="22" fill="#2dd4bf"/>
-      <text x="74" y="34" fill="#ccfbf1" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="700">API ≥ 1.44</text>
+      <text x="74" y="34" fill="#ccfbf1" font-family="Nunito, Nunito Variable, Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="700">API ≥ 1.44</text>
     </g>
     <g transform="translate(1430 38)">
       <circle cx="22" cy="22" r="22" fill="#f59e0b"/>
-      <text x="74" y="34" fill="#ffedd5" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="700">nftables 实验支持</text>
+      <text x="74" y="34" fill="#ffedd5" font-family="Nunito, Nunito Variable, Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="700">nftables 实验支持</text>
     </g>
   </g>
 </svg>

@@ -1,6 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2350" height="1000" viewBox="0 0 2350 1000"
   role="img" aria-label="Linux kernel Clang and GNU C extensions article cover">
   <defs>
+    <style>
+      @font-face {
+        font-family: "Nunito";
+        src: url("https://cdn.jsdelivr.net/npm/@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+        font-weight: 200 1000;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Nunito Variable";
+        src: url("https://cdn.jsdelivr.net/npm/@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+        font-weight: 200 1000;
+        font-style: normal;
+      }
+    </style>
     <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#fbfdff" />
       <stop offset="0.58" stop-color="#edfaff" />
@@ -30,17 +44,17 @@
   <g transform="translate(170 160)">
     <rect x="0" y="0" width="292" height="58" rx="0" fill="#f6b73c" />
     <text x="146" y="39" text-anchor="middle" fill="#0b2533"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="28"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="28"
       font-weight="900" letter-spacing="0">LINUX KERNEL</text>
 
     <text x="0" y="190" fill="#0b2533"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="116"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="116"
       font-weight="900" letter-spacing="0">GNU C Extensions</text>
     <text x="0" y="306" fill="#12313d"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="68"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="68"
       font-weight="850" letter-spacing="0">Clang 编译内核难在哪</text>
     <text x="2" y="386" fill="#5b6f79"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="34"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="34"
       font-weight="600" letter-spacing="0">asm goto / typeof / section / builtins / LTO semantics</text>
   </g>
 
@@ -51,7 +65,7 @@
       font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="30"
       font-weight="800" letter-spacing="0">asm goto("jz %l[slow]" : "=r"(out) : ...)</text>
     <text x="42" y="92" fill="#5b6f79"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="25"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="25"
       font-weight="650" letter-spacing="0">compiler extensions meet kernel control flow and ELF
       layout</text>
   </g>
@@ -66,10 +80,10 @@
     </g>
 
     <text x="385" y="70" text-anchor="middle" fill="#0b2533"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="34"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="34"
       font-weight="500" letter-spacing="0">GCC</text>
     <text x="385" y="106" text-anchor="middle" fill="#5b6f79"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="22"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="22"
       font-weight="400" letter-spacing="0">GNU C dialect in practice</text>
 
     <g transform="translate(112 134)">
@@ -93,14 +107,14 @@
     </g>
 
     <text x="385" y="362" text-anchor="middle" fill="#ffffff"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="31"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="31"
       font-weight="500" letter-spacing="0">GNU C extension contract</text>
 
     <text x="385" y="552" text-anchor="middle" fill="#0b2533"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="33"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="33"
       font-weight="500" letter-spacing="0">Clang / LLVM</text>
     <text x="385" y="586" text-anchor="middle" fill="#5b6f79"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="22"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="22"
       font-weight="400" letter-spacing="0">compatible implementation</text>
 
     <g fill="none" stroke="#8a9aa3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"

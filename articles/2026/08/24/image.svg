@@ -1,5 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2350" height="1000" viewBox="0 0 2350 1000" role="img" aria-label="Zig cross-compilation for Rust and Go article cover">
   <defs>
+    <style>
+      @font-face {
+        font-family: "Nunito";
+        src: url("https://cdn.jsdelivr.net/npm/@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+        font-weight: 200 1000;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Nunito Variable";
+        src: url("https://cdn.jsdelivr.net/npm/@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+        font-weight: 200 1000;
+        font-style: normal;
+      }
+    </style>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#101820"/>
       <stop offset="0.62" stop-color="#17242d"/>
@@ -26,11 +40,11 @@
 
   <g transform="translate(154 144)">
     <rect x="0" y="0" width="286" height="54" fill="#f7a41d"/>
-    <text x="143" y="37" text-anchor="middle" fill="#101820" font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" font-size="26" font-weight="900" letter-spacing="0">BUILD TOOLCHAIN</text>
+    <text x="143" y="37" text-anchor="middle" fill="#101820" font-family="Nunito, Nunito Variable, PingFang SC, Avenir Next, Helvetica Neue, sans-serif" font-size="26" font-weight="900" letter-spacing="0">BUILD TOOLCHAIN</text>
 
-    <text x="0" y="258" fill="#f4f7f8" font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" font-size="82" font-weight="900" letter-spacing="0"><tspan>一套</tspan><tspan dx="18">Zig</tspan><tspan dx="18">交叉编译</tspan><tspan dx="18">Rust</tspan><tspan dx="18">与</tspan><tspan dx="18">Go</tspan></text>
+    <text x="0" y="258" fill="#f4f7f8" font-family="Nunito, Nunito Variable, PingFang SC, Avenir Next, Helvetica Neue, sans-serif" font-size="82" font-weight="900" letter-spacing="0"><tspan>一套</tspan><tspan dx="18">Zig</tspan><tspan dx="18">交叉编译</tspan><tspan dx="18">Rust</tspan><tspan dx="18">与</tspan><tspan dx="18">Go</tspan></text>
 
-    <text x="4" y="350" fill="#aebdc4" font-family="PingFang SC, Avenir Next, Helvetica Neue, sans-serif" font-size="40" font-weight="600" letter-spacing="0"><tspan>不再为每个架构维护一套</tspan><tspan dx="12">C/C++</tspan><tspan dx="12">工具链</tspan></text>
+    <text x="4" y="350" fill="#aebdc4" font-family="Nunito, Nunito Variable, PingFang SC, Avenir Next, Helvetica Neue, sans-serif" font-size="40" font-weight="600" letter-spacing="0"><tspan>不再为每个架构维护一套</tspan><tspan dx="12">C/C++</tspan><tspan dx="12">工具链</tspan></text>
   </g>
 
   <g transform="translate(158 648)">

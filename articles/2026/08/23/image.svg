@@ -1,5 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2350" height="1000" viewBox="0 0 2350 1000" role="img" aria-label="Go 1.27 generic methods article cover">
   <defs>
+    <style>
+      @font-face {
+        font-family: "Nunito";
+        src: url("https://cdn.jsdelivr.net/npm/@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+        font-weight: 200 1000;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Nunito Variable";
+        src: url("https://cdn.jsdelivr.net/npm/@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+        font-weight: 200 1000;
+        font-style: normal;
+      }
+    </style>
     <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#fbfdff"/>
       <stop offset="0.55" stop-color="#edfaff"/>
@@ -28,21 +42,20 @@
   <g transform="translate(1710 112)" opacity="0.94">
     <circle cx="270" cy="230" r="206" fill="#dff8fd"/>
     <circle cx="270" cy="230" r="142" fill="#00add8"/>
-    <text x="270" y="276" text-anchor="middle" fill="#ffffff" font-family="Avenir Next, Helvetica Neue, PingFang SC, sans-serif" font-size="120" font-weight="900" letter-spacing="0">Go</text>
+    <text x="270" y="276" text-anchor="middle" fill="#ffffff" font-family="Nunito, Nunito Variable, Avenir Next, Helvetica Neue, PingFang SC, sans-serif" font-size="120" font-weight="900" letter-spacing="0">Go</text>
     <path d="M 58 178 H -50" stroke="#00add8" stroke-width="26" stroke-linecap="round"/>
     <path d="M 34 236 H -126" stroke="#00add8" stroke-width="26" stroke-linecap="round" opacity="0.78"/>
     <path d="M 64 294 H -42" stroke="#00add8" stroke-width="26" stroke-linecap="round" opacity="0.56"/>
   </g>
 
   <g transform="translate(170 178)">
-    <text x="0" y="0" fill="#007d9c" font-family="Avenir Next, Helvetica Neue, PingFang SC, sans-serif" font-size="34" font-weight="800" letter-spacing="0">GO 1.27</text>
-    <text x="0" y="152" fill="#0b2533" font-family="Avenir Next, Helvetica Neue, PingFang SC, sans-serif" font-size="132" font-weight="900" letter-spacing="0">Generic Methods</text>
-    <text x="0" y="286" fill="#12313d" font-family="Avenir Next, Helvetica Neue, PingFang SC, sans-serif" font-size="68" font-weight="850" letter-spacing="0">泛型方法终于来了</text>
+    <text x="0" y="0" fill="#007d9c" font-family="Nunito, Nunito Variable, Avenir Next, Helvetica Neue, PingFang SC, sans-serif" font-size="34" font-weight="800" letter-spacing="0">GO 1.27</text>
+    <text x="0" y="152" fill="#0b2533" font-family="Nunito, Nunito Variable, Avenir Next, Helvetica Neue, PingFang SC, sans-serif" font-size="132" font-weight="900" letter-spacing="0">Generic Methods</text>
+    <text x="0" y="286" fill="#12313d" font-family="Nunito, Nunito Variable, Avenir Next, Helvetica Neue, PingFang SC, sans-serif" font-size="68" font-weight="850" letter-spacing="0">泛型方法终于来了</text>
   </g>
 
   <g transform="translate(170 642)" opacity="0.92">
     <path d="M 0 0 H 360" stroke="url(#cyanInk)" stroke-width="12" stroke-linecap="round"/>
-    <text x="0" y="88" fill="#007d9c" font-family="Consolas, SFMono-Regular, Menlo, monospace" font-size="42" letter-spacing="0">func (s Stream[T]) Map[U any](...)</text>
   </g>
 
   <g transform="translate(2020 794)" opacity="0.42">

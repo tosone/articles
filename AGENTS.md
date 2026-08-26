@@ -183,9 +183,9 @@ Close with this point: generic methods mainly fix a mismatch between Go's type n
 Create a 2350x1000 SVG named `image.svg` alongside the article. Match the repository's existing cover style:
 
 - Canvas: `width="2350" height="1000" viewBox="0 0 2350 1000"`.
-- Typography: use `Avenir Next`, `Inter`, `Helvetica Neue`, `PingFang SC`, and fallback sans-serif.
+- Typography: declare network `@font-face` entries for `Nunito` and `Nunito Variable` in the SVG, then use `Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif` for non-code cover text.
 - Letter spacing must be `0`.
-- Use normal text weight on cover SVGs. Do not add explicit `font-weight` attributes.
+- Use explicit title weights when needed, typically `800` or `900` for title and eyebrow text.
 - Keep the visual geometry precise and evenly spaced.
 - Use real text, not outlined text paths.
 - Keep the cover readable at thumbnail size.
@@ -285,18 +285,17 @@ When the user asks to generate a WeChat public account HTML version of an articl
 
 ## Cover PNG Export
 
-After creating or updating `image.svg`, export PNG assets from the article directory with `rsvg-convert` and verify dimensions with `sips`.
+When PNG export is needed for `image.svg`, use the Bun WebView exporter and verify dimensions with `sips`. Bun WebView is required so SVG web fonts declared with `@font-face` render consistently.
 
 Use this command pattern:
 
 ```bash
-rsvg-convert -w 2350 -h 1000 image.svg -o image.png && rsvg-convert -w 4700 -h 2000 image.svg -o image@2x.png && sips -g pixelWidth -g pixelHeight image.png image@2x.png
+bun scripts/export-svg-png.js articles/YYYY/MM/DD/image.svg && sips -g pixelWidth -g pixelHeight articles/YYYY/MM/DD/image.png
 ```
 
 Expected dimensions:
 
 - `image.png`: 2350x1000.
-- `image@2x.png`: 4700x2000.
 
 ## Article Quality Checklist
 

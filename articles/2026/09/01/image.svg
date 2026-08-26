@@ -1,6 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2350" height="1000" viewBox="0 0 2350 1000"
   role="img" aria-label="Deno core advantages article cover">
   <defs>
+    <style>
+      @font-face {
+        font-family: "Nunito";
+        src: url("https://cdn.jsdelivr.net/npm/@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+        font-weight: 200 1000;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Nunito Variable";
+        src: url("https://cdn.jsdelivr.net/npm/@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+        font-weight: 200 1000;
+        font-style: normal;
+      }
+    </style>
     <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#fbfdff" />
       <stop offset="0.58" stop-color="#edfaff" />
@@ -17,17 +31,17 @@
   <g transform="translate(170 158)">
     <rect x="0" y="0" width="218" height="58" rx="0" fill="#0b2533" />
     <text x="109" y="39" text-anchor="middle" fill="#ffffff"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="28"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="28"
       letter-spacing="0">DENO 2.x</text>
 
-    <text x="0" y="190" fill="#0b2533"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="118"
+    <text x="0" y="190" fill="#0b2533" font-weight="900"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="118"
       letter-spacing="0">Deno</text>
-    <text x="0" y="306" fill="#12313d"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="72"
+    <text x="0" y="306" fill="#12313d" font-weight="800"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="72"
       letter-spacing="0">没有掉队，只是更底层</text>
     <text x="2" y="386" fill="#5b6f79"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="34"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="34"
       letter-spacing="0">secure runtime · Node/npm compatibility · agent firewall</text>
   </g>
 
@@ -38,7 +52,7 @@
       font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="30"
       letter-spacing="0">deno run --allow-net=api.example.com main.ts</text>
     <text x="42" y="92" fill="#5b6f79"
-      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="25"
+      font-family="Nunito, Nunito Variable, Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="25"
       letter-spacing="0">AI agents need external policy boundaries, not just better prompts</text>
   </g>
 

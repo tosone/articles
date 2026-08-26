@@ -227,9 +227,11 @@ a.article-tag:focus-visible {
   padding: 0 32px 32px;
 }
 
-.cover-wrap img {
+.cover-wrap img,
+.cover-wrap svg {
   display: block;
   width: 100%;
+  height: auto;
   border: 1.5px solid var(--animal-border);
   border-radius: var(--animal-radius-lg);
   background: #fffdf4;
