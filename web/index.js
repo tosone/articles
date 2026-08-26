@@ -127,7 +127,7 @@ function renderMarkdown(markdown, articlePath = "") {
   let paragraph = [];
   let listType = "";
   let table = [];
-  let pendingTableSvg = "";
+  let pendingTableSvg = null;
   let quote = [];
   let inCode = false;
   let inComment = false;
@@ -155,12 +155,18 @@ function renderMarkdown(markdown, articlePath = "") {
       return;
     }
     if (pendingTableSvg) {
-      const src = resolveArticleAsset(articlePath, pendingTableSvg);
+      const src = resolveArticleAsset(articlePath, pendingTableSvg.path);
+      const className = pendingTableSvg.height
+        ? "table-svg table-svg-fixed-height"
+        : "table-svg";
+      const style = pendingTableSvg.height
+        ? ` style="--table-svg-height: ${pendingTableSvg.height}px"`
+        : "";
       html.push(
-        `<figure class="table-svg"><img src="${escapeAttr(src)}" alt=""></figure>`,
+        `<figure class="${className}"${style}><img src="${escapeAttr(src)}" alt=""></figure>`,
       );
       table = [];
-      pendingTableSvg = "";
+      pendingTableSvg = null;
       return;
     }
     const rows = table.filter(
@@ -259,13 +265,13 @@ function renderMarkdown(markdown, articlePath = "") {
     }
 
     const comment = line.trim();
-    const tableSvg = comment.match(/^<!--\s*table-svg:\s*(.+?)\s*-->$/);
+    const tableSvg = parseTableSvgComment(comment);
     if (tableSvg) {
       flushParagraph();
       flushList();
       flushTable();
       flushQuote();
-      pendingTableSvg = tableSvg[1].trim();
+      pendingTableSvg = tableSvg;
       continue;
     }
 
@@ -407,6 +413,20 @@ function resolveArticleAsset(articlePath, assetPath) {
   }
   const basePath = articlePath.split("/").slice(0, -1).join("/");
   return `${contentRoot}${basePath}/${assetPath}`;
+}
+
+function parseTableSvgComment(comment) {
+  const match = comment.match(/^<!--\s*table-svg:\s*(.+?)\s*-->$/);
+  if (!match) {
+    return null;
+  }
+
+  const [path, ...options] = match[1].trim().split(/\s+/);
+  const heightOption = options.find((option) => /^height=\d+$/.test(option));
+  return {
+    path,
+    height: heightOption ? Number(heightOption.split("=")[1]) : 0,
+  };
 }
 
 function inline(text) {

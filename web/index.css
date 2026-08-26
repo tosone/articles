@@ -445,6 +445,11 @@ a.article-tag:focus-visible {
   height: auto;
 }
 
+.markdown-body .table-svg-fixed-height img {
+  width: auto;
+  height: var(--table-svg-height);
+}
+
 .markdown-body hr {
   box-sizing: content-box;
   overflow: hidden;
