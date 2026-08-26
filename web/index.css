@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  --animal-font: Geist Variable, -apple-system, "PingFang SC", "Hiragino Sans GB", sans-serif;
+  --animal-font: "Nunito Variable", "Noto Sans SC", -apple-system, "PingFang SC", "Hiragino Sans GB", sans-serif;
   --animal-primary: #19c8b9;
   --animal-primary-hover: #3dd4c6;
   --animal-primary-active: #11a89b;
@@ -223,8 +223,8 @@ a.article-tag:focus-visible {
 
 .cover-wrap {
   max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 32px;
+  margin: 32px auto 0;
+  padding: 0 32px 32px;
 }
 
 .cover-wrap img {
@@ -1816,7 +1816,8 @@ a.article-tag:focus-visible {
   }
 
   .cover-wrap {
-    padding: 16px 14px;
+    margin-top: 16px;
+    padding: 0 14px 16px;
   }
 
   .markdown {

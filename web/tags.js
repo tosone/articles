@@ -68,7 +68,7 @@ function renderCloud() {
     )
     .padding(10)
     .rotate(() => 0)
-    .font("Geist Variable")
+    .font("Nunito Variable")
     .fontSize((tag) => tag.size)
     .random(() => 0.5)
     .on("end", (words) => drawCloud(words, width, height))
@@ -98,7 +98,10 @@ function drawCloud(words, width, height) {
     .attr("role", "button")
     .attr("tabindex", 0)
     .style("font-size", (tag) => `${tag.size}px`)
-    .style("font-family", "Geist Variable, PingFang SC, sans-serif")
+    .style(
+      "font-family",
+      "Nunito Variable, Noto Sans SC, PingFang SC, sans-serif",
+    )
     .attr("text-anchor", "middle")
     .attr("transform", (tag) => `translate(${tag.x},${tag.y})`)
     .text((tag) => tag.text)
