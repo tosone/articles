@@ -19,14 +19,37 @@
     <rect x="0" y="0" width="202" height="58" rx="0" fill="#0b2533" />
     <text x="101" y="39" text-anchor="middle" fill="#ffffff"
       font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="28"
-      letter-spacing="0">AI HISTORY</text>
+      font-weight="900" letter-spacing="0">AI HISTORY</text>
 
     <text x="0" y="188" fill="#0b2533"
       font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="102"
-      letter-spacing="0">大模型进化史</text>
+      font-weight="900" letter-spacing="0">大模型进化史</text>
     <text x="0" y="302" fill="#12313d"
       font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="58"
-      letter-spacing="0">从 Transformer 到 Agentic Engineering</text>
+      font-weight="850" letter-spacing="0">从 Transformer 到 Agentic Engineering</text>
+  </g>
+
+  <g transform="translate(170 668)">
+    <path d="M 0 0 H 760" fill="none" stroke="#00add8" stroke-width="8" stroke-linecap="round" opacity="0.72" />
+    <circle cx="0" cy="0" r="15" fill="#00add8" />
+    <circle cx="250" cy="0" r="15" fill="#12c7b8" />
+    <circle cx="510" cy="0" r="15" fill="#f6b73c" />
+    <circle cx="760" cy="0" r="15" fill="#0b2533" />
+    <text x="0" y="66" fill="#0b2533"
+      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="32"
+      letter-spacing="0">Transformer</text>
+    <text x="250" y="66" fill="#0b2533"
+      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="32"
+      letter-spacing="0">RAG</text>
+    <text x="510" y="66" fill="#0b2533"
+      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="32"
+      letter-spacing="0">Agent</text>
+    <text x="760" y="66" fill="#0b2533"
+      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="32"
+      letter-spacing="0">Human Check</text>
+    <text x="0" y="120" fill="#5b6f79"
+      font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="30"
+      letter-spacing="0">context, tools, evaluation, rollback</text>
   </g>
 
   <g transform="translate(1438 220) scale(1.12)">

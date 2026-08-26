@@ -12,9 +12,6 @@
     <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
       <path d="M 46 0 L 0 0 0 46" fill="none" stroke="#8ac9d8" stroke-width="1" opacity="0.18"/>
     </pattern>
-    <filter id="shadow" x="-12%" y="-12%" width="124%" height="124%">
-      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#006d88" flood-opacity="0.12"/>
-    </filter>
   </defs>
 
   <rect width="2350" height="1000" fill="url(#paper)"/>
@@ -29,14 +26,14 @@
     <text x="2" y="388" fill="#5b6f79" font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="34" font-weight="600" letter-spacing="0">TLB / THP / HugeTLB / NUMA / latency trade-offs</text>
   </g>
 
-  <g transform="translate(150 742)" filter="url(#shadow)">
+  <g transform="translate(150 742)">
     <rect x="0" y="0" width="860" height="108" rx="26" fill="#ffffff" stroke="#b7e8f2" stroke-width="2"/>
     <text x="40" y="45" fill="#007d9c" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="28" font-weight="800" letter-spacing="0">echo madvise &gt; transparent_hugepage/enabled</text>
     <text x="40" y="79" fill="#5b6f79" font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="24" font-weight="650" letter-spacing="0">select per workload, verify with p99 and memory pressure</text>
   </g>
 
   <g transform="translate(1004 150)">
-    <rect x="392" y="112" width="430" height="290" rx="28" fill="#ffffff" stroke="#9bdce8" stroke-width="3" filter="url(#shadow)"/>
+    <rect x="392" y="112" width="430" height="290" rx="28" fill="#ffffff" stroke="#9bdce8" stroke-width="3"/>
     <rect x="430" y="150" width="354" height="64" rx="18" fill="#e6f9fd"/>
     <text x="607" y="191" text-anchor="middle" fill="#0b2533" font-family="Avenir Next, Inter, Helvetica Neue, PingFang SC, sans-serif" font-size="32" font-weight="900" letter-spacing="0">TLB</text>
     <g fill="#00add8" opacity="0.9">

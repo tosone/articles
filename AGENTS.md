@@ -244,7 +244,8 @@ When turning Markdown tables into standalone SVG/PNG assets:
 - Generate separate SVG and PNG files alongside the article. Do not replace or embed the image back into the Markdown article unless explicitly requested.
 - When drafting or revising an article that has a corresponding table SVG, add `<!-- table-svg: filename.svg -->` immediately above the matching Markdown table in the same edit. The marker must directly touch the Markdown table with no blank line between them. Keep the Markdown table below the marker as the source fallback.
 - Use the exact same filename as the SVG asset in the article directory, for example `<!-- table-svg: zig-cc-summary-table.svg -->`.
-- If a low-row table is over-enlarged in the frontend preview, add an explicit display height based on the SVG/table height, for example `<!-- table-svg: zig-cc-libc-choice.svg height=220 -->`. Frontend rendering should keep width automatic for height-constrained table images.
+- Frontend table image rendering should use the article width as the maximum width without horizontal scrolling. Small table images may render narrower than the article area; large table images should shrink to fit.
+- Frontend table image rendering should also apply a maximum display height derived from the Markdown table row count by default. Use `max-height=...` in the `table-svg` marker only when a specific table needs an explicit override.
 - Do not add a title above the table image. The image should contain only the table.
 - Table SVGs should keep the HTML table directly inside the SVG file; do not depend on a separate generation script for normal edits.
 - Do not use shadows in table SVGs. Avoid `filter`, `feDropShadow`, `drop-shadow`, and shadow-like effects.

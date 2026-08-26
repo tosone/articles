@@ -29,7 +29,7 @@ Zig 提供了另一条路：把 `zig cc` 和 `zig c++` 当成兼容 Clang 命令
 
 ## 一、先看结论
 
-<!-- table-svg: zig-cc-summary-table.svg height=520 -->
+<!-- table-svg: zig-cc-summary-table.svg -->
 | 场景               | 不使用 Zig                                     | 使用 Zig                                        | 仍然需要自己准备什么                                                 |
 | ------------------ | ---------------------------------------------- | ----------------------------------------------- | -------------------------------------------------------------------- |
 | 纯 Rust            | `rustup` 目标标准库，部分目标还要外部 linker。 | `cargo zigbuild --target ...`。                 | Rust 目标标准库。                                                    |
@@ -69,7 +69,7 @@ GLIBC_2.38 not found
 
 这里需要区分三个概念：
 
-<!-- table-svg: zig-cc-toolchain-layers.svg height=320 -->
+<!-- table-svg: zig-cc-toolchain-layers.svg -->
 | 概念                   | 负责什么                               | Zig 能否直接提供                         |
 | ---------------------- | -------------------------------------- | ---------------------------------------- |
 | 编译器与 linker driver | 编译 C/C++，组织链接参数，调用链接器。 | 能，使用 `zig cc` / `zig c++`。          |
@@ -106,7 +106,7 @@ zig c++ -target aarch64-linux-musl hello.cpp -o hello-cpp-linux-arm64
 
 Zig target 与 Rust target、Go target 的拼写并不完全相同：
 
-<!-- table-svg: zig-cc-target-map.svg height=488 -->
+<!-- table-svg: zig-cc-target-map.svg -->
 | 目标                   | Zig                  | Rust                         | Go                          |
 | ---------------------- | -------------------- | ---------------------------- | --------------------------- |
 | Linux x86-64 + glibc   | `x86_64-linux-gnu`   | `x86_64-unknown-linux-gnu`   | `GOOS=linux GOARCH=amd64`   |
@@ -135,7 +135,7 @@ zig cc -target aarch64-linux-gnu.2.28 hello.c -o hello-arm64
 
 ### glibc 与 musl 怎么选
 
-<!-- table-svg: zig-cc-libc-choice.svg height=220 -->
+<!-- table-svg: zig-cc-libc-choice.svg -->
 | 选择               | 优点                                                  | 代价                                                    |
 | ------------------ | ----------------------------------------------------- | ------------------------------------------------------- |
 | `*-linux-gnu.2.17` | 对传统 Linux 软件生态兼容更好，动态库更常见。         | 运行时依赖目标机 glibc，不能把“指定版本”当成完全静态。  |

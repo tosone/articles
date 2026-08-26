@@ -5,9 +5,6 @@
       <stop offset="0.56" stop-color="#12303b"/>
       <stop offset="1" stop-color="#1d2939"/>
     </linearGradient>
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="26" stdDeviation="24" flood-color="#020617" flood-opacity="0.28"/>
-    </filter>
     <pattern id="grid" width="70" height="70" patternUnits="userSpaceOnUse">
       <path d="M 70 0 L 0 0 0 70" fill="none" stroke="#ffffff" stroke-width="1.2" opacity="0.055"/>
     </pattern>
@@ -22,7 +19,7 @@
     <text x="0" y="190" fill="#cbd5e1" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="38" font-weight="500" letter-spacing="0">模块迁移、兼容坑位与 Go SDK breaking changes</text>
   </g>
 
-  <g filter="url(#softShadow)">
+  <g>
     <rect x="270" y="405" width="760" height="310" rx="24" fill="#f8fafc"/>
     <text x="334" y="482" fill="#0284c7" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="0">旧路径</text>
     <text x="334" y="548" fill="#0f172a" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="0">docker/docker</text>
@@ -31,7 +28,7 @@
     <text x="356" y="662" fill="#075985" font-family="JetBrains Mono, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="700">github.com/docker/docker</text>
   </g>
 
-  <g filter="url(#softShadow)">
+  <g>
     <rect x="1320" y="405" width="760" height="310" rx="24" fill="#f8fafc"/>
     <text x="1384" y="482" fill="#0f766e" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="0">新边界</text>
     <text x="1384" y="548" fill="#0f172a" font-family="Inter, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="50" font-weight="800" letter-spacing="0">Moby modules</text>

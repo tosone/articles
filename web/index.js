@@ -154,24 +154,20 @@ function renderMarkdown(markdown, articlePath = "") {
     if (!table.length) {
       return;
     }
+    const rows = table.filter(
+      (row) => !/^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$/.test(row),
+    );
     if (pendingTableSvg) {
       const src = resolveArticleAsset(articlePath, pendingTableSvg.path);
-      const className = pendingTableSvg.height
-        ? "table-svg table-svg-fixed-height"
-        : "table-svg";
-      const style = pendingTableSvg.height
-        ? ` style="--table-svg-height: ${pendingTableSvg.height}px"`
-        : "";
+      const maxHeight =
+        pendingTableSvg.maxHeight || tableSvgMaxHeight(rows.length);
       html.push(
-        `<figure class="${className}"${style}><img src="${escapeAttr(src)}" alt=""></figure>`,
+        `<figure class="table-svg" style="--table-svg-max-height: ${maxHeight}px"><img src="${escapeAttr(src)}" alt=""></figure>`,
       );
       table = [];
       pendingTableSvg = null;
       return;
     }
-    const rows = table.filter(
-      (row) => !/^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$/.test(row),
-    );
     const cells = rows.map((row) => splitTableRow(row));
     const [head, ...body] = cells;
     html.push("<table>");
@@ -422,11 +418,17 @@ function parseTableSvgComment(comment) {
   }
 
   const [path, ...options] = match[1].trim().split(/\s+/);
-  const heightOption = options.find((option) => /^height=\d+$/.test(option));
+  const heightOption = options.find((option) =>
+    /^(?:max-height|height)=\d+$/.test(option),
+  );
   return {
     path,
-    height: heightOption ? Number(heightOption.split("=")[1]) : 0,
+    maxHeight: heightOption ? Number(heightOption.split("=")[1]) : 0,
   };
+}
+
+function tableSvgMaxHeight(rowCount) {
+  return Math.max(180, Math.min(620, rowCount * 64));
 }
 
 function inline(text) {
