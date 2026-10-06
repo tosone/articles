@@ -1,6 +1,6 @@
 # 大模型进化史：从 Transformer 到 Agentic Engineering
 
-<!-- summary: 大模型的发展不是一条单纯的模型参数增长曲线，而是模型能力、工程方法和公众感知三条线同时演进的结果。从 Transformer、GPT、BERT、ChatGPT、GPT-4、Claude、Gemini、LLaMA、DeepSeek 到 RAG、Human-in-the-Loop、Agentic Workflow、Harness 和 Skill 化工具，真正改变软件行业的是“智能如何被组织进工程系统”。 -->
+<!-- summary: 大模型的发展不是单纯的参数增长，而是模型能力、工程方法与公众感知三条线同时演进。从 Transformer 到 Agentic Engineering，真正改变软件行业的是“智能如何被组织进工程系统”。 -->
 <!-- tags: LLM, ChatGPT, Agentic Engineering, AI Engineering -->
 
 如果把大模型的发展写成一张发布时间表，很容易得到一个线性的故事：2017 年 Transformer 出现，2020 年 GPT-3 变大，2022 年 ChatGPT 爆发，2023 年 GPT-4 让所有公司开始焦虑，2025 年 DeepSeek-R1 又把成本和开源推到台前。
