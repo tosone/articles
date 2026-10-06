@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1820" height="220" viewBox="0 0 1820 220" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" width="1820" height="222" viewBox="0 0 1820 222" role="img"
   aria-label="glibc and musl choice table">
-  <foreignObject x="0" y="0" width="1820" height="220">
+  <foreignObject x="0" y="0" width="1820" height="222">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
@@ -44,8 +44,6 @@
         td:first-child {
           color: #0b2533;
         }
-        th:last-child, td:last-child { border-right: 0; }
-        tr:last-child td { border-bottom: 0; }
         code {
           font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
           font-size: 0.9em;

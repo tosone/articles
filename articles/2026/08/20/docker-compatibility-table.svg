@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2225" height="772" viewBox="0 0 2225 772" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" width="2225" height="783" viewBox="0 0 2225 783" role="img"
   aria-label="Docker v29 compatibility table">
-  <foreignObject x="0" y="0" width="2225" height="772">
+  <foreignObject x="0" y="0" width="2225" height="783">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
@@ -49,8 +49,6 @@
           font-size: 25px;
           font-weight: 850;
         }
-        th:last-child, td:last-child { border-right: 0; }
-        tr:last-child td { border-bottom: 0; }
         code {
           font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
           font-size: 0.94em;

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2110" height="430" viewBox="0 0 2110 430" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" width="2110" height="436" viewBox="0 0 2110 436" role="img"
   aria-label="Docker version boundary table">
-  <foreignObject x="0" y="0" width="2110" height="430">
+  <foreignObject x="0" y="0" width="2110" height="436">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
@@ -48,8 +48,6 @@
           font-size: 25px;
           font-weight: 850;
         }
-        th:last-child, td:last-child { border-right: 0; }
-        tr:last-child td { border-bottom: 0; }
         code {
           font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
           font-size: 0.94em;

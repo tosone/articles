@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="1212" viewBox="0 0 2500 1212"
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="1226" viewBox="0 0 2500 1226"
   role="img" aria-label="Docker Go SDK breaking changes table">
-  <foreignObject x="0" y="0" width="2500" height="1212">
+  <foreignObject x="0" y="0" width="2500" height="1226">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
@@ -48,8 +48,6 @@
           font-size: 25px;
           font-weight: 850;
         }
-        th:last-child, td:last-child { border-right: 0; }
-        tr:last-child td { border-bottom: 0; }
         code {
           font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
           font-size: 0.94em;

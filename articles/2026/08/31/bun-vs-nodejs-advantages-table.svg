@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2440" height="844" viewBox="0 0 2440 844" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" width="2440" height="845" viewBox="0 0 2440 845" role="img"
   aria-label="Bun 1.4.0 versus Node.js advantages table">
-  <foreignObject x="0" y="0" width="2440" height="844">
+  <foreignObject x="0" y="0" width="2440" height="845">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
@@ -49,8 +49,6 @@
           font-size: 25px;
           font-weight: 850;
         }
-        th:last-child, td:last-child { border-right: 0; }
-        tr:last-child td { border-bottom: 0; }
         code {
           font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
           font-size: 0.94em;

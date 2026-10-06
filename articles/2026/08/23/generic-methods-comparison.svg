@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="3170" height="412" viewBox="0 0 3170 412" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" width="3170" height="416" viewBox="0 0 3170 416" role="img"
   aria-label="Generic methods comparison table">
-  <foreignObject x="0" y="0" width="3170" height="412">
+  <foreignObject x="0" y="0" width="3170" height="416">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
@@ -50,8 +50,6 @@
           font-size: 25px;
           font-weight: 850;
         }
-        th:last-child, td:last-child { border-right: 0; }
-        tr:last-child td { border-bottom: 0; }
         code {
           font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
           font-size: 0.94em;

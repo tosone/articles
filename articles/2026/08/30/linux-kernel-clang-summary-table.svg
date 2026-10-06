@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2350" height="692" viewBox="0 0 2350 692" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" width="2350" height="691" viewBox="0 0 2350 691" role="img"
   aria-label="Linux kernel Clang and GNU C extensions summary table">
-  <foreignObject x="0" y="0" width="2350" height="692">
+  <foreignObject x="0" y="0" width="2350" height="691">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
@@ -49,8 +49,6 @@
           font-size: 25px;
           font-weight: 400;
         }
-        th:last-child, td:last-child { border-right: 0; }
-        tr:last-child td { border-bottom: 0; }
         code {
           font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
           font-size: 0.94em;

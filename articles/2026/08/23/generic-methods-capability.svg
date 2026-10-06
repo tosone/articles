@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2320" height="494" viewBox="0 0 2320 494" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" width="2320" height="498" viewBox="0 0 2320 498" role="img"
   aria-label="Go generic methods capability table">
-  <foreignObject x="0" y="0" width="2320" height="494">
+  <foreignObject x="0" y="0" width="2320" height="498">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
@@ -48,8 +48,6 @@
           font-size: 25px;
           font-weight: 850;
         }
-        th:last-child, td:last-child { border-right: 0; }
-        tr:last-child td { border-bottom: 0; }
         code {
           font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
           font-size: 0.94em;

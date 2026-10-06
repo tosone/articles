@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1880" height="584" viewBox="0 0 1880 584" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" width="1880" height="580" viewBox="0 0 1880 580" role="img"
   aria-label="Bun and Node.js runtime choice table">
-  <foreignObject x="0" y="0" width="1880" height="584">
+  <foreignObject x="0" y="0" width="1880" height="580">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { box-sizing: border-box; }
@@ -48,8 +48,6 @@
           font-size: 25px;
           font-weight: 850;
         }
-        th:last-child, td:last-child { border-right: 0; }
-        tr:last-child td { border-bottom: 0; }
       </style>
       <table>
         <colgroup>
