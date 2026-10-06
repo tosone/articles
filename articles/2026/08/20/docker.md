@@ -260,11 +260,11 @@ Docker Engine 继续叫 Docker Engine，Moby 继续是它的上游；只是对 G
 
 ---
 
-**参考资料**
+## 参考资料
 
-1. Moby 项目 README（Go modules 一节）：https://github.com/moby/moby
-2. 官方公告《github.com/docker/docker module deprecation》，moby/moby Discussion #52404：https://github.com/moby/moby/discussions/52404
-3. Docker 官方博客《Docker Engine v29: Foundational Updates for the Future》：https://www.docker.com/blog/docker-engine-version-29/
-4. Docker Engine v29 Release Notes：https://docs.docker.com/engine/release-notes/29/
-5. Moby v29.0.0 Release Notes：https://github.com/moby/moby/releases/tag/docker-v29.0.0
+1. [Moby 项目 README（Go modules 一节）](https://github.com/moby/moby)
+2. [官方公告《github.com/docker/docker module deprecation》](https://github.com/moby/moby/discussions/52404)，moby/moby Discussion #52404
+3. [Docker 官方博客《Docker Engine v29: Foundational Updates for the Future》](https://www.docker.com/blog/docker-engine-version-29/)
+4. [Docker Engine v29 Release Notes](https://docs.docker.com/engine/release-notes/29/)
+5. [Moby v29.0.0 Release Notes](https://github.com/moby/moby/releases/tag/docker-v29.0.0)
 6. Docker CLI `docker version` JSON 输出兼容问题：docker/cli#6647、docker/cli#6649、moby/moby#51487

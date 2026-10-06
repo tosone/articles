@@ -116,10 +116,10 @@ __typeof__(x)
 典型例子是简化版 `min`：
 
 ```c
-#define min(x, y) ({			\
-  typeof(x) _x = (x);		\
-  typeof(y) _y = (y);		\
-  _x < _y ? _x : _y;		\
+#define min(x, y) ({    \
+  typeof(x) _x = (x);   \
+  typeof(y) _y = (y);   \
+  _x < _y ? _x : _y;    \
 })
 ```
 
@@ -136,9 +136,9 @@ int v = bad_min(i++, j);
 `container_of` 也是同一类思路。它通过成员指针反推出外层结构体指针，是链表、引用计数、驱动模型等内核基础设施的常用工具：
 
 ```c
-#define container_of(ptr, type, member) ({			\
-  const typeof(((type *)0)->member) *__mptr = (ptr);	\
-  (type *)((char *)__mptr - offsetof(type, member));	\
+#define container_of(ptr, type, member) ({              \
+  const typeof(((type *)0)->member) *__mptr = (ptr);    \
+  (type *)((char *)__mptr - offsetof(type, member));    \
 })
 ```
 
@@ -269,7 +269,7 @@ __builtin_add_overflow(a, b, &out)
 例如内核可能写出这种模式：
 
 ```c
-#define fast_or_slow(x)						\
+#define fast_or_slow(x)         \
   (__builtin_constant_p(x) ? fast_const_path(x) : slow_path(x))
 ```
 
