@@ -1,5 +1,7 @@
 # AGENTS.md
 
+<!-- markdownlint-disable MD010 MD026 -->
+
 ## Purpose
 
 This repository stores long-form WeChat public account articles and their SVG cover images. Use this guide when drafting or revising articles in the current project, especially for Go, Docker, runtime, SDK migration, tooling, and release-analysis topics.
