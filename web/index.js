@@ -47,8 +47,8 @@ function renderList(articles) {
         )
         .join("");
       return `
-      <div class="article-link${active}">
-        <button class="article-open" type="button" data-path="${escapeAttr(article.path)}">
+      <div class="article-link${active}" data-path="${escapeAttr(article.path)}">
+        <button class="article-open" type="button">
           <span class="article-date">${escapeHtml(article.date)}</span>
           <span class="article-title">${escapeHtml(article.title)}</span>
         </button>
@@ -59,10 +59,18 @@ function renderList(articles) {
     })
     .join("");
 
-  list.querySelectorAll(".article-open").forEach((button) => {
-    button.addEventListener("click", () => {
+  // 整个卡片可点击（标题、日期、简介都跳转）；标签点击交给 <a> 自己跳分类页；
+  // 当前选中的文章保持 pointer 光标，但不再重复跳转。
+  list.querySelectorAll(".article-link").forEach((card) => {
+    card.addEventListener("click", (event) => {
+      if (event.target.closest(".article-tag")) {
+        return;
+      }
+      if (card.classList.contains("active")) {
+        return;
+      }
       const article = state.articles.find(
-        (item) => item.path === button.dataset.path,
+        (item) => item.path === card.dataset.path,
       );
       if (article) {
         openArticle(article);
