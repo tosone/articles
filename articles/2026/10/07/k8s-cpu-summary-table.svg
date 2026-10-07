@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="421" viewBox="0 0 1460 421" role="img"
+  aria-label="Kubernetes CPU limits recommendation summary table">
+  <foreignObject width="1460" height="421">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1460px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 200px; }
+        col:nth-child(2) { width: 320px; }
+        col:nth-child(3) { width: 300px; }
+        col:nth-child(4) { width: 640px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th>传统默认做法</th>
+            <th>爆款文章的主张</th>
+            <th>更稳妥的工程做法</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CPU limits</td>
+            <td>requests 和 limits 都设</td>
+            <td>删掉，只留 requests</td>
+            <td>按负载分级：在线服务放宽或不设，离线任务严格限制</td>
+          </tr>
+          <tr>
+            <td>CPU requests</td>
+            <td>常被当成形式</td>
+            <td>必须保留，且要准确</td>
+            <td>保留，作为调度与保底算力依据</td>
+          </tr>
+          <tr>
+            <td>Memory limits</td>
+            <td>与 CPU 对称设置</td>
+            <td>暗示必须保留</td>
+            <td>必须保留，内存是不可压缩资源</td>
+          </tr>
+          <tr>
+            <td>CFS 节流</td>
+            <td>很少被监控</td>
+            <td>是延迟恶化的根因</td>
+            <td>把节流比例纳入核心 SLO 监控</td>
+          </tr>
+          <tr>
+            <td>隔离性</td>
+            <td>靠 limit 兜底</td>
+            <td>基本未讨论</td>
+            <td>用节点池、QoS、权重和准入来兜底</td>
+          </tr>
+          <tr>
+            <td>成本</td>
+            <td>看 limit 配额</td>
+            <td>提升集群利用率</td>
+            <td>兼顾利用率与多租户公平、许可证计费</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

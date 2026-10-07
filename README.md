@@ -8,6 +8,7 @@
 
 | 日期 | 标题 |
 | --- | --- |
+| 2026-10-07 | [K8s 的 CPU limits 到底该不该设：CFS 节流、隔离代价与工程折中](./articles/2026/10/07/k8s-cpu-limits.md) |
 | 2026-09-03 | [大模型进化史：从 Transformer 到 Agentic Engineering](./articles/2026/09/03/llm.md) |
 | 2026-09-02 | [阿里开发者生态遭 npm 定向投毒：这次供应链攻击真正危险在哪里](./articles/2026/09/02/attack.md) |
 | 2026-09-01 | [Deno 没有掉队，它只是押注了更底层的 AI 基建](./articles/2026/09/01/deno.md) |

@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-10-07",
+    "title": "K8s 的 CPU limits 到底该不该设：CFS 节流、隔离代价与工程折中",
+    "path": "articles/2026/10/07/k8s-cpu-limits.md",
+    "cover": "articles/2026/10/07/image.svg",
+    "summary": "平均 CPU 只有 30%，p99 延迟却因 CFS 节流大幅恶化。停止设置 CPU limits 原理成立，却不能一刀切。本文拆解 CFS 节流机制、CPU 与内存的区别、隔离与 QoS 的代价，并给出按负载分级的管理策略。",
+    "tags": [
+      "Kubernetes",
+      "CPU Limits",
+      "CFS",
+      "SRE",
+      "Capacity Planning"
+    ]
+  },
+  {
     "date": "2026-09-03",
     "title": "大模型进化史：从 Transformer 到 Agentic Engineering",
     "path": "articles/2026/09/03/llm.md",

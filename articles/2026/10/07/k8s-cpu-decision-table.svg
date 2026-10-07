@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1660" height="301" viewBox="0 0 1660 301" role="img"
+  aria-label="Kubernetes CPU limit decision table by workload type">
+  <foreignObject width="1660" height="301">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1660px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 520px; }
+        col:nth-child(2) { width: 580px; }
+        col:nth-child(3) { width: 560px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>负载类型</th>
+            <th>CPU limit 建议</th>
+            <th>原因</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>延迟敏感的在线服务（网关、交易、实时推荐）</td>
+            <td>不设，或设置成 request 的 4~8 倍</td>
+            <td>避免 CFS 节流伤害 p99，允许空闲时突发</td>
+          </tr>
+          <tr>
+            <td>普通在线服务（后台 API、内部系统）</td>
+            <td>设置较宽的 limit，<code>request : limit</code> 保持 1:2~1:4</td>
+            <td>兼顾隔离性与突发能力</td>
+          </tr>
+          <tr>
+            <td>离线批处理、CronJob、数据同步、日志采集</td>
+            <td>严格设置 limit</td>
+            <td>对延迟不敏感，重点是不要抢走在线业务的算力</td>
+          </tr>
+          <tr>
+            <td>需要最高保障的核心组件</td>
+            <td><code>requests == limits</code>，配合专用节点池</td>
+            <td>换取 Guaranteed QoS 和更可预测的隔离</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

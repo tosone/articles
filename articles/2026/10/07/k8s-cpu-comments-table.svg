@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1620" height="241" viewBox="0 0 1620 241" role="img"
+  aria-label="Reader comments on the Kubernetes CPU limits article">
+  <foreignObject width="1620" height="241">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1620px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 200px; }
+        col:nth-child(2) { width: 760px; }
+        col:nth-child(3) { width: 660px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>评论者</th>
+            <th>核心观点</th>
+            <th>对实践的启示</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sherlock</td>
+            <td>商业软件按 CPU 授权（PVU），删掉 limit 会按整个 Node 计费</td>
+            <td>合规和成本约束可能比性能约束更硬，不能只看延迟</td>
+          </tr>
+          <tr>
+            <td>Jakub Jirak</td>
+            <td>问题是“把两种不同资源当成可互换”，配置整齐的审美代价很高</td>
+            <td>真正该上监控的是节流比例，而不是记住“不要设 limit”</td>
+          </tr>
+          <tr>
+            <td>Kövi András</td>
+            <td>稳定内存的应用用 <code>limit=request</code> 合理；突发型应用会浪费内存</td>
+            <td>内存策略也要分类，短生命周期任务应拆成独立 Pod</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

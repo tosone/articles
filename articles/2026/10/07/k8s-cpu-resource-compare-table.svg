@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="421" viewBox="0 0 1500 421" role="img"
+  aria-label="CPU vs memory resource comparison table">
+  <foreignObject width="1500" height="421">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1500px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 220px; }
+        col:nth-child(2) { width: 620px; }
+        col:nth-child(3) { width: 660px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th>CPU</th>
+            <th>内存</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>资源类型</td>
+            <td>可压缩（compressible）</td>
+            <td>不可压缩（incompressible）</td>
+          </tr>
+          <tr>
+            <td>超限后的行为</td>
+            <td>变慢：被 throttle 或排队</td>
+            <td>崩溃：OOMKilled，严重时拖垮节点</td>
+          </tr>
+          <tr>
+            <td>隔离手段</td>
+            <td>CFS 带宽、权重、绑核</td>
+            <td>cgroup 内存上限、OOM 优先级</td>
+          </tr>
+          <tr>
+            <td>是否可以借用</td>
+            <td>可以借用节点上空闲的 CPU 周期</td>
+            <td>不能借用，超额会被内核杀掉</td>
+          </tr>
+          <tr>
+            <td>limit 的作用</td>
+            <td>限制吞吐上限，也引入尾延迟</td>
+            <td>保护节点不被单个容器的内存失控毁掉</td>
+          </tr>
+          <tr>
+            <td>建议</td>
+            <td>谨慎设置，或设置得比 request 宽很多</td>
+            <td>必须设置，防止内存泄漏和节点雪崩</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>
