@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="721" viewBox="0 0 1180 721" role="img"
+  aria-label="OCI 镜像标准标签清单">
+  <foreignObject width="1180" height="721">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1180px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 540px; }
+        col:nth-child(2) { width: 340px; }
+        col:nth-child(3) { width: 300px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Label</th>
+            <th>含义</th>
+            <th>建议来源</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>org.opencontainers.image.created</code></td>
+            <td>构建时间，RFC 3339 格式</td>
+            <td>CI 构建时钟</td>
+          </tr>
+          <tr>
+            <td><code>org.opencontainers.image.revision</code></td>
+            <td>源码 commit SHA</td>
+            <td><code>git rev-parse HEAD</code></td>
+          </tr>
+          <tr>
+            <td><code>org.opencontainers.image.version</code></td>
+            <td>业务版本号</td>
+            <td>发布 tag</td>
+          </tr>
+          <tr>
+            <td><code>org.opencontainers.image.source</code></td>
+            <td>源码仓库地址</td>
+            <td>仓库配置</td>
+          </tr>
+          <tr>
+            <td><code>org.opencontainers.image.url</code></td>
+            <td>项目主页或文档</td>
+            <td>仓库配置</td>
+          </tr>
+          <tr>
+            <td><code>org.opencontainers.image.title</code></td>
+            <td>镜像简短名称</td>
+            <td>Dockerfile 常量</td>
+          </tr>
+          <tr>
+            <td><code>org.opencontainers.image.description</code></td>
+            <td>镜像详细描述</td>
+            <td>Dockerfile 常量</td>
+          </tr>
+          <tr>
+            <td><code>org.opencontainers.image.licenses</code></td>
+            <td>开源许可证，SPDX 标识符</td>
+            <td>仓库配置</td>
+          </tr>
+          <tr>
+            <td><code>org.opencontainers.image.vendor</code></td>
+            <td>构建方或团队名称</td>
+            <td>仓库配置</td>
+          </tr>
+          <tr>
+            <td><code>org.opencontainers.image.base.name</code></td>
+            <td>基础镜像名称</td>
+            <td>构建参数</td>
+          </tr>
+          <tr>
+            <td><code>org.opencontainers.image.base.digest</code></td>
+            <td>基础镜像 digest</td>
+            <td>构建参数</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

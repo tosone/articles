@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="301" viewBox="0 0 1120 301" role="img"
+  aria-label="Go 项目增量构建效果对比表">
+  <foreignObject width="1120" height="301">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1120px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 280px; }
+        col:nth-child(2) { width: 420px; }
+        col:nth-child(3) { width: 420px; }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>场景</th>
+            <th>无缓存挂载</th>
+            <th>有缓存挂载</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>首次构建</td>
+            <td>全量编译，约 120s</td>
+            <td>全量编译，约 120s</td>
+          </tr>
+          <tr>
+            <td>改一行业务代码</td>
+            <td>全量重编，约 120s</td>
+            <td>增量编译，约 8 到 15s</td>
+          </tr>
+          <tr>
+            <td>只新增一个依赖</td>
+            <td>重新下载加全量重编</td>
+            <td>只下载新依赖，其余增量编译</td>
+          </tr>
+          <tr>
+            <td>源码完全未变</td>
+            <td>全量重编</td>
+            <td>全部命中，通常数秒内完成</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

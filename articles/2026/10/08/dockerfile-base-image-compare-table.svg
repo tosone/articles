@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="421" viewBox="0 0 1700 421" role="img"
+  aria-label="基础镜像方案横向对比表">
+  <foreignObject width="1700" height="421">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1700px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 220px; }
+        col:nth-child(2) { width: 340px; }
+        col:nth-child(3) { width: 300px; }
+        col:nth-child(4) { width: 380px; }
+        col:nth-child(5) { width: 460px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>对比维度</th>
+            <th>完整 Debian / Ubuntu</th>
+            <th>Alpine</th>
+            <th>Google Distroless</th>
+            <th>Chainguard Images</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>底层 C 库</td>
+            <td>glibc</td>
+            <td>musl libc</td>
+            <td>glibc</td>
+            <td>glibc（Wolfi OS）</td>
+          </tr>
+          <tr>
+            <td>包含 Shell</td>
+            <td>是</td>
+            <td>是</td>
+            <td>否</td>
+            <td>否（生产版）</td>
+          </tr>
+          <tr>
+            <td>CVE 数量</td>
+            <td>极多</td>
+            <td>中等</td>
+            <td>少，但修复慢</td>
+            <td>极少，按小时级修复</td>
+          </tr>
+          <tr>
+            <td>语言版本更新</td>
+            <td>慢</td>
+            <td>中等</td>
+            <td>极慢</td>
+            <td>快，跟随上游每日构建</td>
+          </tr>
+          <tr>
+            <td>调试难度</td>
+            <td>容易</td>
+            <td>容易</td>
+            <td>难</td>
+            <td>用 <code>-dev</code> 变体调试</td>
+          </tr>
+          <tr>
+            <td>镜像体积</td>
+            <td>大</td>
+            <td>极小</td>
+            <td>小</td>
+            <td>小</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

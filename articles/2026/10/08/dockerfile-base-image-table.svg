@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1520" height="696" viewBox="0 0 1520 696" role="img"
+  aria-label="容器基础镜像选型对照表">
+  <foreignObject width="1520" height="696">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1520px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 340px; }
+        col:nth-child(2) { width: 280px; }
+        col:nth-child(3) { width: 400px; }
+        col:nth-child(4) { width: 500px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>镜像</th>
+            <th>包含内容</th>
+            <th>适用场景</th>
+            <th>代价与限制</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>scratch</code></td>
+            <td>空镜像，什么都没有</td>
+            <td>完全静态编译的二进制</td>
+            <td>没有 CA 证书和时区数据，需要自己 <code>COPY</code> 进去</td>
+          </tr>
+          <tr>
+            <td><code>distroless/static</code></td>
+            <td>CA 证书、时区数据</td>
+            <td>静态二进制，Go / Rust 的常见选择</td>
+            <td>无 shell、无包管理器</td>
+          </tr>
+          <tr>
+            <td><code>distroless/base</code></td>
+            <td>glibc、ssl 库、CA 证书</td>
+            <td>动态链接应用，且必须使用 glibc</td>
+            <td>排错需要依赖 <code>debug</code> 变体</td>
+          </tr>
+          <tr>
+            <td><code>distroless/cc</code></td>
+            <td>base 加 <code>libstdc++</code></td>
+            <td>C++ 应用，或依赖 C++ 运行时</td>
+            <td>体积略大于 base</td>
+          </tr>
+          <tr>
+            <td><code>distroless/nodejs</code> / <code>java</code> 等</td>
+            <td>base 加对应语言运行时</td>
+            <td>Node.js、JVM、Python 应用</td>
+            <td>运行时版本跟随上游节奏，可能滞后</td>
+          </tr>
+          <tr>
+            <td>Chainguard Images</td>
+            <td>按语言持续维护的最小镜像</td>
+            <td>需要快速跟进语言新版本的生产环境</td>
+            <td>强化镜像需要商业订阅（FIPS、SLA）</td>
+          </tr>
+          <tr>
+            <td>Debian / Ubuntu <code>slim</code></td>
+            <td>精简发行版，保留包管理器</td>
+            <td>复杂的系统依赖，需要调试工具</td>
+            <td>攻击面仍然明显大于 Distroless</td>
+          </tr>
+          <tr>
+            <td>Alpine</td>
+            <td>musl libc 加 apk</td>
+            <td>体积敏感，且能接受 musl</td>
+            <td>musl 兼容性和 DNS 解析行为与 glibc 不同</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

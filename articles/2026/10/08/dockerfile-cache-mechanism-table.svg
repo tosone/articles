@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1520" height="303" viewBox="0 0 1520 303" role="img"
+  aria-label="Docker 层缓存与缓存挂载对比表">
+  <foreignObject width="1520" height="303">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1520px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 400px; }
+        col:nth-child(2) { width: 380px; }
+        col:nth-child(3) { width: 350px; }
+        col:nth-child(4) { width: 390px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>机制</th>
+            <th>它决定什么</th>
+            <th>失效或清除条件</th>
+            <th>典型收益</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Docker 层缓存</td>
+            <td>命令要不要重新执行</td>
+            <td>该层或任一前置层的输入发生变化</td>
+            <td>依赖清单没变时跳过下载</td>
+          </tr>
+          <tr>
+            <td><code>--mount=type=cache</code></td>
+            <td>命令重跑时能否复用之前的中间结果</td>
+            <td>只有 <code>docker builder prune</code> 才清</td>
+            <td>改了代码后仍能增量编译</td>
+          </tr>
+          <tr>
+            <td><code>--cache-to</code> / <code>--cache-from</code></td>
+            <td>跨机器携带层缓存和挂载缓存</td>
+            <td>缓存后端被清理或过期</td>
+            <td>CI 复用上一台机器构建出的结果</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

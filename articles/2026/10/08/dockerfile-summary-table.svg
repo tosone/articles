@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="665" viewBox="0 0 1460 665" role="img"
+  aria-label="现代 Dockerfile 关键维度对照表">
+  <foreignObject width="1460" height="665">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1460px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+        }
+        td {
+          background: #ffffff;
+        }
+        col:nth-child(1) { width: 170px; }
+        col:nth-child(2) { width: 330px; }
+        col:nth-child(3) { width: 460px; }
+        col:nth-child(4) { width: 500px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 5px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th>传统写法</th>
+            <th>现代化写法</th>
+            <th>需要注意的边界</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>基础镜像</td>
+            <td>ubuntu / centos / 完整语言镜像</td>
+            <td>Distroless、Chainguard、slim、scratch</td>
+            <td>没有 shell 也意味着不能 <code>docker exec</code> 排错</td>
+          </tr>
+          <tr>
+            <td>依赖安装</td>
+            <td>每次构建全量下载</td>
+            <td><code>--mount=type=cache</code> 挂载包管理器缓存</td>
+            <td>缓存挂载只在本地有效，CI 需要额外导出</td>
+          </tr>
+          <tr>
+            <td>层结构</td>
+            <td><code>COPY . .</code> 之后再统一安装依赖</td>
+            <td>依赖清单先行，构建与运行严格分阶段</td>
+            <td>层缓存失效不等于缓存挂载丢失</td>
+          </tr>
+          <tr>
+            <td>运行身份</td>
+            <td>默认 root</td>
+            <td><code>USER nonroot</code> 与 <code>COPY --chown</code></td>
+            <td>文件属主不对会在运行时变成权限报错</td>
+          </tr>
+          <tr>
+            <td>构建密钥</td>
+            <td>用 <code>ENV</code> 或 <code>ARG</code> 传 Token</td>
+            <td><code>--mount=type=secret</code> 按次注入</td>
+            <td>secret 不落层，但仍可能被构建日志带出</td>
+          </tr>
+          <tr>
+            <td>镜像元数据</td>
+            <td>基本不写</td>
+            <td>OCI Labels 注入版本、源码坐标和许可证</td>
+            <td>标签应在 CI 动态注入，不要硬编码</td>
+          </tr>
+          <tr>
+            <td>分发格式</td>
+            <td>默认 gzip</td>
+            <td>zstd 与 registry 层缓存</td>
+            <td>压缩级别过高会明显拖慢构建</td>
+          </tr>
+          <tr>
+            <td>供应链证明</td>
+            <td>没有</td>
+            <td>provenance / SBOM attestation</td>
+            <td><code>--load</code> 与 attestation 存在兼容问题</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

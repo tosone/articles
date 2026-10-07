@@ -1,5 +1,21 @@
 [
   {
+    "date": "2026-10-08",
+    "title": "现代化 Dockerfile 编写指南",
+    "path": "articles/2026/10/08/dockerfile.md",
+    "cover": "articles/2026/10/08/image.svg",
+    "summary": "现代 Dockerfile 的核心不是“能跑起来”，而是构建速度、攻击面与供应链可追溯性。本文拆解层缓存与缓存挂载的区别、基础镜像选型、多阶段与多 target、非 root 与密钥隔离，以及 OCI 元数据、zstd 压缩和 SBOM。",
+    "tags": [
+      "Docker",
+      "Dockerfile",
+      "BuildKit",
+      "Distroless",
+      "OCI",
+      "Container Security",
+      "Supply Chain"
+    ]
+  },
+  {
     "date": "2026-10-07",
     "title": "K8s 的 CPU limits 到底该不该设：CFS 节流、隔离代价与工程折中",
     "path": "articles/2026/10/07/k8s-cpu-limits.md",
