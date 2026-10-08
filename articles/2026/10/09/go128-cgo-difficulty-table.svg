@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="243" viewBox="0 0 1180 243" role="img"
+  aria-label="cgo without a C toolchain 的分层难度">
+  <foreignObject width="1180" height="243">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; background: #ffffff; }
+        table {
+          width: 1180px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          background: #ffffff;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.38;
+          color: #173642;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+          font-weight: 700;
+        }
+        td { font-weight: 400; }
+        td:first-child { color: #0b2533; font-weight: 600; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 4px;
+        }
+        .nowrap { white-space: nowrap; }
+      </style>
+      <table>
+        <colgroup>
+          <col style="width: 150px" />
+          <col style="width: 700px" />
+          <col style="width: 330px" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>层次</th>
+            <th>覆盖内容</th>
+            <th>难度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>第一层</td>
+            <td><code>int foo(int)</code>、<code>double bar(double)</code> 这类标量函数</td>
+            <td>低</td>
+          </tr>
+          <tr>
+            <td>第二层</td>
+            <td>结构体布局、对齐、指针、回调函数</td>
+            <td>中高</td>
+          </tr>
+          <tr>
+            <td>第三层</td>
+            <td>宏、位域、匿名联合体、变长参数、TLS、<code>setjmp</code> 等边角特性</td>
+            <td>高，且未必值得</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

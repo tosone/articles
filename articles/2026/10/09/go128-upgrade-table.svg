@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1540" height="426" viewBox="0 0 1540 426" role="img"
+  aria-label="Go 1.28 升级准备清单">
+  <foreignObject width="1540" height="426">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; background: #ffffff; }
+        table {
+          width: 1540px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          background: #ffffff;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 23px;
+          line-height: 1.38;
+          color: #173642;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 18px;
+          text-align: left;
+          vertical-align: middle;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+          font-weight: 700;
+        }
+        td { font-weight: 400; }
+        td:first-child { color: #0b2533; font-weight: 600; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.92em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 4px;
+        }
+        .nowrap { white-space: nowrap; }
+      </style>
+      <table>
+        <colgroup>
+          <col style="width: 150px" />
+          <col style="width: 900px" />
+          <col style="width: 490px" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>阶段</th>
+            <th>动作</th>
+            <th>完成标准</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>现在</td>
+            <td>盘点 cgo 依赖，区分“只调 libc”和“复杂 C/C++”</td>
+            <td>产出一份可迁移 / 暂缓迁移的清单</td>
+          </tr>
+          <tr>
+            <td>现在</td>
+            <td>给核心服务建立 benchmark 和 GC 暂停分布基线</td>
+            <td>有一组可对比的 <code>benchstat</code> 和 pprof 数据</td>
+          </tr>
+          <tr>
+            <td>现在</td>
+            <td>回归 JSON 边界测试：未知字段、错误文本、字段顺序</td>
+            <td>相关测试不再依赖具体错误字符串</td>
+          </tr>
+          <tr>
+            <td>发布后</td>
+            <td>在测试环境跑 1.28，观察 <code>gc/pause</code> 和 <code>sync.Pool</code> 命中率</td>
+            <td>暂停分布和内存曲线没有出现异常拐点</td>
+          </tr>
+          <tr>
+            <td>发布后</td>
+            <td>灰度 10% 流量，对比 CPU、内存、GC 三项</td>
+            <td>三项指标在可接受区间内，再逐步放量</td>
+          </tr>
+          <tr>
+            <td>长期</td>
+            <td>只对稳定后的特性做迁移，实验特性单独立项</td>
+            <td>不把 <code>GOEXPERIMENT</code> 带进生产构建脚本</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

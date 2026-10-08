@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-10-09",
+    "title": "Go 1.28 路线图梳理：Cgo 去工具链化、泛型容器补位与 Green Tea GC 转正",
+    "path": "articles/2026/10/09/go128.md",
+    "cover": "articles/2026/10/09/image.svg",
+    "summary": "Go 1.28 计划 2027 年初发布，候选清单里 Cgo 去工具链化、Green Tea GC 转默认、stdlib 泛型容器是最值得关注的三项。本文按生产影响排序，区分稳定、实验和提案阶段，并给出升级前该做的验证。",
+    "tags": [
+      "Go",
+      "Go 1.28",
+      "Roadmap",
+      "Runtime",
+      "GC",
+      "Generics"
+    ]
+  },
+  {
     "date": "2026-10-08",
     "title": "现代化 Dockerfile 编写指南",
     "path": "articles/2026/10/08/dockerfile.md",
