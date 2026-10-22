@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-label="PHP memory amplification measurement table">
+  <foreignObject width="960" height="300">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 960px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 22px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 16px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+          white-space: nowrap;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+          font-weight: 600;
+        }
+        td {
+          background: #ffffff;
+        }
+        tr { height: 60px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.94em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 4px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col style="width: 300px;" />
+          <col style="width: 420px;" />
+          <col style="width: 240px;" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>memory_limit</th>
+            <th>触发 OOM 的最小请求体</th>
+            <th>放大倍率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8M</td>
+            <td>153 KB</td>
+            <td>54.8x</td>
+          </tr>
+          <tr>
+            <td>32M</td>
+            <td>636 KB</td>
+            <td>52.8x</td>
+          </tr>
+          <tr>
+            <td>128M</td>
+            <td>2.57 MB</td>
+            <td>52.3x</td>
+          </tr>
+          <tr>
+            <td>256M</td>
+            <td>5.14 MB</td>
+            <td>52.2x</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

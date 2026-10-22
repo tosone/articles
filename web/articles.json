@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-10-22",
+    "title": "PHP 2026-109618/109619 高分漏洞解析：OOM 如何变成 RCE",
+    "path": "articles/2026/10/22/php2shell.md",
+    "cover": "articles/2026/10/22/image.svg",
+    "summary": "PHP 8.2 至 8.5 的两个 CVSS 9.2 漏洞（CVE-2026-109618/109619），根因是 OOM 路径破坏了内存生命周期契约；OpenAI 随后通过 Patch the Planet 披露了 AI 发现与协调过程。",
+    "tags": [
+      "PHP",
+      "CVE-2026-109618",
+      "CVE-2026-109619",
+      "Memory Safety",
+      "Vulnerability Analysis",
+      "WAF",
+      "OpenAI",
+      "Patch the Planet",
+      "AI Security"
+    ]
+  },
+  {
     "date": "2026-10-09",
     "title": "Go 1.28 路线图梳理：Cgo 去工具链化、泛型容器补位与 Green Tea GC 转正",
     "path": "articles/2026/10/09/go128.md",

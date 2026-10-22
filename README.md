@@ -8,6 +8,7 @@
 
 | 日期 | 标题 |
 | --- | --- |
+| 2026-10-22 | [PHP 2026-109618/109619 高分漏洞解析：OOM 如何变成 RCE](./articles/2026/10/22/php2shell.md) |
 | 2026-10-09 | [Go 1.28 路线图梳理：Cgo 去工具链化、泛型容器补位与 Green Tea GC 转正](./articles/2026/10/09/go128.md) |
 | 2026-10-08 | [现代化 Dockerfile 编写指南](./articles/2026/10/08/dockerfile.md) |
 | 2026-10-07 | [K8s 的 CPU limits 到底该不该设：CFS 节流、隔离代价与工程折中](./articles/2026/10/07/k8s-cpu-limits.md) |

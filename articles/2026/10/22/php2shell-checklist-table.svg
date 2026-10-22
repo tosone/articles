@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1450" height="420" viewBox="0 0 1450 420" role="img" aria-label="PHP php2shell response checklist table">
+  <foreignObject width="1450" height="420">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1450px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 22px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 16px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+          white-space: nowrap;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+          font-weight: 600;
+        }
+        td {
+          background: #ffffff;
+        }
+        tr { height: 60px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.94em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 4px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col style="width: 130px;" />
+          <col style="width: 780px;" />
+          <col style="width: 540px;" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>优先级</th>
+            <th>动作</th>
+            <th>验收标准</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>P0</td>
+            <td>升级到 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 或更高</td>
+            <td><code>php -v</code> 与镜像 digest 一致，重新构建</td>
+          </tr>
+          <tr>
+            <td>P0</td>
+            <td>关闭 <code>display_errors</code>，重算 <code>memory_limit</code> 与 <code>post_max_size</code></td>
+            <td>大 multipart 不再 OOM，比例至少 60 倍</td>
+          </tr>
+          <tr>
+            <td>P1</td>
+            <td>不用就关闭 <code>session.upload_progress</code>，开启严格会话模式</td>
+            <td>会话文件里没有攻击者可控键</td>
+          </tr>
+          <tr>
+            <td>P1</td>
+            <td>检测规则改为正文结构加行为检测，覆盖逗号/空格</td>
+            <td>四种 Content-Type 写法都能命中</td>
+          </tr>
+          <tr>
+            <td>P2</td>
+            <td>为 <code>var_destroy</code> 重入和 handler 混用补回归用例</td>
+            <td>8.5.12 上仍能复现，升级后不误判</td>
+          </tr>
+          <tr>
+            <td>P2</td>
+            <td>隔离 7.4 等 EOL 分支</td>
+            <td>无公网暴露，或已排期迁移</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

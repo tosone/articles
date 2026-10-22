@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1390" height="300" viewBox="0 0 1390 300" role="img" aria-label="PHP php2shell PoC proof boundary table">
+  <foreignObject width="1390" height="300">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1390px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 22px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 16px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+          white-space: nowrap;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+          font-weight: 600;
+        }
+        td {
+          background: #ffffff;
+        }
+        tr { height: 60px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.94em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 4px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col style="width: 150px;" />
+          <col style="width: 800px;" />
+          <col style="width: 440px;" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>层级</th>
+            <th>内容</th>
+            <th>对读者的意义</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>已证明</td>
+            <td>8.5.11 + 单 worker，4 个普通 HTTP 请求拿到 uid=33，12/12、8 组 ASLR</td>
+            <td>代码执行可行性成立，不是纯理论</td>
+          </tr>
+          <tr>
+            <td>实验室辅助</td>
+            <td>早期链地址来自 GDB 或 /proc，端到端改用 cookie 泄露</td>
+            <td>远程利用仍需信息泄露</td>
+          </tr>
+          <tr>
+            <td>未证明</td>
+            <td>默认加固配置、多 worker、FPM RCE、补丁后复现原链、持久化控制</td>
+            <td>不能外推成“所有 PHP 沦陷”</td>
+          </tr>
+          <tr>
+            <td>已证伪</td>
+            <td>cached-zval session.upload_progress UAF 理论</td>
+            <td>别在错误方向写检测规则</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>

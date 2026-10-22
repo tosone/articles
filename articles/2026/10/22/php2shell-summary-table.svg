@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="360" viewBox="0 0 1380 360" role="img" aria-label="PHP php2shell vulnerability summary table">
+  <foreignObject width="1380" height="360">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        table {
+          width: 1380px;
+          border-collapse: separate;
+          border-spacing: 0;
+          table-layout: fixed;
+          font-family: "PingFang SC", "Avenir Next", "Helvetica Neue", sans-serif;
+          font-size: 22px;
+          line-height: 1.35;
+          color: #0b2533;
+          letter-spacing: 0;
+          word-break: normal;
+          overflow-wrap: break-word;
+          line-break: strict;
+        }
+        th, td {
+          border-right: 1px solid #d5eef4;
+          border-bottom: 1px solid #d5eef4;
+          padding: 14px 16px;
+          text-align: left;
+          vertical-align: middle;
+          font-weight: 400;
+          white-space: nowrap;
+        }
+        th {
+          background: #00add8;
+          color: #ffffff;
+          font-weight: 600;
+        }
+        td {
+          background: #ffffff;
+        }
+        tr { height: 60px; }
+        code {
+          font-family: "Consolas", "SFMono-Regular", "Menlo", monospace;
+          font-size: 0.94em;
+          background: #f1fbfd;
+          color: #0b2533;
+          padding: 0 4px;
+        }
+      </style>
+      <table>
+        <colgroup>
+          <col style="width: 230px;" />
+          <col style="width: 450px;" />
+          <col style="width: 380px;" />
+          <col style="width: 320px;" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>项目</th>
+            <th>关键事实</th>
+            <th>实验室结论</th>
+            <th>工程动作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CVE-2026-109618</td>
+            <td>OOM 后消费未初始化内存（9.2）</td>
+            <td>Chain A 可复现，需非默认分配器</td>
+            <td>升级修复版本</td>
+          </tr>
+          <tr>
+            <td>CVE-2026-109619</td>
+            <td>跨请求残留全局状态（9.2）</td>
+            <td>Chain B 在默认 Zend MM 可达</td>
+            <td>升级并收紧会话</td>
+          </tr>
+          <tr>
+            <td>内存放大</td>
+            <td>6 字节头放大到约 314 字节</td>
+            <td>52 倍，2.57MB 可 OOM 128M</td>
+            <td>重算内存比例</td>
+          </tr>
+          <tr>
+            <td>8.5.12 补丁</td>
+            <td>引擎级 fallible allocation</td>
+            <td>两个 CVE 已死，三条旁路存活</td>
+            <td>继续排查相邻面</td>
+          </tr>
+          <tr>
+            <td>公开 WAF 规则</td>
+            <td>多数锚定分号 boundary</td>
+            <td>逗号、空格分隔同样被接受</td>
+            <td>改结构与行为检测</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </foreignObject>
+</svg>
